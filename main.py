@@ -1,10 +1,22 @@
-"""Market Consensus — Phase 1 entry point.
+"""Market Consensus — full pipeline entry point.
 
-Runs every configured scraper and prints the normalized records in a clean,
-human-readable format. Later phases will swap the print step for Supabase
-storage and Claude-based sentiment extraction.
+    scrape  ->  normalize  ->  score (Claude)  ->  aggregate  ->  print
+
+Scraping and normalization always run. Scoring + aggregation run when
+ANTHROPIC_API_KEY is set; otherwise we print the normalized feed by tier and
+explain what's missing — so the pipeline is useful even before the key is added.
+
+Usage:
+    python3 main.py            # synchronous scoring (fast dev loop)
+    python3 main.py --batch    # Batch API scoring (~50% cheaper daily run)
 """
 
+import argparse
+import os
+from collections import Counter
+from datetime import datetime, timezone
+
+from pipeline import aggregator, normalizer, scorer
 from scrapers import arxiv, news, reddit
 
 SCRAPERS = {
@@ -13,50 +25,87 @@ SCRAPERS = {
     "arxiv": arxiv.scrape,
 }
 
+TIER_NAMES = {1: "arxiv", 2: "news", 3: "reddit"}
 
-def run_all():
-    """Run every scraper and return a single combined list of records."""
-    all_records = []
+
+def run_scrapers():
+    """Run every scraper; one failing source never kills the run."""
+    raw = []
     for name, scrape_fn in SCRAPERS.items():
-        print(f"Running scraper: {name} ...")
+        print(f"scraping {name} ...")
         try:
             records = scrape_fn()
             print(f"  -> {len(records)} records")
-            all_records.extend(records)
-        except Exception as exc:  # keep one bad source from killing the run
+            raw.extend(records)
+        except Exception as exc:  # noqa: BLE001
             print(f"  !! {name} failed: {exc}")
-    return all_records
+    return raw
 
 
-def print_records(records):
-    """Pretty-print records to the terminal."""
-    print(f"\n{'=' * 70}")
-    print(f"COLLECTED {len(records)} RECORDS")
-    print(f"{'=' * 70}\n")
+def print_tier_breakdown(records):
+    """Counts by tier — shown when we can't score yet."""
+    counts = Counter(TIER_NAMES.get(r["source_tier"], "?") for r in records)
+    print("\nNormalized feed by source:")
+    for name, n in counts.most_common():
+        print(f"  {name:8} {n}")
 
-    for i, record in enumerate(records, start=1):
-        title = record["title"]
-        snippet = record["text"].replace("\n", " ").strip()
-        if len(snippet) > 200:
-            snippet = snippet[:200] + "..."
 
-        print(f"[{i:>3}] {record['source']}  ({record['timestamp']})")
-        print(f"      {title}")
-        if snippet and snippet != title:
-            print(f"      {snippet}")
-        meta = record.get("metadata") or {}
-        if meta.get("score") is not None:
-            print(
-                f"      score={meta['score']}  comments={meta.get('num_comments')}"
-                f"  upvote_ratio={meta.get('upvote_ratio')}"
-            )
-        print(f"      {record['url']}")
-        print()
+def print_consensus(result):
+    """Pretty-print the daily consensus report."""
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    bar = "=" * 70
+    print(f"\n{bar}")
+    print(f"DAILY MARKET CONSENSUS — {today}")
+    print(bar)
+    print(f"Consensus: {result['consensus_score']:+.3f}  ({result['label'].upper()})")
+    print(f"Items: {result['item_count']} scored, "
+          f"{result['contributing_count']} directional")
+
+    state = "CONTESTED" if result["contested"] else "aligned"
+    print(f"\nSource disagreement: {result['dispersion']:.3f}  ({state})")
+    for tier, mean in result["tier_means"].items():
+        print(f"  {TIER_NAMES.get(tier, tier):8} {mean:+.3f}")
+
+    if result["top_themes"]:
+        print("\nTop themes:")
+        for theme, count in result["top_themes"]:
+            print(f"  - {theme} ({count})")
+
+    if result["bull_signals"]:
+        print("\nBull signals:")
+        for sig in result["bull_signals"]:
+            print(f"  + {sig}")
+
+    if result["bear_signals"]:
+        print("\nBear signals:")
+        for sig in result["bear_signals"]:
+            print(f"  - {sig}")
+    print(bar)
 
 
 def main():
-    records = run_all()
-    print_records(records)
+    parser = argparse.ArgumentParser(description="Market Consensus daily pipeline")
+    parser.add_argument(
+        "--batch", action="store_true",
+        help="use the Batch API for scoring (cheaper, async)",
+    )
+    args = parser.parse_args()
+
+    raw = run_scrapers()
+    records = normalizer.normalize(raw)
+    print(f"\nnormalized {len(records)} records")
+
+    if not os.getenv("ANTHROPIC_API_KEY"):
+        print("\nANTHROPIC_API_KEY not set — skipping scoring & aggregation.")
+        print("Add it to .env to produce the consensus report.")
+        print_tier_breakdown(records)
+        return
+
+    mode = "batch" if args.batch else "sync"
+    print(f"\nscoring {len(records)} records ({mode}) ...")
+    scored = scorer.score(records, use_batch=args.batch)
+    result = aggregator.aggregate(scored)
+    print_consensus(result)
 
 
 if __name__ == "__main__":
