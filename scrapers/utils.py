@@ -1,14 +1,21 @@
 """Shared helpers for all scrapers.
 
 Every scraper returns a list of dicts with these consistent fields:
-    source, title, text, url, timestamp
-Use `make_record` to build them so the shape never drifts between scrapers.
+    source, title, text, url, timestamp, metadata
+`metadata` is a dict for source-specific extras (e.g. Reddit score/comments);
+it's always present (defaulting to {}) so the shape never drifts.
+Use `make_record` to build records so this stays consistent everywhere.
 """
 
+import os
 import time
 from datetime import datetime, timezone
 
 import requests
+from dotenv import load_dotenv
+
+# Load .env once at import so every scraper can read credentials via os.getenv.
+load_dotenv()
 
 # A descriptive User-Agent is required by Reddit (and polite everywhere else).
 USER_AGENT = "market-consensus/0.1 (daily market sentiment aggregator)"
@@ -34,14 +41,19 @@ def polite_get(url, params=None, timeout=15, headers=None):
     return response
 
 
-def make_record(source, title, text, url, timestamp):
-    """Build a single normalized record with the canonical field shape."""
+def make_record(source, title, text, url, timestamp, metadata=None):
+    """Build a single normalized record with the canonical field shape.
+
+    `metadata` holds source-specific extras (Reddit score/comments, etc.) and is
+    always present as a dict so the record shape is identical across scrapers.
+    """
     return {
         "source": source,
         "title": title,
         "text": text,
         "url": url,
         "timestamp": timestamp,
+        "metadata": metadata or {},
     }
 
 

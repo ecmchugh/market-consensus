@@ -5,11 +5,12 @@ human-readable format. Later phases will swap the print step for Supabase
 storage and Claude-based sentiment extraction.
 """
 
-from scrapers import news, reddit
+from scrapers import arxiv, news, reddit
 
 SCRAPERS = {
     "reddit": reddit.scrape,
     "news": news.scrape,
+    "arxiv": arxiv.scrape,
 }
 
 
@@ -43,6 +44,12 @@ def print_records(records):
         print(f"      {title}")
         if snippet and snippet != title:
             print(f"      {snippet}")
+        meta = record.get("metadata") or {}
+        if meta.get("score") is not None:
+            print(
+                f"      score={meta['score']}  comments={meta.get('num_comments')}"
+                f"  upvote_ratio={meta.get('upvote_ratio')}"
+            )
         print(f"      {record['url']}")
         print()
 
