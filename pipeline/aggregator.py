@@ -98,6 +98,53 @@ def _label(score):
     return "neutral"
 
 
+def _confidence(spread):
+    """Lower sentiment spread = more agreement = higher confidence."""
+    if spread <= config.CONFIDENCE_HIGH_MAX:
+        return "high"
+    if spread <= config.CONFIDENCE_MED_MAX:
+        return "medium"
+    return "low"
+
+
+def _ticker_consensus(scored, now):
+    """Per-ticker weighted consensus, built from directional sources only.
+
+    arXiv (themes-only, weight 0) doesn't drive ticker direction, so we skip it
+    here even though its themes still surface at the top level. Tickers with
+    fewer than MIN_TICKER_MENTIONS directional mentions are dropped as noise.
+    """
+    by_ticker = defaultdict(list)
+    for rec in scored:
+        if config.SOURCE_WEIGHTS.get(rec["source_tier"], 0.0) <= 0:
+            continue
+        for ticker in rec.get("tickers", []):
+            key = ticker.strip().upper()
+            if key:
+                by_ticker[key].append(rec)
+
+    results = []
+    for ticker, recs in by_ticker.items():
+        if len(recs) < config.MIN_TICKER_MENTIONS:
+            continue
+        score = _weighted_mean(
+            [(_weight(r, now), r["sentiment_score"]) for r in recs]
+        )
+        # Confidence from how much the individual scores agree.
+        spread = _dispersion([r["sentiment_score"] for r in recs])
+        results.append({
+            "ticker": ticker,
+            "score": round(score, 4),
+            "label": _label(score),
+            "mentions": len(recs),
+            "confidence": _confidence(spread),
+        })
+
+    # Strongest signals first (most bullish or most bearish).
+    results.sort(key=lambda d: abs(d["score"]), reverse=True)
+    return results
+
+
 def _top_themes(scored, n=10):
     """Rank themes by frequency across all items (arXiv included)."""
     counts, display = Counter(), {}
@@ -143,11 +190,13 @@ def aggregate(scored, now=None):
     return {
         "consensus_score": round(consensus, 4),
         "label": _label(consensus),
+        "confidence": _confidence(dispersion),
         "item_count": len(scored),
         "contributing_count": sum(1 for w in weights if w > 0),
         "tier_means": {t: round(v, 4) for t, v in sorted(tier_means.items())},
         "dispersion": round(dispersion, 4),
         "contested": dispersion > config.CONFLICT_STDDEV_THRESHOLD,
+        "tickers": _ticker_consensus(scored, now),
         "top_themes": _top_themes(scored),
         "bull_signals": _collect_signals(scored, "bull_signals"),
         "bear_signals": _collect_signals(scored, "bear_signals"),

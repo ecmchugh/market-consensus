@@ -57,7 +57,8 @@ def print_consensus(result):
     print(f"\n{bar}")
     print(f"DAILY MARKET CONSENSUS — {today}")
     print(bar)
-    print(f"Consensus: {result['consensus_score']:+.3f}  ({result['label'].upper()})")
+    print(f"Consensus: {result['consensus_score']:+.3f}  ({result['label'].upper()}, "
+          f"{result['confidence']} confidence)")
     print(f"Items: {result['item_count']} scored, "
           f"{result['contributing_count']} directional")
 
@@ -65,6 +66,12 @@ def print_consensus(result):
     print(f"\nSource disagreement: {result['dispersion']:.3f}  ({state})")
     for tier, mean in result["tier_means"].items():
         print(f"  {TIER_NAMES.get(tier, tier):8} {mean:+.3f}")
+
+    if result.get("tickers"):
+        print("\nPer-ticker consensus:")
+        for t in result["tickers"]:
+            print(f"  {t['ticker']:6} {t['score']:+.3f}  {t['label']:8}"
+                  f"  ({t['mentions']} mentions, {t['confidence']} confidence)")
 
     if result["top_themes"]:
         print("\nTop themes:")

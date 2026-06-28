@@ -34,6 +34,7 @@ class SentimentResult(BaseModel):
     """Structured sentiment for a single piece of content."""
 
     sentiment_score: float  # -1.0 (bearish) .. +1.0 (bullish)
+    tickers: list[str]      # stock ticker symbols mentioned, uppercase
     themes: list[str]
     bull_signals: list[str]
     bear_signals: list[str]
@@ -47,7 +48,9 @@ Return:
 - sentiment_score: a number from -1.0 (strongly bearish) to +1.0 (strongly \
 bullish). Use 0.0 for neutral, mixed, or non-directional content (e.g. most \
 academic abstracts).
-- themes: the key topics or tickers discussed (short phrases).
+- tickers: stock ticker symbols explicitly mentioned, uppercase (e.g. NVDA, \
+TSLA). Empty list if none. Do not invent tickers that aren't clearly present.
+- themes: the key topics discussed (short phrases).
 - bull_signals: concrete reasons the content implies upside, if any.
 - bear_signals: concrete reasons the content implies downside, if any.
 
@@ -85,6 +88,7 @@ def _merge(record, result):
     return {
         **record,
         "sentiment_score": _clamp(result.sentiment_score),
+        "tickers": result.tickers,
         "themes": result.themes,
         "bull_signals": result.bull_signals,
         "bear_signals": result.bear_signals,

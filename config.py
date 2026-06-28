@@ -39,8 +39,16 @@ ENGAGEMENT_LOG_WEIGHT = 0.15
 
 # Conflict detection: if the spread of weighted sentiment *across tiers*
 # exceeds this, the day is flagged "contested" and the disagreement surfaced.
-# (Placeholder — tuned when we build the aggregator in step 5.)
 CONFLICT_STDDEV_THRESHOLD = 0.4
+
+# Confidence labels from the sentiment spread (lower spread = more agreement =
+# higher confidence). Used for both the overall reading and per-ticker.
+CONFIDENCE_HIGH_MAX = 0.20   # spread <= this  -> "high"
+CONFIDENCE_MED_MAX = 0.40    # spread <= this  -> "medium", else "low"
+
+# Per-ticker consensus: ignore tickers with fewer than this many directional
+# mentions, so one stray post doesn't create a noisy "ticker signal".
+MIN_TICKER_MENTIONS = 2
 
 
 # --- Claude scorer ---------------------------------------------------------
