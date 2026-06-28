@@ -14,20 +14,12 @@ produces the canonical record the rest of the pipeline depends on:
     }
 
 Assigning the tier here (not in the scrapers) keeps source-weighting policy in
-one place. The tier table moves to config.py in step 3, when the scorer and
-aggregator also need shared constants.
+one place. The tier table itself lives in config.py.
 """
 
-TEXT_MAX_CHARS = 500
+from config import DEFAULT_TIER, SOURCE_TIERS
 
-# Matched by prefix so "reddit/r/investing" and "reddit/r/stocks" both map to 3.
-# (Moves to config.py in step 3.)
-SOURCE_TIERS = (
-    ("arxiv", 1),
-    ("yahoo-finance", 2),
-    ("reddit", 3),
-)
-DEFAULT_TIER = 3
+TEXT_MAX_CHARS = 500
 
 
 def tier_for_source(source):
