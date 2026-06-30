@@ -57,13 +57,23 @@ def print_consensus(result):
     print(f"\n{bar}")
     print(f"DAILY MARKET CONSENSUS — {today}")
     print(bar)
-    print(f"Consensus: {result['consensus_score']:+.3f}  ({result['label'].upper()}, "
-          f"{result['confidence']} confidence)")
+    conf = result["confidence"]
+    if conf in ("high", "medium", "low"):
+        conf_str = f"{conf} confidence"
+    elif conf == "single-source":
+        conf_str = "single source — agreement not assessable"
+    else:
+        conf_str = "no directional signal"
+    print(f"Consensus: {result['consensus_score']:+.3f}  "
+          f"({result['label'].upper()}, {conf_str})")
     print(f"Items: {result['item_count']} scored, "
           f"{result['contributing_count']} directional")
 
-    state = "CONTESTED" if result["contested"] else "aligned"
-    print(f"\nSource disagreement: {result['dispersion']:.3f}  ({state})")
+    if len(result["tier_means"]) >= 2:
+        state = "CONTESTED" if result["contested"] else "aligned"
+        print(f"\nSource disagreement: {result['dispersion']:.3f}  ({state})")
+    else:
+        print("\nSource disagreement: n/a (need ≥ 2 source tiers)")
     for tier, mean in result["tier_means"].items():
         print(f"  {TIER_NAMES.get(tier, tier):8} {mean:+.3f}")
 

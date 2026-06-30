@@ -187,10 +187,21 @@ def aggregate(scored, now=None):
     tier_means = _tier_means(scored, now)
     dispersion = _dispersion(list(tier_means.values()))
 
+    # Confidence measures cross-source *agreement*, so it's only meaningful with
+    # >= 2 directional tiers. With one tier the spread is trivially 0.0 — report
+    # that honestly instead of passing it off as "high confidence".
+    n_tiers = len(tier_means)
+    if n_tiers >= 2:
+        confidence = _confidence(dispersion)
+    elif n_tiers == 1:
+        confidence = "single-source"
+    else:
+        confidence = "none"
+
     return {
         "consensus_score": round(consensus, 4),
         "label": _label(consensus),
-        "confidence": _confidence(dispersion),
+        "confidence": confidence,
         "item_count": len(scored),
         "contributing_count": sum(1 for w in weights if w > 0),
         "tier_means": {t: round(v, 4) for t, v in sorted(tier_means.items())},
