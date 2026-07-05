@@ -16,7 +16,7 @@ import os
 from collections import Counter
 from datetime import datetime, timezone
 
-from pipeline import aggregator, normalizer, scorer
+from pipeline import aggregator, normalizer, scorer, store
 from scrapers import arxiv, news, reddit
 
 SCRAPERS = {
@@ -123,6 +123,15 @@ def main():
     scored = scorer.score(records, use_batch=args.batch)
     result = aggregator.aggregate(scored)
     print_consensus(result)
+
+    if store.is_configured():
+        try:
+            run_date = store.save(result)
+            print(f"\nsaved to Supabase (run_date={run_date})")
+        except Exception as exc:  # never lose the report over a storage hiccup
+            print(f"\n!! failed to save to Supabase: {exc}")
+    else:
+        print("\nSupabase not configured — result not saved.")
 
 
 if __name__ == "__main__":

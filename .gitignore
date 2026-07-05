@@ -2,3 +2,8 @@ venv/
 .env
 __pycache__/
 *.pyc
+
+# Node / npm (accidental — this is a Python backend; JS deps don't belong here)
+node_modules/
+/package.json
+/package-lock.json
