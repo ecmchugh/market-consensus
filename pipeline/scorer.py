@@ -97,9 +97,9 @@ def _merge(record, result):
 
 # --- Sync path -------------------------------------------------------------
 
-def _score_one_sync(client, record):
+def _score_one_sync(client, record, model):
     response = client.messages.parse(
-        model=config.MODEL,
+        model=model,
         max_tokens=MAX_TOKENS,
         system=_SYSTEM,
         messages=[{"role": "user", "content": _user_content(record)}],
@@ -110,34 +110,48 @@ def _score_one_sync(client, record):
 
 # --- Batch path ------------------------------------------------------------
 
-def _score_batch(client, records, poll_seconds=30):
-    """Score all records via the Batch API. Returns results aligned to input."""
-    requests = [
-        Request(
-            custom_id=f"item-{i}",
-            params=MessageCreateParamsNonStreaming(
-                model=config.MODEL,
-                max_tokens=MAX_TOKENS,
-                system=_SYSTEM,
-                messages=[{"role": "user", "content": _user_content(rec)}],
-                output_config=_OUTPUT_CONFIG,
-            ),
-        )
-        for i, rec in enumerate(records)
-    ]
+def _score_batch(client, records, model, poll_seconds=30, batch_id=None):
+    """Score records via the Batch API, or resume an existing `batch_id`.
 
-    batch = client.messages.batches.create(requests=requests)
-    print(f"  batch {batch.id} submitted ({len(requests)} items)...")
+    Resilient to transient network errors while polling — a dropped connection
+    shouldn't discard a batch that's already running (and already paid for).
+    Pass `batch_id` to reconnect to a batch submitted earlier; the records must
+    be reconstructed in the same order so custom_ids line up.
+    """
+    if batch_id is None:
+        requests = [
+            Request(
+                custom_id=f"item-{i}",
+                params=MessageCreateParamsNonStreaming(
+                    model=model,
+                    max_tokens=MAX_TOKENS,
+                    system=_SYSTEM,
+                    messages=[{"role": "user", "content": _user_content(rec)}],
+                    output_config=_OUTPUT_CONFIG,
+                ),
+            )
+            for i, rec in enumerate(records)
+        ]
+        batch = client.messages.batches.create(requests=requests)
+        batch_id = batch.id
+        print(f"  batch {batch_id} submitted ({len(requests)} items)...")
+    else:
+        print(f"  resuming batch {batch_id} ...")
 
     while True:
-        batch = client.messages.batches.retrieve(batch.id)
+        try:
+            batch = client.messages.batches.retrieve(batch_id)
+        except (anthropic.APIConnectionError, anthropic.APITimeoutError) as exc:
+            print(f"  transient poll error ({type(exc).__name__}); retrying...")
+            time.sleep(poll_seconds)
+            continue
         if batch.processing_status == "ended":
             break
         time.sleep(poll_seconds)
 
     # Results arrive in any order — key by custom_id, then realign to input.
     by_id = {}
-    for result in client.messages.batches.results(batch.id):
+    for result in client.messages.batches.results(batch_id):
         if result.result.type == "succeeded":
             text = next(
                 (b.text for b in result.result.message.content if b.type == "text"),
@@ -153,20 +167,23 @@ def _score_batch(client, records, poll_seconds=30):
 
 # --- Public interface ------------------------------------------------------
 
-def score(records, use_batch=False):
+def score(records, use_batch=False, model=None, batch_id=None):
     """Score normalized records, returning them enriched with sentiment fields.
 
-    Records that fail to score are dropped (with a warning) so downstream
-    aggregation only sees usable sentiment.
+    `model` defaults to config.MODEL (production Opus); the backtest passes a
+    cheaper model. Pass `batch_id` to resume/collect a previously submitted
+    batch instead of scoring afresh. Records that fail to score are dropped
+    (with a warning) so downstream aggregation only sees usable sentiment.
     """
     if not records:
         return []
 
+    model = model or config.MODEL
     client = anthropic.Anthropic()
-    if use_batch:
-        results = _score_batch(client, records)
+    if use_batch or batch_id:
+        results = _score_batch(client, records, model, batch_id=batch_id)
     else:
-        results = [_score_one_sync(client, rec) for rec in records]
+        results = [_score_one_sync(client, rec, model) for rec in records]
 
     scored = []
     for rec, res in zip(records, results):
