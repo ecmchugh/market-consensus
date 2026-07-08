@@ -20,6 +20,7 @@ Requires ANTHROPIC_API_KEY in .env (loaded by scrapers.utils on import).
 import time
 
 import anthropic
+import httpx
 from pydantic import BaseModel
 
 import config
@@ -150,18 +151,37 @@ def _score_batch(client, records, model, poll_seconds=30, batch_id=None):
         time.sleep(poll_seconds)
 
     # Results arrive in any order — key by custom_id, then realign to input.
-    by_id = {}
-    for result in client.messages.batches.results(batch_id):
-        if result.result.type == "succeeded":
-            text = next(
-                (b.text for b in result.result.message.content if b.type == "text"),
-                None,
-            )
-            by_id[result.custom_id] = SentimentResult.model_validate_json(text)
-        else:
-            print(f"  !! {result.custom_id} {result.result.type}")
-            by_id[result.custom_id] = None
+    # Downloading thousands of results is a long stream that can drop mid-way.
+    # Re-fetching is idempotent (we rebuild by_id), so retry the whole stream.
+    for attempt in range(4):
+        try:
+            by_id = {}
+            parse_failures = 0
+            for result in client.messages.batches.results(batch_id):
+                if result.result.type == "succeeded":
+                    text = next(
+                        (b.text for b in result.result.message.content
+                         if b.type == "text"),
+                        None,
+                    )
+                    try:
+                        by_id[result.custom_id] = SentimentResult.model_validate_json(text)
+                    except Exception:
+                        # A truncated/malformed response drops just that item.
+                        by_id[result.custom_id] = None
+                        parse_failures += 1
+                else:
+                    by_id[result.custom_id] = None
+            break
+        except (anthropic.APIConnectionError, anthropic.APITimeoutError,
+                httpx.HTTPError) as exc:
+            print(f"  results download interrupted ({type(exc).__name__}); retrying...")
+            time.sleep(poll_seconds)
+    else:
+        raise RuntimeError("batch results download failed after retries")
 
+    if parse_failures:
+        print(f"  ({parse_failures} items dropped: unparseable model output)")
     return [by_id.get(f"item-{i}") for i in range(len(records))]
 
 
