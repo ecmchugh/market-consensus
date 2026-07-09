@@ -22,6 +22,24 @@ class TickerSentiment(BaseModel):
     confidence: str
 
 
+class HistoryPoint(BaseModel):
+    """One day in the trend series — just what a chart needs."""
+
+    run_date: str
+    consensus_score: float
+    label: str
+    contested: bool
+
+    @classmethod
+    def from_row(cls, row: dict) -> "HistoryPoint":
+        return cls(
+            run_date=str(row["run_date"]),
+            consensus_score=row["consensus_score"],
+            label=row["label"],
+            contested=row["contested"],
+        )
+
+
 class ConsensusDay(BaseModel):
     run_date: str
     consensus_score: float

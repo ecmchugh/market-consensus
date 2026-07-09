@@ -79,3 +79,8 @@ def get_latest():
     """Fetch the single most recent daily row, or None if the table is empty."""
     rows = latest(limit=1)
     return rows[0] if rows else None
+
+
+def get_history(days=30):
+    """Fetch up to `days` recent rows in chronological order (oldest first)."""
+    return list(reversed(latest(limit=days)))

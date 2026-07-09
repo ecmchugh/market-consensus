@@ -9,7 +9,7 @@ Run locally:
     -> interactive docs at http://localhost:8000/docs
 """
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 
 from api import models
@@ -45,3 +45,10 @@ def consensus_latest():
     if row is None:
         raise HTTPException(status_code=404, detail="No consensus data yet")
     return models.ConsensusDay.from_row(row)
+
+
+@app.get("/consensus/history", response_model=list[models.HistoryPoint])
+def consensus_history(days: int = Query(30, ge=1, le=365)):
+    """Daily consensus scores over time (oldest first) — for the trend chart."""
+    rows = store.get_history(days)
+    return [models.HistoryPoint.from_row(r) for r in rows]
