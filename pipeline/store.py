@@ -84,3 +84,16 @@ def get_latest():
 def get_history(days=30):
     """Fetch up to `days` recent rows in chronological order (oldest first)."""
     return list(reversed(latest(limit=days)))
+
+
+def get_by_date(run_date):
+    """Fetch the row for a specific run_date (YYYY-MM-DD), or None if absent."""
+    client = _client()
+    resp = (
+        client.table(TABLE)
+        .select("*")
+        .eq("run_date", str(run_date))
+        .limit(1)
+        .execute()
+    )
+    return resp.data[0] if resp.data else None

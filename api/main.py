@@ -9,6 +9,8 @@ Run locally:
     -> interactive docs at http://localhost:8000/docs
 """
 
+from datetime import date
+
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -52,3 +54,14 @@ def consensus_history(days: int = Query(30, ge=1, le=365)):
     """Daily consensus scores over time (oldest first) — for the trend chart."""
     rows = store.get_history(days)
     return [models.HistoryPoint.from_row(r) for r in rows]
+
+
+# Declared after /latest and /history so those literal paths win over this
+# path param. `date` typing auto-rejects malformed dates with a 422.
+@app.get("/consensus/{run_date}", response_model=models.ConsensusDay)
+def consensus_by_date(run_date: date):
+    """One specific day's full consensus."""
+    row = store.get_by_date(run_date)
+    if row is None:
+        raise HTTPException(status_code=404, detail=f"No consensus for {run_date}")
+    return models.ConsensusDay.from_row(row)
