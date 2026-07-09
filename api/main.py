@@ -9,8 +9,11 @@ Run locally:
     -> interactive docs at http://localhost:8000/docs
 """
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+
+from api import models
+from pipeline import store
 
 app = FastAPI(
     title="Market Consensus API",
@@ -33,3 +36,12 @@ app.add_middleware(
 def health():
     """Liveness check."""
     return {"status": "ok"}
+
+
+@app.get("/consensus/latest", response_model=models.ConsensusDay)
+def consensus_latest():
+    """The most recent day's full consensus."""
+    row = store.get_latest()
+    if row is None:
+        raise HTTPException(status_code=404, detail="No consensus data yet")
+    return models.ConsensusDay.from_row(row)

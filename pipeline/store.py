@@ -73,3 +73,9 @@ def latest(limit=30):
         .execute()
     )
     return resp.data
+
+
+def get_latest():
+    """Fetch the single most recent daily row, or None if the table is empty."""
+    rows = latest(limit=1)
+    return rows[0] if rows else None
