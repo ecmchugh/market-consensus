@@ -6,10 +6,11 @@ editing this file, not hunting through pipeline logic.
 
 # --- Sources & tiers -------------------------------------------------------
 # Tier identifies a source's authority class (lower = more authoritative).
-# Matched by prefix, so "reddit/r/investing" and "reddit/r/stocks" both → 3.
+# Matched by prefix, so "reddit/r/investing" → 3 and "news:cnbc" → 2. All press
+# outlets share the "news:" prefix, so new feeds slot in without a config change.
 SOURCE_TIERS = (
     ("arxiv", 1),
-    ("yahoo-finance", 2),
+    ("news", 2),
     ("reddit", 3),
 )
 DEFAULT_TIER = 3
