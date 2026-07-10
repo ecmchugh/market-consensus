@@ -65,3 +65,12 @@ def consensus_by_date(run_date: date):
     if row is None:
         raise HTTPException(status_code=404, detail=f"No consensus for {run_date}")
     return models.ConsensusDay.from_row(row)
+
+
+@app.get("/tickers/latest", response_model=list[models.TickerSentiment])
+def tickers_latest():
+    """Per-ticker sentiment from the most recent day (empty if none were named)."""
+    row = store.get_latest()
+    if row is None:
+        raise HTTPException(status_code=404, detail="No consensus data yet")
+    return [models.TickerSentiment(**t) for t in (row.get("tickers") or [])]
