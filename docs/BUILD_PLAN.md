@@ -44,8 +44,15 @@ _Last updated: 2026-07 — pivot from stock-news sentiment to crypto/stocks crow
 - `pgvector` embeddings + subject-query layer + cached `subject_reading`s.
 - Price-anchored backtest of conviction vs. forward returns.
 
-**Active slice:** Slice 1 — loop proven; pivoted source Reddit → Hacker News to fix
-the data-volume blocker. Re-running on HN, then Slice 2 (real backtest).
+**Active slice:** Slice 2 — monthly/large-cap backtest done (no significant predictive
+signal; see finding below). Now testing at WEEKLY resolution (monthly likely too coarse
+for a fast signal). Pipeline is now period-aware (month|week) end to end.
+
+**Slice 2 monthly result (24 names × 12 mo, 1811 items):** LEAD r=+0.13 but permutation
+p=0.076 (NOT significant), bootstrap CI includes zero, horizon jagged → no reliable
+monthly predictive signal. Most robust thread: coincident −0.16 (informed mood leans
+CONTRARIAN to the same-month move). → chose "finer resolution" next: weekly re-test on
+top-10 high-volume names × 52 weeks (running).
 
 **Source decision (2026-07):** sources are pluggable and each item carries a
 `source_type` — **"informed"** (Hacker News = practitioners/technical crowd, zero-auth)
@@ -193,7 +200,7 @@ This completes the architecture story (resume bullet #3)._
 | Cached query latency (ms) | — | |
 | LLM cost / 1k items | — | |
 | Backtest breadth `[N]×[M]` | — | |
-| **Headline finding (verbatim)** | "HN 'informed' NVDA conviction, 12 mo: coincident corr w/ price return ≈ 0.00; conviction LEADS next-month return +0.21; recent return → conviction −0.26 (informed crowd leans contrarian to the move). All weak, n=11, not significant — suggestive, needs breadth (Slice 2)." | 2026-07 |
+| **Headline finding (verbatim)** | "Slice 2, 24 large-cap tech names × 12 mo, 1811 HN items, 257 pooled pairs: mood does NOT reliably predict next-month return. LEAD r=+0.13 but permutation p=0.076 (not sig at .05), bootstrap 95% CI [−0.03,+0.28] includes zero, horizon jagged (−0.16 / +0.13 / −0.03). 17/24 names positive. The one robust-ish thread: COINCIDENT r=−0.16 — informed mood leans CONTRARIAN to the same-month move (echoes Slice-1 lag −0.26). Honest verdict: no significant monthly predictive signal on this universe; contrarian structure is the interesting lead." | 2026-07 |
 
 **Slice 1 finding v2 (HN, 202 relevant / 480, 12 mo, NVDA):** loop solid, readings now
 trustworthy (n=11–24/mo). Quantified result above. Interpretation: no same-month

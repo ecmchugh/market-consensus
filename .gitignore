@@ -10,3 +10,9 @@ node_modules/
 
 # Backtest datasets (large, downloadable — not source)
 data/*.csv
+
+# Slice run artifacts + scoring cache (regenerable outputs, not source).
+# (slice1_nvda.* were committed earlier; these patterns keep new ones out.)
+slice2_*.png
+slice2_*.json
+.slice2_cache/

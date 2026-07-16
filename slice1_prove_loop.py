@@ -158,30 +158,51 @@ def _strip_html(s: str) -> str:
 # ============================================================================
 # STAGE 1 (alt source) — FETCH HACKER NEWS  (→ future ingestion/hackernews.py)
 # ============================================================================
-def fetch_hn_posts(subject: dict, months_back: int = 12, per_month: int = 40) -> list[dict]:
-    """Fetch subject-specific HN stories + comments via the Algolia search API.
+def _iter_windows(period: str, n: int):
+    """Yield (start_unix, end_unix, label) for the last n periods, newest first.
 
-    No credentials. We query month-by-month so every month gets coverage (a single
-    relevance search would cluster around a few big threads). Each item is tagged
-    source_type="informed" — HN is the practitioner/technical slice of opinion.
+    label is the bucket key downstream aggregation/price join on:
+      month → "YYYY-MM";  week → the week's Monday date "YYYY-MM-DD".
     """
     import calendar
-    from datetime import datetime, timezone
+    from datetime import datetime, timedelta, timezone
 
+    now = datetime.now(timezone.utc)
+    if period == "month":
+        year, month = now.year, now.month
+        for _ in range(n):
+            start = datetime(year, month, 1, tzinfo=timezone.utc)
+            last = calendar.monthrange(year, month)[1]
+            end = datetime(year, month, last, 23, 59, 59, tzinfo=timezone.utc)
+            yield int(start.timestamp()), int(end.timestamp()), f"{year}-{month:02d}"
+            month -= 1
+            if month == 0:
+                month, year = 12, year - 1
+    elif period == "week":
+        monday = (now - timedelta(days=now.weekday())).replace(hour=0, minute=0, second=0, microsecond=0)
+        for _ in range(n):
+            end = monday + timedelta(days=6, hours=23, minutes=59, seconds=59)
+            yield int(monday.timestamp()), int(end.timestamp()), monday.strftime("%Y-%m-%d")
+            monday -= timedelta(days=7)
+    else:
+        raise ValueError(f"unknown period: {period}")
+
+
+def fetch_hn(subject: dict, period: str = "month", windows: int = 12,
+             per_window: int = 40) -> list[dict]:
+    """Fetch subject-specific HN stories + comments via the Algolia search API.
+
+    No credentials. We query one window (month or week) at a time so every period
+    gets coverage (a single relevance search would cluster around a few big threads).
+    Each item is tagged source_type="informed" — HN is the practitioner slice.
+    """
     import requests
 
     query = subject["hn_query"]
     records: list[dict] = []
     seen: set[str] = set()
 
-    now = datetime.now(timezone.utc)
-    year, month = now.year, now.month
-    for _ in range(months_back):
-        start = datetime(year, month, 1, tzinfo=timezone.utc)
-        last_day = calendar.monthrange(year, month)[1]
-        end = datetime(year, month, last_day, 23, 59, 59, tzinfo=timezone.utc)
-        start_i, end_i = int(start.timestamp()), int(end.timestamp())
-
+    for start_i, end_i, label in _iter_windows(period, windows):
         try:
             resp = requests.get(
                 "https://hn.algolia.com/api/v1/search",
@@ -189,7 +210,7 @@ def fetch_hn_posts(subject: dict, months_back: int = 12, per_month: int = 40) ->
                     "query": query,
                     "tags": "(story,comment)",
                     "numericFilters": f"created_at_i>={start_i},created_at_i<={end_i}",
-                    "hitsPerPage": str(per_month),
+                    "hitsPerPage": str(per_window),
                 },
                 headers={"User-Agent": USER_AGENT},
                 timeout=20,
@@ -197,7 +218,7 @@ def fetch_hn_posts(subject: dict, months_back: int = 12, per_month: int = 40) ->
             resp.raise_for_status()
             hits = resp.json().get("hits", [])
         except Exception as e:  # noqa: BLE001
-            print(f"  ! HN {year}-{month:02d}: fetch failed ({e.__class__.__name__}), skipping")
+            print(f"  ! HN {label}: fetch failed ({e.__class__.__name__}), skipping")
             hits = []
 
         n_before = len(records)
@@ -227,14 +248,14 @@ def fetch_hn_posts(subject: dict, months_back: int = 12, per_month: int = 40) ->
                     "metadata": {"points": hit.get("points"), "author": hit.get("author")},
                 }
             )
-        print(f"  HN {year}-{month:02d}: +{len(records) - n_before}")
-
-        # step back one month
-        month -= 1
-        if month == 0:
-            month, year = 12, year - 1
+        print(f"  HN {label}: +{len(records) - n_before}")
 
     return records
+
+
+def fetch_hn_posts(subject: dict, months_back: int = 12, per_month: int = 40) -> list[dict]:
+    """Backward-compatible monthly wrapper (used by the Slice-1 demo)."""
+    return fetch_hn(subject, period="month", windows=months_back, per_window=per_month)
 
 
 # ============================================================================
@@ -259,103 +280,138 @@ Judge the poster's own stance. Account for sarcasm, irony, and crypto/WSB slang
 post is not genuinely about the subject, set relevant=false and score=0."""
 
 
-def score_stance(records: list[dict], subject_name: str) -> list[dict]:
-    """Score each record's stance with Claude Haiku. Adds 'score'/'relevant'/'rationale'.
+def _score_one(client, rec: dict, subject_name: str, max_retries: int = 4):
+    """Score one item. Returns the enriched rec if relevant, else None.
 
-    Returns only the records the model judged relevant to the subject.
+    Retries with exponential backoff on transient/rate-limit errors so a big
+    concurrent batch degrades gracefully instead of dropping items.
     """
-    from anthropic import Anthropic
-
-    client = Anthropic()  # reads ANTHROPIC_API_KEY from env
-    scored: list[dict] = []
-    n = len(records)
-    cache_hits = 0
-
-    for i, rec in enumerate(records, 1):
-        content = f"SUBJECT: {subject_name}\n\nPOST TITLE: {rec['title']}\n\nPOST BODY: {rec['text'][:1500]}"
+    content = f"SUBJECT: {subject_name}\n\nPOST TITLE: {rec['title']}\n\nPOST BODY: {rec['text'][:1500]}"
+    for attempt in range(max_retries):
         try:
             resp = client.messages.create(
                 model=MODEL,
                 max_tokens=120,
-                system=[
-                    {
-                        "type": "text",
-                        "text": STANCE_SYSTEM,
-                        # Cache the (large, fixed) rubric so every call after the
-                        # first in the batch reads it from cache, not fresh tokens.
-                        "cache_control": {"type": "ephemeral"},
-                    }
-                ],
+                system=[{"type": "text", "text": STANCE_SYSTEM, "cache_control": {"type": "ephemeral"}}],
                 messages=[
                     {"role": "user", "content": content},
                     {"role": "assistant", "content": "{"},  # prefill → forces clean JSON
                 ],
             )
-            cache_hits += getattr(resp.usage, "cache_read_input_tokens", 0) or 0
-            raw = "{" + resp.content[0].text
-            data = json.loads(raw)
-        except Exception as e:  # noqa: BLE001
-            print(f"  [{i}/{n}] scoring error ({e.__class__.__name__}), skipping")
-            continue
+            data = json.loads("{" + resp.content[0].text)
+            if not data.get("relevant"):
+                return None
+            return {**rec, "score": int(data["score"]), "rationale": data.get("rationale", "")}
+        except Exception:  # noqa: BLE001 — retry transient errors, give up after max_retries
+            if attempt < max_retries - 1:
+                time.sleep(2 ** attempt)  # 1s, 2s, 4s
+                continue
+            return None
+    return None
 
-        if not data.get("relevant"):
-            continue
-        rec = {**rec, "score": int(data["score"]), "rationale": data.get("rationale", "")}
-        scored.append(rec)
-        if i % 10 == 0 or i == n:
-            print(f"  scored {i}/{n} … kept {len(scored)} relevant")
 
-    print(f"  (prompt-cache read tokens across batch: {cache_hits:,})")
+def score_stance(records: list[dict], subject_name: str, max_workers: int = 8,
+                 quiet: bool = False) -> list[dict]:
+    """Score records' stance with Claude Haiku, CONCURRENTLY. Returns relevant ones.
+
+    Uses a thread pool because scoring is I/O-bound (network round-trips): 8 in
+    flight turns a ~45-min sequential batch into a few minutes. One shared client
+    is thread-safe. Order doesn't matter — we bucket by timestamp downstream.
+    """
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    from anthropic import Anthropic
+
+    client = Anthropic()  # reads ANTHROPIC_API_KEY from env
+    scored: list[dict] = []
+    n = len(records)
+    done = 0
+
+    with ThreadPoolExecutor(max_workers=max_workers) as ex:
+        futures = [ex.submit(_score_one, client, rec, subject_name) for rec in records]
+        for fut in as_completed(futures):
+            done += 1
+            result = fut.result()
+            if result is not None:
+                scored.append(result)
+            if not quiet and (done % 25 == 0 or done == n):
+                print(f"  scored {done}/{n} … kept {len(scored)} relevant")
+
     return scored
 
 
 # ============================================================================
 # STAGE 4 — AGGREGATE  (→ future pipeline/aggregate.py)
 # ============================================================================
-def aggregate_by_month(scored: list[dict]) -> list[dict]:
-    """Roll scored posts into a monthly conviction reading.
+def _bucket_key(iso_ts: str, period: str) -> str:
+    """Map an ISO timestamp to its bucket key: month 'YYYY-MM' or week's Monday date."""
+    if period == "month":
+        return iso_ts[:7]
+    from datetime import date, timedelta
+    d = date.fromisoformat(iso_ts[:10])
+    monday = d - timedelta(days=d.weekday())
+    return monday.isoformat()
 
-    Equal-weighted for Slice 1 (RSS has no engagement metadata). Slice 1.5 adds
-    upvote/comment weighting via config.ENGAGEMENT_LOG_WEIGHT once OAuth is on.
+
+def aggregate_by_period(scored: list[dict], period: str = "month",
+                        min_items: int = 1) -> list[dict]:
+    """Roll scored items into a per-period conviction reading (key: 'period').
+
+    Equal-weighted for now. `min_items` drops thin buckets — important weekly, where
+    a 1-item week would just be noise (set min_items≈3 for weekly).
     """
     buckets: dict[str, list[int]] = defaultdict(list)
     for rec in scored:
         if not rec.get("timestamp"):
             continue
-        month = rec["timestamp"][:7]  # YYYY-MM
-        buckets[month].append(rec["score"])
+        buckets[_bucket_key(rec["timestamp"], period)].append(rec["score"])
 
     readings = []
-    for month in sorted(buckets):
-        scores = buckets[month]
+    for key in sorted(buckets):
+        scores = buckets[key]
+        if len(scores) < min_items:
+            continue
         readings.append(
-            {
-                "month": month,
-                "consensus": round(sum(scores) / len(scores), 1),
-                "n": len(scores),
-            }
+            {"period": key, "consensus": round(sum(scores) / len(scores), 1), "n": len(scores)}
         )
     return readings
+
+
+def aggregate_by_month(scored: list[dict]) -> list[dict]:
+    """Backward-compatible monthly wrapper (Slice-1 demo uses the 'month' key)."""
+    return [{"month": r["period"], "consensus": r["consensus"], "n": r["n"]}
+            for r in aggregate_by_period(scored, "month")]
 
 
 # ============================================================================
 # STAGE 5 — PRICE  (→ future analysis/prices.py)
 # ============================================================================
-def fetch_monthly_price(ticker: str, start: str, end: str) -> list[dict]:
-    """Monthly close for the proxy over the reading window (yfinance, no key)."""
+def fetch_price(ticker: str, start: str, end: str, period: str = "month") -> list[dict]:
+    """Per-period close for the proxy (yfinance, no key). Key: 'period'.
+
+    Weekly bars are indexed by the week's Monday and monthly by the 1st, matching
+    the bucket keys from aggregate_by_period so the two join cleanly.
+    """
     import yfinance as yf
 
-    df = yf.download(ticker, start=start, end=end, interval="1mo", progress=False, auto_adjust=True)
+    interval = "1wk" if period == "week" else "1mo"
+    df = yf.download(ticker, start=start, end=end, interval=interval, progress=False, auto_adjust=True)
     out = []
     if df is None or df.empty:
         return out
     closes = df["Close"]
-    # yfinance may return a single-column DataFrame; squeeze to a Series.
-    if hasattr(closes, "columns"):
+    if hasattr(closes, "columns"):  # squeeze single-column frame to a Series
         closes = closes.iloc[:, 0]
     for idx, val in closes.items():
-        out.append({"month": idx.strftime("%Y-%m"), "close": round(float(val), 2)})
+        key = idx.strftime("%Y-%m") if period == "month" else idx.strftime("%Y-%m-%d")
+        out.append({"period": key, "close": round(float(val), 2)})
     return out
+
+
+def fetch_monthly_price(ticker: str, start: str, end: str) -> list[dict]:
+    """Backward-compatible monthly wrapper (Slice-1 demo uses the 'month' key)."""
+    return [{"month": r["period"], "close": r["close"]}
+            for r in fetch_price(ticker, start, end, "month")]
 
 
 # ============================================================================
