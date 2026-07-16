@@ -44,7 +44,14 @@ _Last updated: 2026-07 — pivot from stock-news sentiment to crypto/stocks crow
 - `pgvector` embeddings + subject-query layer + cached `subject_reading`s.
 - Price-anchored backtest of conviction vs. forward returns.
 
-**Active slice:** Slice 0 (decisions) → then Slice 1.
+**Active slice:** Slice 1 loop PROVEN (2026-07, `slice1_prove_loop.py`) → next is
+Slice 1.5 (data volume) then Slice 2 (real backtest).
+
+**Slice 1 finding (NVDA, 42 relevant WSB posts / 12 months):** the loop runs end to
+end and produces a sensible read. In the months with enough posts (n≥6) conviction
+tracks price coincidentally (Oct '25 high/high, Nov '25 low/low, May '26 pos/high).
+The dramatic-looking "lead" (Mar) and "contrarian top" (Jul) months are n=1 — noise,
+not signal. **Verdict: idea is not disproven; #1 blocker is sample size per period.**
 
 ---
 
@@ -170,9 +177,9 @@ This completes the architecture story (resume bullet #3)._
 
 | Metric | Value | Captured when |
 |---|---|---|
-| Corpus items `[N]` | — | |
-| Hours of audio transcribed | — | |
-| Sources live | — | |
+| Corpus items `[N]` | 42 relevant / 100 fetched (NVDA, Slice 1) | 2026-07 |
+| Hours of audio transcribed | — (no audio yet) | |
+| Sources live | 1 (Reddit RSS search, WSB) | 2026-07 |
 | % chatter down-weighted `[X]` | — | |
 | Cluster-collapse ratio | — | |
 | Cached query latency (ms) | — | |

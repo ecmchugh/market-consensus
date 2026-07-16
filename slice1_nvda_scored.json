@@ -2,37 +2,85 @@
   "subject": "NVDA",
   "readings": [
     {
+      "month": "2025-08",
+      "consensus": 75.0,
+      "n": 1
+    },
+    {
       "month": "2025-09",
       "consensus": 75.0,
       "n": 1
     },
     {
       "month": "2025-10",
-      "consensus": 28.3,
-      "n": 3
+      "consensus": 54.5,
+      "n": 6
     },
     {
       "month": "2025-11",
-      "consensus": -55.0,
+      "consensus": -11.2,
+      "n": 8
+    },
+    {
+      "month": "2025-12",
+      "consensus": -5.0,
+      "n": 2
+    },
+    {
+      "month": "2026-01",
+      "consensus": 30.0,
       "n": 2
     },
     {
       "month": "2026-02",
-      "consensus": 85.0,
+      "consensus": -3.0,
+      "n": 5
+    },
+    {
+      "month": "2026-03",
+      "consensus": 75.0,
       "n": 1
     },
     {
+      "month": "2026-04",
+      "consensus": 34.0,
+      "n": 3
+    },
+    {
       "month": "2026-05",
-      "consensus": 75.0,
-      "n": 2
+      "consensus": 28.8,
+      "n": 8
     },
     {
       "month": "2026-06",
-      "consensus": 15.0,
+      "consensus": -12.5,
+      "n": 4
+    },
+    {
+      "month": "2026-07",
+      "consensus": -35.0,
       "n": 1
     }
   ],
   "scored": [
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "Plan B if Nvidia crashes the market tomorrow",
+      "text": "submitted by /u/MysteriousSlice007 [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1thzzx3/plan_b_if_nvidia_crashes_the_market_tomorrow/",
+      "timestamp": "2026-05-19T20:52:55+00:00",
+      "score": -35,
+      "rationale": "Poster anticipates negative NVDA scenario, preparing contingency plans."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "It's GAYMAN.",
+      "text": "It's not FAANG anymore. It's GAYMAN. submitted by /u/Appropriate-Soil-896 [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1omcmnz/its_gayman/",
+      "timestamp": "2025-11-02T09:03:29+00:00",
+      "score": 75,
+      "rationale": "Bullish sentiment: NVDA replacing Facebook in elite mega-cap acronym."
+    },
     {
       "source": "reddit/r/wallstreetbets",
       "title": "$10,526 to $1,500,000 in 5 months thanks Google!",
@@ -40,7 +88,7 @@
       "url": "https://www.reddit.com/r/wallstreetbets/comments/1n7n2ll/10526_to_1500000_in_5_months_thanks_google/",
       "timestamp": "2025-09-03T18:38:10+00:00",
       "score": 75,
-      "rationale": "Trader bullish on Google, mentions NVDA downturn but focuses success on Google calls."
+      "rationale": "Heavily bullish on Google, mentions NVDA losses but focuses on Google recovery. Conviction play."
     },
     {
       "source": "reddit/r/wallstreetbets",
@@ -49,7 +97,7 @@
       "url": "https://www.reddit.com/r/wallstreetbets/comments/1txf6im/fuck_everyone_45_years_to_get_to_a_million/",
       "timestamp": "2026-06-05T08:45:27+00:00",
       "score": 15,
-      "rationale": "Minor NVDA mention; early 2022 loss, not current conviction."
+      "rationale": "Mentions NVDA as early position, lost half in 2022, moved on. Neutral."
     },
     {
       "source": "reddit/r/wallstreetbets",
@@ -58,7 +106,7 @@
       "url": "https://www.reddit.com/r/wallstreetbets/comments/1ohrse7/turns_out_my_dumbass_might_be_a_genius/",
       "timestamp": "2025-10-27T21:54:35+00:00",
       "score": 75,
-      "rationale": "Poster profited $12K buying/selling NVDA 179\u2192191. Bullish execution."
+      "rationale": "Poster bought NVDA at 179, sold at 191\u2014profitable trade. Bullish execution."
     },
     {
       "source": "reddit/r/wallstreetbets",
@@ -67,7 +115,7 @@
       "url": "https://www.reddit.com/r/wallstreetbets/comments/1o1souo/bought_nvda_in_2022_because_i_liked_gaming_1000/",
       "timestamp": "2025-10-09T01:01:49+00:00",
       "score": 85,
-      "rationale": "Investor holds massive unrealized gains, demonstrates strong conviction in NVDA."
+      "rationale": "Strong bullish conviction demonstrated by massive realized gains and long-term holding conviction."
     },
     {
       "source": "reddit/r/wallstreetbets",
@@ -75,8 +123,8 @@
       "text": "Check my previous post for verification. I have a total of 71k shares of NVDA, but only 43.5k on robinhood. submitted by /u/Knillls [link] [comments]",
       "url": "https://www.reddit.com/r/wallstreetbets/comments/1repm1d/ill_sell_when_it_hits_100m/",
       "timestamp": "2026-02-25T20:56:24+00:00",
-      "score": 85,
-      "rationale": "Holder with massive position, planning to sell at high target (100M), implying strong bullish conviction."
+      "score": 75,
+      "rationale": "Bullish conviction implied by setting very high exit target; substantial position indicates confidence."
     },
     {
       "source": "reddit/r/wallstreetbets",
@@ -85,7 +133,7 @@
       "url": "https://www.reddit.com/r/wallstreetbets/comments/1tc6trw/i_finally_rest_and_watch_the_sunrise_on_a/",
       "timestamp": "2026-05-13T17:36:28+00:00",
       "score": 75,
-      "rationale": "Trader boasts 300-350k NVDA profit, long-term bullish conviction since 2016."
+      "rationale": "Poster made massive NVDA profits (300-350k), held since 2016, very bullish history."
     },
     {
       "source": "reddit/r/wallstreetbets",
@@ -94,7 +142,7 @@
       "url": "https://www.reddit.com/r/wallstreetbets/comments/1tcki02/discovered_an_old_fidelity_account_i_forgot_about/",
       "timestamp": "2026-05-14T02:14:04+00:00",
       "score": 75,
-      "rationale": "Bullish conviction from long-term holdings and massive unrealized gains; hesitation suggests confidence."
+      "rationale": "Holder with massive unrealized gains, asking hodl-vs-sell. Bullish conviction."
     },
     {
       "source": "reddit/r/wallstreetbets",
@@ -103,7 +151,7 @@
       "url": "https://www.reddit.com/r/wallstreetbets/comments/1oktbeg/tried_to_trade_credit_spreads_failed_miserably/",
       "timestamp": "2025-10-31T12:33:08+00:00",
       "score": -75,
-      "rationale": "Trader expected NVDA rise, got wrecked via options exercise, facing massive losses."
+      "rationale": "Massive trading loss on NVDA position; poster bearish on strategy/execution, implies NVDA didn't perform as expected."
     },
     {
       "source": "reddit/r/wallstreetbets",
@@ -112,7 +160,7 @@
       "url": "https://www.reddit.com/r/wallstreetbets/comments/1p28edd/what_a_crazy_trap_set_for_all_nvda_bulls/",
       "timestamp": "2025-11-20T16:57:17+00:00",
       "score": -75,
-      "rationale": "Poster describes NVDA bull positions as trapped and hammered; bearish market action."
+      "rationale": "Poster views NVDA bull positions as caught in a trap, bearish on near-term momentum."
     },
     {
       "source": "reddit/r/wallstreetbets",
@@ -121,10 +169,284 @@
       "url": "https://www.reddit.com/r/wallstreetbets/comments/1p6kduo/nvdia_releases_statement_on_googles_success/",
       "timestamp": "2025-11-25T18:33:17+00:00",
       "score": -35,
-      "rationale": "Poster questions NVDA's defensive reaction, implying competitive threat concern."
+      "rationale": "Implies NVDA feels threatened by TPUs; unusual defensive posture suggests competitive pressure."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "My first (real) 1000x",
+      "text": "Wasn't going to post it because I'm not ready to sell. Then I saw the pseudo 1000x poser and decide to post it. Screenshot from boomer brokerage. submitted by /u/finkalot1 [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1sxwzr7/my_first_real_1000x/",
+      "timestamp": "2026-04-28T10:03:12+00:00",
+      "score": 92,
+      "rationale": "Poster celebrating massive gains, holding position, extremely bullish conviction."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "Michael Burry is going all in on shorting the bubble",
+      "text": "Michael Burry goes short on $PLTR and $NVDA in his latest 13F filing. Scion Capital just bought put options on 1M Nvidia shares and 5M Palantir shares. Pure bubble shorting, he's going after the next 2008. submitted by /u/Quixotus [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1ont093/michael_burry_is_going_all_in_on_shorting_the/",
+      "timestamp": "2025-11-04T00:24:58+00:00",
+      "score": -75,
+      "rationale": "Burry shorting NVDA via puts signals strong bearish conviction on bubble risk."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "Tried explaining covered calls to a date and now I\u2019m banned from Applebee\u2019s.",
+      "text": "Met a girl for drinks after a huge SPY scalp and figured I\u2019d impress her by talking finance. Everything was going great until the check came. She asked: \u201cSo are you paying?\u201d I said: \u201cTechnically yes, but strategically no.\u201d Pulled out my Robinhood app and showed her my open positions. I explained that if my NVDA calls printed Friday morning, this mozzarella stick platter was basically free. She stared at my account balance like a doctor reading terminal lab results. Then she says: \u201cSo you don\u2019t actually have the money?\u201d I said: \u201cNo, no, I have buying power. Completely different.\u201d That\u2019s when the waiter came back and asked if I wanted to split the bill. I told him I don\u2019t believe in diversification. Long story short, her ex picked her up in a lifted F-150, the bartender laughed at me, and I had to wash dishes while watching my options go from -40% to -97% in real time. Worst part is Friday morning they recovered and would\u2019ve covered the date, the appetizers, and possibly a mortgage payment. TL;DR: Diamond handed my dignity. Paper handed my dating life. submitted by /u/BrokeButFunny5 [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1tnpvqv/tried_explaining_covered_calls_to_a_date_and_now/",
+      "timestamp": "2026-05-25T23:47:17+00:00",
+      "score": -35,
+      "rationale": "Self-deprecating humor about NVDA calls losing money; mixed sentiment."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "I always thought they were overrated",
+      "text": "submitted by /u/No_Cell6708 [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1p6ahi8/i_always_thought_they_were_overrated/",
+      "timestamp": "2025-11-25T11:52:17+00:00",
+      "score": -45,
+      "rationale": "Poster expresses skepticism about NVDA's valuation/quality, moderately bearish."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "If you bought NVDA instead of a 1080ti at launch you would have ~264 shares worth ~$47,000 today",
+      "text": "submitted by /u/itsdantheichiman [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1mxv57a/if_you_bought_nvda_instead_of_a_1080ti_at_launch/",
+      "timestamp": "2025-08-23T07:35:37+00:00",
+      "score": 75,
+      "rationale": "Strong bullish sentiment. Post highlights exceptional NVDA stock appreciation versus past GPU purchase alternative."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "NVDA earnings 600k yolo",
+      "text": "submitted by /u/Administrative_Rub34 [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1titayv/nvda_earnings_600k_yolo/",
+      "timestamp": "2026-05-20T17:51:53+00:00",
+      "score": 75,
+      "rationale": "Bullish conviction signaled by 'yolo' bet ahead of earnings."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "The moment I buy a thousand dollars worth of puts",
+      "text": "submitted by /u/lancehall08 [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1rbzn1f/the_moment_i_buy_a_thousand_dollars_worth_of_puts/",
+      "timestamp": "2026-02-22T22:23:44+00:00",
+      "score": -75,
+      "rationale": "Poster buying puts signals strong bearish conviction on NVDA."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "NVDA just rugged OpenAI ($100B deal DEAD). My calls are cooked. See you behind Wendy's. \ud83d\udc3b\ud83c\udf08",
+      "text": "submitted by /u/Ok-Lobster7773 [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1qss9kt/nvda_just_rugged_openai_100b_deal_dead_my_calls/",
+      "timestamp": "2026-02-01T07:49:02+00:00",
+      "score": -85,
+      "rationale": "Poster reports deal collapse, expresses extreme bearish conviction, jokes about financial ruin."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "My 41k Savings gone",
+      "text": "I\u2019m from Africa and this money can buy a very nice house in the biggest city in my country. Made most of it on Nvidia and Amazon calls in the beginning of 2024. Then I decided to go all in on one company. Diamond handed a dying company that went bankrupt this week. I kept averaging down for 1 year hoping it will 10x. I\u2019m still processing this loss, I thought shares were safer and here am I. submitted by /u/makshelah [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1psgl6h/my_41k_savings_gone/",
+      "timestamp": "2025-12-21T20:44:25+00:00",
+      "score": -85,
+      "rationale": "User profited from NVDA calls early 2024, then abandoned it for another stock that collapsed. Implies regret about leaving NVDA."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "11,000% gain is cool, how about 22,000%",
+      "text": "submitted by /u/IAMA_dingleberry_AMA [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1o2avcw/11000_gain_is_cool_how_about_22000/",
+      "timestamp": "2025-10-09T16:38:01+00:00",
+      "score": 75,
+      "rationale": "Bullish hyperbole comparing massive historical gains to even larger future ones."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "Sorry for tanking the semi conductor market, i bought $800k worth of NVDA at the top last Friday",
+      "text": "submitted by /u/two_beers_left [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1ukvi14/sorry_for_tanking_the_semi_conductor_market_i/",
+      "timestamp": "2026-07-01T19:29:45+00:00",
+      "score": -35,
+      "rationale": "Self-deprecating humor about poor timing; implies regret but tone is joking."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "Investing changed my life",
+      "text": "The year was 2015. I was working a shit job as a housing consultant at a for profit automotive school. The job sucked but I had plenty of desk time and I used it to research tickers. I had been trading off an on since around 2010 but with only about 1k. I remember buying Macys, Hecla Mining, and bullshit penny stocks until I knew better. I was over trading like a mad man. This was even dumber then because they charged commission of about 7$ per trade during those days. Just young and dumb not really making any money. Wasting company time so no harm no foul. In the beginning of 2015 I received an inheritance from an Aunt for 10k. Which was basically my life savings at that point in time. I could have very easily put this money up my nose but I was intrigued by investing after reading an article about Teslanairres (tsla investors who had made life changing money off shares that iPod around 20 bucks per) During my many hours of researching companies I came across Nvidia. Here was a legacy gaming company that had exposure to many futuristic themes. A CEO that had been there since inception and came across as visionary (yes even at that time). I found his aspirations of self driving, AI , robotics and iot to be very disruptive compared to the current 2015 technology landscape. I began watching his interviews and was particularly interested with an early sit down with Elon Musk. I remember talking to my father in law about it. \u201cWhat if I just plop the whole 10k down on Nvidia?\u201d Too many eggs in one basket was his response. I ended up saying fuggit and doing it my way and in October 2015 I dropped the whole 10k into Nvidia. As I watched Nvidias ascent I realized I had found something on the ground floor an added to my position whenever I could. $200 every other paycheck until I got up to 500shares. It has been a great ride since then. There have been ups and downs and moments of insane volatility that almost spooked me out of my shares. It definitely wasnt a straight arrow up and it took balls of steel to hold this long. So much bullshit -Crypto winter , Andrew Left short selling attacks, Covid selloffs, deepseek bullshit and most recently liberation day. I\u2019m glad to say I stayed the course and only trimmed after massive runs and splits using the money to buy my house, cars, investment properties and drop the rest in a HYSA. Trading and more specifically, Nvidia, changed my entire life. Proudly riding with Jensen submitted by /u/HighlightFeeling4118 [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1q402c9/investing_changed_my_life/",
+      "timestamp": "2026-01-04T20:05:54+00:00",
+      "score": 85,
+      "rationale": "Deeply bullish personal testimony; NVDA investment life-changing decision since 2015."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "1,000% gain is cool, how about 11,000",
+      "text": "I only had a few hundred bucks at the time and just discovered robinhood. Still not selling. submitted by /u/Tatump [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1o1xo0j/1000_gain_is_cool_how_about_11000/",
+      "timestamp": "2025-10-09T05:22:50+00:00",
+      "score": 92,
+      "rationale": "Poster holding massive gains, refusing to sell, implies strong bullish conviction."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "I've made loss in every AI stock!",
+      "text": "I have an anti-midas touch that every trade I make goes south! In 2024 I bought NVDA at $ 950 when they were going up non stop. As per my math, they had a potential to reach $ 1350 at 75 PE. But immediately after I bought, its downtrend started and SMCI announced earnings date without revenue numbers. For this reason, NVDA dropped 10% in one day, so I panicked and sold at $ 760 https://preview.redd.it/d56ajk5fnj8h1.png?width=1313&amp;format=png&amp;auto=webp&amp;s=aec60589e06b042f697633cd052e50a2dbf09dcf Then in Dec, I felt AMD was way oversold and picked up some shares. However at that time AMD was considered Advanced Money Destroyer and it kept tanking whatever the results be. https://preview.redd.it/h9w4bhplnj8h1.png?width=1639&amp;format=png&amp;auto=webp&amp;s=4220b3c64c6ec9aae6e83909359992ea0b950e34 After the deep seek scare in 2025, I bought MRVL shares. They were a strong custom chip player and top contender to AVGO. I thought they will rally up once deep seek scare is over. While other stocks went up MRVL never did. Even though they posted 30-40% revenue growth the stock always kept tanking in 2025. So I exited at 80 or so https://preview.redd.it/tw9xfe5vnj8h1.png?width=1328&amp;format=png&amp;auto=webp&amp;s=46a0d61fdead0412c7ba3d1e01f4c7ef1c47e453 I bought Micron also around this time as their HBM memory was needed for blackwell chips. However that time memory was considered cyclical and Micron kept tanking despite good results https://preview.redd.it/oae7dyt1oj8h1.png?width=1783&amp;format=png&amp;auto=webp&amp;s=fb9d6602b61ae11343ce1dafb7ef2e85caf77f5b I bought Dell in November 2025 assuming they will gain from the AI server demand. Though they posted good results the stock went up only little bit. The commentary was that they have low margins and the top line growth wont go to bottom line. When AVGO results were unimpressive in Dec 2025, Dell tanked. I exited almost at break even. https://preview.redd.it/g96hb8i7pj8h1.png?width=1313&amp;format=png&amp;auto=webp&amp;s=ded84083235ec3eb0d435af7703fd432092951df Since all AI stocks tank after I buy, I thought I'll inverse myself and got a put spread for Sandisk. The stock will pullback a bit was the thesis but jane street somehow found out I have a put spread and so kept pumping the stock higher. https://preview.redd.it/qr7reowhoj8h1.png?width=1299&amp;format=png&amp;auto=webp&amp;s=5afa701895f9c175c9c360ae3114159e03a662bd I feel so shitty and devastated. I didnt but OTM calls, I bought shares in good companies. But they all tanked as soon as I bought. I gave them more time, I waited 2-3 earnings. Nothing helped! Feels like we can make money only if we are destined to! All these companies are now 4-5x the price I bought them. I am scared to touch them due to my painful memories. AI is such an epic bull run of our lifetimes but I got burnt every single time. Everyday I wake up feeling like shit and often think of ending myself. Thankfully these are small plays in my account and my main positions are SPY and QQQ. Those are the only two tickers I've made money in all my life!! I will stick to them and avoid individual stocks :'( Roast me all you want :) submitted by /u/Evening_Control6034 [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1ube9u3/ive_made_loss_in_every_ai_stock/",
+      "timestamp": "2026-06-21T02:26:38+00:00",
+      "score": -65,
+      "rationale": "Poster bought NVDA at $950, panicked-sold at $760. Bearish outcome, regretful tone."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "Nvidia to buy AI chip startup Groq for $20 billion in cash",
+      "text": "Source: https://www.cnbc.com/2025/12/24/nvidia-buying-ai-chip-startup-groq-for-about-20-billion-biggest-deal.html Nvidia has agreed to buy Groq, a designer of high-performance artificial intelligence accelerator chips, for $20 billion in cash, according to Alex Davis, CEO of Disruptive, which led the startup\u2019s latest financing round in September. Davis, whose firm has invested more than half a billion dollars in Groq since the company was founded in 2016, said the deal came together quickly. Groq raised $750 million at a valuation of about $6.9 billion three months ago. Investors in the round included Blackrock and Neuberger Berman, as well as Samsung, Cisco, Altimeter and 1789 Capital, where Donald Trump Jr. is a partner. Groq is expected to alert its investors about the deal later on Wednesday. While the acquisition includes all of Groq\u2019s assets, its nascent Groq cloud business is not part of the transaction, said Davis. It would mark by far Nvidia\u2019s largest deal ever. The chipmaker\u2019s biggest acquisition to date came in 2019 with the purchase of Israeli chip designer Mellanox for close to $7 billion. At the end of October, Nvidia had $60.6 billion in cash and short-term investments, up from $13.3 billion in early 2023. Groq has been targeting revenue of $500 million this year amid booming demand for AI accelerator chips used in speeding up the process for large language models to complete inference-related tasks. The company was not pursuing a sale when it was approached by Nvidia. Colette Kress, Nvidia\u2019s CFO, declined comment on the transaction. Groq was founded in 2016 by a group of former engineers, including Jonathan Ross, the company\u2019s CEO. Ross was one of the creators of Google\u2019s tensor processing unit, or TPU, the company\u2019s custom chip that\u2019s being used by some companies as an alternative to Nvidia\u2019s graphics processing units. In its initial filing with the SEC, announcing a $10.3 million fundraising in late 2016, the company listed as principals Ross and Douglas Wightman, an entrepreneur and former engineer at the Google X \u201cmoonshot factory.\u201d Nvidia has ramped up its investments in chip startups and the broader ecosystem as its cash pile has mounted. The company has backed AI and energy infrastructure company Crusoe, AI model developer Cohere, and boosted its investment in CoreWeave as the AI-centric cloud provider was getting ready to go public this year. In September, Nvidia said it intended to invest up to $100 billion in OpenAI, with the startup committed to deploying at least 10 gigawatts of Nvidia products. The companies have yet to announce a formal deal. That same month, Nvidia said it would invest $5 billion in Intel as part of a partnership. Another chip startup that\u2019s gained traction during the AI boom is Cerebras Systems. The company had planned to go public this year but withdrew its IPO filing in October after announcing that it raised over $1 billion in a fundraising round. In a filing with the SEC, Cerebras said it does not intend to conduct a proposed offering \u201cat this time,\u201d but didn\u2019t provide a reason. A spokesperson told CNBC at the time that the company still hopes to go public as soon as possible. submitted by /u/callsonreddit [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1puxnfu/nvidia_to_buy_ai_chip_startup_groq_for_20_billion/",
+      "timestamp": "2025-12-24T21:20:41+00:00",
+      "score": 75,
+      "rationale": "Major acquisition signals NVDA confidence, market dominance, strategic growth."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "Hit Half a Million \ud83d\ude80",
+      "text": "Hit half a million and gained over $100K in a year. Here are my main holdings\u2026 Amazon - $45,000 Tesla - $36,000 NVIDIA - $30,000 Nebius Group - $21,000 Apple - $13,000 Palo Alto Networks - $10,000 VGT - $26,000 IVV - $20,000 QQQ - $15,000 submitted by /u/Firefighter_Kitchen [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1nwhui3/hit_half_a_million/",
+      "timestamp": "2025-10-02T22:16:50+00:00",
+      "score": 75,
+      "rationale": "NVDA position in profitable portfolio; significant holding demonstrates conviction."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "Oh yeah, I\u2019m getting the fuck out\u2026 \ud83d\udc4b",
+      "text": "Retard this, retard that\u2026 I\u2019m too lazy to post all my trades but I can confirm they\u2019re all retard lucky trades. I think there\u2019s a bull trap coming so for that reason I AM OUT. Good luck to you regards! \u2764\ufe0f submitted by /u/ssmoygugs6 [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1so7cea/oh_yeah_im_getting_the_fuck_out/",
+      "timestamp": "2026-04-17T17:17:42+00:00",
+      "score": -65,
+      "rationale": "Poster exiting position due to predicted bull trap; bearish conviction."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "Google says AI demand forcing 2x capacity growth every 6 months as it targets 1000x scale in 5 years",
+      "text": "No paywall: https://arstechnica.com/ai/2025/11/google-tells-employees-it-must-double-capacity-every-6-months-to-meet-ai-demand/ While AI bubble talk fills the air these days, with fears of overinvestment that could pop at any time, something of a contradiction is brewing on the ground: Companies like Google and OpenAI can barely build infrastructure fast enough to fill their AI needs. During an all-hands meeting earlier this month, Google\u2019s AI infrastructure head Amin Vahdat told employees that the company must double its serving capacity every six months to meet demand for artificial intelligence services, reports CNBC. The comments show a rare look at what Google executives are telling its own employees internally. Vahdat, a vice president at Google Cloud, presented slides to its employees showing the company needs to scale \u201cthe next 1000x in 4-5 years.\u201d While a thousandfold increase in compute capacity sounds ambitious by itself, Vahdat noted some key constraints: Google needs to be able to deliver this increase in capability, compute, and storage networking \u201cfor essentially the same cost and increasingly, the same power, the same energy level,\u201d he told employees during the meeting. \u201cIt won\u2019t be easy but through collaboration and co-design, we\u2019re going to get there.\u201d It\u2019s unclear how much of this \u201cdemand\u201d Google mentioned represents organic user interest in AI capabilities versus the company integrating AI features into existing services like Search, Gmail, and Workspace. But whether users are using the features voluntarily or not, Google isn\u2019t the only tech company struggling to keep up with a growing user base of customers using AI services. Major tech companies are in a race to build out data centers. Google competitor OpenAI is planning to build six massive data centers across the US through its Stargate partnership project with SoftBank and Oracle, committing over $400 billion in the next three years to reach nearly 7 gigawatts of capacity. The company faces similar constraints serving its 800 million weekly ChatGPT users, with even paid subscribers regularly hitting usage limits for features like video synthesis and simulated reasoning models. \u201cThe competition in AI infrastructure is the most critical and also the most expensive part of the AI race,\u201d Vahdat said at the meeting, according to CNBC\u2019s viewing of the presentation. The infrastructure executive explained that Google\u2019s challenge goes beyond simply outspending competitors. \u201cWe\u2019re going to spend a lot,\u201d he said, but noted the real objective is building infrastructure that is \u201cmore reliable, more performant and more scalable than what\u2019s available anywhere else.\u201d The thousandfold scaling challenge One major bottleneck for meeting AI demand has been Nvidia\u2019s lack of capacity to produce enough GPUs that accelerate AI computations. Just a few days ago during a quarterly earnings report, Nvidia said its AI chips are \u201csold out\u201d as it races to meet demand that grew its data center revenue by $10 billion in a single quarter. The lack of chips and other infrastructure constraints affects Google\u2019s ability to deploy new AI features. During the all-hands meeting on November 6, Google CEO Sundar Pichai cited the example of Veo, Google\u2019s video generation tool that received an upgrade last month. \u201cWhen Veo launched, how exciting it was,\u201d Pichai said. \u201cIf we could\u2019ve given it to more people in the Gemini app, I think we would have gotten more users but we just couldn\u2019t because we are at a compute constraint.\u201d At the same meeting, Vahdat\u2019s presentation outlined how Google plans to achieve its massive scaling targets without simply throwing money at the problem. The company plans to rely on three main strategies: building physical infrastructure, developing more efficient AI models, and designing custom silicon chips. Using its own chips means Google does not need to completely rely on Nvidia hardware to build out its AI capabilities. Earlier this month, for example, Google announced the general availability of its seventh-generation Tensor Processing Unit (TPU) called Ironwood. Google claims it is \u201cnearly 30x more power efficient\u201d than its first Cloud TPU from 2018. Given widespread acknowledgment of a potential AI industry bubble, including extended remarks by Pichai in a recent BBC interview, the aggressive plans for AI data center expansion reflect Google\u2019s calculation that the risk of underinvesting exceeds the risk of overcapacity. But it\u2019s a bet that could prove costly if demand doesn\u2019t continue to increase as expected. At the all-hands meeting, Pichai told employees that 2026 will be \u201cintense,\u201d citing both AI competition and pressure to meet cloud and compute demand. Pichai directly addressed employee concerns about a potential AI bubble, acknowledging the topic has been \u201cdefinitely in the zeitgeist.\u201d submitted by /u/callsonreddit [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1p4532c/google_says_ai_demand_forcing_2x_capacity_growth/",
+      "timestamp": "2025-11-22T21:43:22+00:00",
+      "score": 75,
+      "rationale": "Massive AI infrastructure scaling demand strongly bullish for NVDA chips/GPUs."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "2M Gain, $27 NVDA, Not even sure what to do with this.",
+      "text": "submitted by /u/alfred250 [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1ss9pmx/2m_gain_27_nvda_not_even_sure_what_to_do_with_this/",
+      "timestamp": "2026-04-22T03:21:01+00:00",
+      "score": 75,
+      "rationale": "2M gain suggests strong conviction. Uncertainty tone tempers extreme bullish."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "Yes, I held my $MU $160k yolo back at $110/share (for most of the run) 1,058% 1y return.",
+      "text": "My thesis seemed like it ended up being on point back in July 2025. I'm so glad I didn't quit stocks during the tariff tantrum. Was so close to selling everything at $300k and going into real estate. My portfolio is now 30% $MU, 30% MRVL, 15% $ALAB, 15% $NVDA along with some $ALAB, $APH, and $GOOG in that order. I did did do some other trades and sold little by little. Most notable was buying $400k $MRVL at $74 then sold half and put in into OTM LEAPS and also rolling into shorter $SNDK and $MU calls in Nov 2025. It had been a wild ride. I quit my job, bought my in-laws a house, and bought my family dream car Yukon Denali XL for my 3 kids still in car seats. So lots of withdraws. I feel so blessed this can be my life and get to spend it with my young family. $800k in a margin account. $3.7m in me and wife's Roths. $1m in an IRA. Original yolo and thesis back in July 2025: https://www.reddit.com/r/wallstreetbets/s/V1tXlrF522 ps mods let me know if I need to include anything else. submitted by /u/ThomasTanksDown [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1tpg5pp/yes_i_held_my_mu_160k_yolo_back_at_110share_for/",
+      "timestamp": "2026-05-27T19:36:23+00:00",
+      "score": 45,
+      "rationale": "Portfolio allocation shows 15% NVDA conviction. Positive tone but modest weighting."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "LIVE from the WSB Discord: \"IF INVIDIA ISNT RED BY OPEN ILL SHOW EVERYONE MY BUTTHOLE\"",
+      "text": "Big Papa Jensen is waiting for you, Educational-Fox309. Join here: discord.gg/wsbverse Edit: Despite our collective hopes and dreams, NVDA dipped into open and this person did not have to post hole. submitted by /u/PathMobile [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1rfaw3q/live_from_the_wsb_discord_if_invidia_isnt_red_by/",
+      "timestamp": "2026-02-26T14:00:04+00:00",
+      "score": -15,
+      "rationale": "Jokingly pessimistic about NVDA opening red; crude humor masks mild bearish sentiment."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "What $10,000 invested in these IPO\u2019s is worth today\u2026",
+      "text": "Walmart: $489 million Coca-Cola: $186 million McDonald's: $91 million Home Depot: $85 million Nvidia: $56 million Microsoft: $42 million Oracle: $41.7 million Amazon: $35 million Apple: $30 million Cisco: $19.7 million Disney: $17.3 million Adobe: $14.6 million AMD: $7.4 million Netflix: $7.3 million Costco: $6.3 million FedEx: $5 million Starbucks: $4 million Tesla: $3.7 million eBay: $3.6 million Target: $3.4 million Broadcom: $2.8 million Nike: $2.4 million Alphabet: $1.9 million Mastercard: $1.3 million submitted by /u/Foreign-Policy-02- [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1tg9hjx/what_10000_invested_in_these_ipos_is_worth_today/",
+      "timestamp": "2026-05-18T02:35:27+00:00",
+      "score": 75,
+      "rationale": "NVDA ranked 5th in IPO returns; demonstrates strong historical performance."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "NVIDIA CEO Has Good News for Micron and SanDisk Investors: \u201cThe Memory Shortage to Continue for Several Years\u201d",
+      "text": "Good news for MU &amp; SNDK. \u201cIf the multi-year shortage Huang outlined tonight holds, the recent pullback in MU and SNDK looks like a setup rather than a peak signal.\u201d submitted by /u/Pinkygirl7 [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1u00g3k/nvidia_ceo_has_good_news_for_micron_and_sandisk/",
+      "timestamp": "2026-06-08T07:02:06+00:00",
+      "score": 75,
+      "rationale": "Positive NVIDIA CEO outlook supports memory sector; indirect bullish NVDA sentiment."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "Softbank sells all of its NVDA holdings",
+      "text": "Sorry the news I found is in Japanese but that's alot of gains secured. \u30bd\u30d5\u30c8\u30d0\u30f3\u30afG\u3001\u4fdd\u6709\u3059\u308b\u5168\u3066\u306e\u7c73\u30a8\u30cc\u30d3\u30c7\u30a3\u30a2\u682a\u309258.3\u5104\u30c9\u30eb\u3067\u58f2\u5374 OK now I find the English one. SoftBank Unloads Nvidia Stake for $5.8 Billion in Surprise Move - Bloomberg submitted by /u/FlanTypical8844 [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1ou36pe/softbank_sells_all_of_its_nvda_holdings/",
+      "timestamp": "2025-11-11T07:25:40+00:00",
+      "score": -25,
+      "rationale": "Major investor exit signals profit-taking; mixed sentiment\u2014gains secured but suggests cooling conviction."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "The \"AI is dead because oil\" guy has clearly never read an income statement",
+      "text": "So someone posted that whole thing about how Iran war means oil goes up which means energy gets expensive which means AI is dead. And like sure each step on its own isn't crazy but the whole thing is held together with vibes. The part that got me was &quot;opex balloons 3-4x on already razor thin margins.&quot; Razor thin?? MSFT cloud runs ~45% operating margin. NVDA is printing 60%+ net margins. In what world is that razor thin. You can be bearish on AI without just making numbers up. And where does 3-4x even come from. Energy is like 10-15% of total data center costs. If electricity doubled tomorrow that's a 10-15% opex bump, not 300%. The rest is hardware, real estate, cooling. This is stuff you can just google. Also most hyperscalers aren't buying power at spot like some guy mining crypto in his basement. They have multi-year contracts locked in. Microsoft signed a 20-year deal to restart Three Mile Island. Amazon bought a whole nuclear data center campus. Google's been on renewable PPAs since like 2010. Oil going up doesn't mean their electricity bill triples next quarter. For this whole thesis to work you basically need Iran war prolonged, oil to spike AND stay high, that somehow hitting contracted data center rates, crushing margins that are currently enormous, the treasury market dying at the same time, and then China invading Taiwan on top of it. Every single domino has to fall perfectly. And he wants this by January. Honestly if you wanna be bearish on AI there can be a real case, like whether these companies can actually monetize fast enough to justify the insane capex spend. but oil's not it. Trimmed some in March, still long big tech. submitted by /u/Promptfolio [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1s84xuc/the_ai_is_dead_because_oil_guy_has_clearly_never/",
+      "timestamp": "2026-03-30T22:06:30+00:00",
+      "score": 75,
+      "rationale": "Strongly defends NVDA margins against bearish thesis; factual confidence."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "A year ago, Michael Burry sold everything except Estee Lauder. He also bought puts on Nvidia.",
+      "text": "May 19, 2025 \u2026He had been quite bullish on China, owning large Chinese stocks like Alibaba, Baidu, JD.Com, and PDD Holdings. But after selling these stocks, he also purchased put options on these names. Put options are similar to call options but in the opposite direction, essentially betting that a stock price will decline. Burry also purchased put options on Nvidia\u2026 \u2026 Interestingly, Burry's lone remaining long position is the multinational cosmetics company Est\u00e9e Lauder, which is down over 50% in the last year (as of May 16). Scion actually doubled its position in the company in the first quarter... Source: https://finance.yahoo.com/news/nearly-dumping-entire-portfolio-buying-220500241.html submitted by /u/AccelerationFinish [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1u7wup4/a_year_ago_michael_burry_sold_everything_except/",
+      "timestamp": "2026-06-17T01:49:54+00:00",
+      "score": -75,
+      "rationale": "Burry bought puts on NVDA, betting on price decline. Bearish signal."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "Big numbers incoming",
+      "text": "Expectations for revenue this quarter is 65-66billy. I think they easily eclipse that as Jensen tends to guide conservatively. Consensus guide for next quarter is 75 Billy. I actually think that number will be closer to 80. Just obscene amounts of money an even more crazy are their margins. You have Blackwell selling out, orders for Rubin from Meta (more hyperscalers to follow) and then you have next generation Feynman production to keep the train rolling. What else do you want from this company. Bullish submitted by /u/HighlightFeeling4118 [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1refc6x/big_numbers_incoming/",
+      "timestamp": "2026-02-25T14:53:36+00:00",
+      "score": 85,
+      "rationale": "Strong bullish conviction on revenue beat, margin strength, product momentum."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "The movie \"The Big Short\" could theoreticaly single handedly safe us from a major crash for forever",
+      "text": "The fact that there is an AI bubble can't really be denied by anyone at this point probably. Like I mean we all know that Nvidia investing into OpenAI and OpenAI buying chips from Nvidia is inflating the valuation of both massively. We all know that stocks like $BIRD can't just shoot up by 2000% only because of them selling all their main buissness and going all in AI. I don't want to compare it to the dot com bubble or any other crash, because all the companies mentioned are the major companies at this point. Now to how &quot;The Big Short&quot; could save us from any major move. It is rather easy: Everyone wants to be Michael Burry. Even Michael Burry wants to be the movie Michael Burry again (20 out of the last 2 crashes correctly predicted). About a year ago the rather obvious AI bubble was all over social media. What has happened since then? We have pumped all the way higher and the bears got fucked. Are there now less bears? No there are still soooo many. Everyone wants to be the guy having the correct short, because that has the most aura. Who gives a shit if you made a very good trade on Nvidia with 1000% in profit. Surely everyone is happy for you, yes you made it and made money (Not like 90% in here). And? Will you get a movie? No, you won't. Everyone wants to hit a perfect short. What's extra funny is that most people shorting because of Burry or because of the general situation have not even understood the movie. Guys, Burry did not do a perfect short. He was way to early, he had to wait for 2 to 3 years until something finally happened. After all he made around 400-500% profit for that. The only reason it is such a known position is because people somehow believe he is some sort of genius who hit the perfect trade. With the movie being so popular and social media impact there is a slight chance of never running out of bears and people who believe they are the next Michael Burry (Spoiler: most people can't hold an option longer than 1 week and Burry didn't even buy option he bought swaps) submitted by /u/Arc3on [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1tqg22x/the_movie_the_big_short_could_theoreticaly_single/",
+      "timestamp": "2026-05-28T20:50:14+00:00",
+      "score": -45,
+      "rationale": "Bearish on AI bubble sustainability; acknowledges NVDA's inflated valuation concerns."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "The $100 Billion Megadeal Between OpenAI and Nvidia Is on Ice",
+      "text": "Nvidia CEO Jensen Huang has privately emphasized to industry associates in recent months that the original $100 billion agreement was nonbinding and not finalized, people familiar with the matter said. He has also privately criticized what he has described as a lack of discipline in OpenAI\u2019s business approach and expressed concern about the competition it faces from the likes of Google and Anthropic, some of the people said. submitted by /u/Independent-Cress382 [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1qrmhs9/the_100_billion_megadeal_between_openai_and/",
+      "timestamp": "2026-01-30T23:59:16+00:00",
+      "score": -25,
+      "rationale": "CEO privately critical of deal status; nonbinding agreement suggests uncertainty and competitive pressures."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "Decade of experience",
+      "text": "I think I should just throw it in ETFs EDIT for more info, Since this is getting eyeballs and people are asking: I\u2019ve been trading for 10 years now. Not rich, not homeless... just a dude who has made every possible mistake, occasionally hit something real, and then promptly fumbled the bag again. Some highlights along the way: ASTS I found ASTS way back during the SPAC era. I bought before it had a ticker, before the hype, before Reddit even knew what space-based 5G was. I spent 5 years accumulating. Over 10,000 shares, plus a stupid amount of calls. My average cost was around $4. I held through it all Dilution Missed launches \u201cWe swear the network is live\u201d investor calls The CEO looking like he was aging in dog years Then 2024 came. I had lost faith. I sold basically everything for a tiny loss. That position would be worth over $1,000,000 today. Instead I took like a $3k loss. NVDA I got in on the first AI run-up, not the late one. Bought $17,000 worth of $100 strike calls mid/late-March 2024. Expiration was April. And so it began. NVDA was unstoppable. Every day I kept thinking, this can't continue... until it reached a point where it was more like, now that's its surpassed a threshold, this can't NOT continue. I bought. It stopped its rocketship upwards almost immediately. But I had faith as I watched my options half, and then half again. Hell, I bought more. At a certain point, I just said screw it, I'm seeing this through, all or nothing. And it DID finally go up. But it didn\u2019t go up-up until shortly AFTER my expiration. I lost it. If I had rolled them out THREE WEEKS at the low point: The profit would have been over $100k. I didn\u2019t roll. I just stared and let time decay eat my soul. GME Yes. I was there. That big spikey spike you see right before the endless dropping. That's it. But I wanted more. So I bought more. I bought the top. Sold the bottom. Bought back in. Sold lower. Repeated like a lab rat pressing a dopamine button. ETH My biggest regret. It's not in the chart but a friend of mine got me on crypto early. I bought around 2,000 ETH at like $17. That would be OVER SIX MILLION today. I did actually make a profit of like $30k here, and at the time I was rather pleased with myself. OVER SIX MILLION if I had held. ALMOST SEVEN. At today's price, $6,799,680. Other Notable Trades / Character Development Moments Random biotech phase \u2014 I turned $4k into $18k and then back to $0 because I \u201cliked the chart.\u201d SPY options era \u2014 I contributed meaningfully to someone else\u2019s Hamptons house. Margin interest that one year: My 1099 literally shows I paid $1,800+ in margin interest to Robinhood in 2021. I paid interest to lose money. What I\u2019ve Learned: The bag is real, but the bag doesn\u2019t wait. If your conviction lasts 5 years but your patience lasts 5 minutes, you are just donating. Rolling options is not optional. Stop losses are probably a good idea. The market rewards psychopaths and people who forget they own things. TLDR: My portfolio isn\u2019t diversified by sector, it\u2019s diversified by types of bad decisions . submitted by /u/wave_dashing [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1ordp9u/decade_of_experience/",
+      "timestamp": "2025-11-08T02:26:39+00:00",
+      "score": 15,
+      "rationale": "Mixed sentiment: early AI entry was profitable, but poor timing/execution hurt returns. Cautious."
     }
   ],
   "prices": [
+    {
+      "month": "2025-08",
+      "close": 173.95
+    },
     {
       "month": "2025-09",
       "close": 186.34
