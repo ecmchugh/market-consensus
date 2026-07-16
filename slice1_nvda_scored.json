@@ -1,0 +1,173 @@
+{
+  "subject": "NVDA",
+  "readings": [
+    {
+      "month": "2025-09",
+      "consensus": 75.0,
+      "n": 1
+    },
+    {
+      "month": "2025-10",
+      "consensus": 28.3,
+      "n": 3
+    },
+    {
+      "month": "2025-11",
+      "consensus": -55.0,
+      "n": 2
+    },
+    {
+      "month": "2026-02",
+      "consensus": 85.0,
+      "n": 1
+    },
+    {
+      "month": "2026-05",
+      "consensus": 75.0,
+      "n": 2
+    },
+    {
+      "month": "2026-06",
+      "consensus": 15.0,
+      "n": 1
+    }
+  ],
+  "scored": [
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "$10,526 to $1,500,000 in 5 months thanks Google!",
+      "text": "This account started the year with around $150,000 and I was playing NVDA. The stock tanked with everything else in April during liberation day and I was down to $526. I had to deposit another $10,000 to pick myself up and take revenge on the market. Luckily I caught Google on the dip to 148 and I had conviction that Google was going to the moon based on its P/E and great ai plays. I kept buying 5% otm calls 30 days out on red days and selling when the calls were in the money. Then I would open another position with more and more contracts every time. The last push was this weekend before Labor Day I held $450,000 cash and unloaded it on the dip Monday at 207 and bought $4.70 950 contracts of 220 strike calls for 10/17. Those calls were up $91,000 end of the day as you can see from my previous post. Today I sold at $16 per contract. submitted by /u/wanderingtofu [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1n7n2ll/10526_to_1500000_in_5_months_thanks_google/",
+      "timestamp": "2025-09-03T18:38:10+00:00",
+      "score": 75,
+      "rationale": "Trader bullish on Google, mentions NVDA downturn but focuses success on Google calls."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "Fuck everyone. 4.5 years to get to a million without options and I\u2019m done!",
+      "text": "Got to 1 million without options because I\u2019m a pussy. Yes I know it doesn\u2019t count it\u2019s Canadian monopoly money. Started by losing half my position with Nvidia 2022 then made out ok. After that it was space stocks, robinhood, nebius and finally drones with RCAT ONDS and UMAC that got me over the line. Missed out on another 1 million selling micron up only 100%. I\u2019m done waking up losing 100k before lunchtime. I\u2019m going into boring ass ETF bullshit and retiring as a gay bear until I fomo at the real top and lose everything \ud83d\ude24 submitted by /u/WorkingInflations [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1txf6im/fuck_everyone_45_years_to_get_to_a_million/",
+      "timestamp": "2026-06-05T08:45:27+00:00",
+      "score": 15,
+      "rationale": "Minor NVDA mention; early 2022 loss, not current conviction."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "Turns out my dumbass might be a genius",
+      "text": "Some of the trades I made were shorting $RGTI for over 40K profit I bought and sold 3k shares of $AMZN from 211 to 223 I bought and sold 5K shares of $NVDA from 179 to 191 I bought the equivalent of 3.4 bitcoins in $ARKB on Friday and sold today for 16K profit+ I made other trades as well. I\u2019ve been constantly compounding wins and selling when gains get outsized. I am currently sitting in $ALGN and DKNG. I will post a picture in the comments of my positions submitted by /u/Diligent-Plane-2640 [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1ohrse7/turns_out_my_dumbass_might_be_a_genius/",
+      "timestamp": "2025-10-27T21:54:35+00:00",
+      "score": 75,
+      "rationale": "Poster profited $12K buying/selling NVDA 179\u2192191. Bullish execution."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "Bought NVDA in 2022 because I liked gaming. 1,000% gain for $197k later",
+      "text": "submitted by /u/Character_Economy928 [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1o1souo/bought_nvda_in_2022_because_i_liked_gaming_1000/",
+      "timestamp": "2025-10-09T01:01:49+00:00",
+      "score": 85,
+      "rationale": "Investor holds massive unrealized gains, demonstrates strong conviction in NVDA."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "I'll sell when it hits 100m...",
+      "text": "Check my previous post for verification. I have a total of 71k shares of NVDA, but only 43.5k on robinhood. submitted by /u/Knillls [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1repm1d/ill_sell_when_it_hits_100m/",
+      "timestamp": "2026-02-25T20:56:24+00:00",
+      "score": 85,
+      "rationale": "Holder with massive position, planning to sell at high target (100M), implying strong bullish conviction."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "I finally rest and watch the sunrise on a grateful universe",
+      "text": "Mods bubble popped my first post so let me lay out the positions: NVDA: 300-350k profit bought my first shares in 2016 been in and out since and usually would buy 100k leaps that expire years from the date bought would cash those at around 25k profit MU, AMD, AMZN, AVGO, HCA, NBIS: Usually on big drops I bought tons of shares of these guys and usually around 10-20k far dated options would either ride them out to 0 or make bank. QQQ 0DTE has been godly to me easily have made around 50-75k My biggest gainer by far was Rocket Lab. Had 13,500 shares at like 22 avg during liberation day times but trimmed as it went up to 40 and 50 and completely cashed out right on tax day (I think it was around 70 at the time - feels bad). Have hit massive option plays from previous posts and the rest is history. This year was so fucking stressful. Godspeed my friends see you all at Wendy\u2019s when it\u2019s back at 0. Edit: wow this post blew up there\u2019s no way I can reply to all the questions but I love you all and I definitely didn\u2019t sell shit but will be full cash end of day. Think it\u2019s time I wait for the crash and try and kick this nicotine addiction. \ud83e\udd0d\ud83e\udd0d\ud83e\udd0d\ud83e\udd0d submitted by /u/Any-Cartoonist-7052 [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1tc6trw/i_finally_rest_and_watch_the_sunrise_on_a/",
+      "timestamp": "2026-05-13T17:36:28+00:00",
+      "score": 75,
+      "rationale": "Trader boasts 300-350k NVDA profit, long-term bullish conviction since 2016."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "discovered an old Fidelity account i forgot about",
+      "text": "I was cleaning out my apartment today and found an old notebook with a login for a fidelity account I made back years ago. Logged in not expecting anything and it made me do 2 factor authentication but couldnt find the app. Spend over an hour on the phone with fidelity rep and they finally got me logged in. Turns out I bought some NVDA back in 2019 at a crazy low price and didn\u2019t even know I had this. Sitting on massive gain. Should I hodl or sell ? Don\u2019t really need the money but it\u2019s nice to have. submitted by /u/Only-Design-2484 [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1tcki02/discovered_an_old_fidelity_account_i_forgot_about/",
+      "timestamp": "2026-05-14T02:14:04+00:00",
+      "score": 75,
+      "rationale": "Bullish conviction from long-term holdings and massive unrealized gains; hesitation suggests confidence."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "Tried to trade credit spreads, failed miserably ($6.5M margin call)",
+      "text": "Sniped these for $0.01, expecting NVDA to continue its rise and be able to profit on the IV making the spread between legs (haha) bigger. The gain is a facade. I have NO IDEA why I got exercised. But now I\u2019ll take max loss at open, and I\u2019ll owe interest on $7.2M overnight. submitted by /u/Toxicview [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1oktbeg/tried_to_trade_credit_spreads_failed_miserably/",
+      "timestamp": "2025-10-31T12:33:08+00:00",
+      "score": -75,
+      "rationale": "Trader expected NVDA rise, got wrecked via options exercise, facing massive losses."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "What a crazy trap set for all $NVDA bulls",
+      "text": "Nasdaq 600 points tumble in just over an hour. All the Nvidia result bull positions getting hammered. submitted by /u/Lumiaman88 [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1p28edd/what_a_crazy_trap_set_for_all_nvda_bulls/",
+      "timestamp": "2025-11-20T16:57:17+00:00",
+      "score": -75,
+      "rationale": "Poster describes NVDA bull positions as trapped and hammered; bearish market action."
+    },
+    {
+      "source": "reddit/r/wallstreetbets",
+      "title": "NVDIA releases statement on Google's success",
+      "text": "Are TPUs being overhyped or are they a threat to their business? I never would have expected a $4T company to publicly react like this over sentiment. submitted by /u/gwszack [link] [comments]",
+      "url": "https://www.reddit.com/r/wallstreetbets/comments/1p6kduo/nvdia_releases_statement_on_googles_success/",
+      "timestamp": "2025-11-25T18:33:17+00:00",
+      "score": -35,
+      "rationale": "Poster questions NVDA's defensive reaction, implying competitive threat concern."
+    }
+  ],
+  "prices": [
+    {
+      "month": "2025-09",
+      "close": 186.34
+    },
+    {
+      "month": "2025-10",
+      "close": 202.23
+    },
+    {
+      "month": "2025-11",
+      "close": 176.77
+    },
+    {
+      "month": "2025-12",
+      "close": 186.27
+    },
+    {
+      "month": "2026-01",
+      "close": 190.9
+    },
+    {
+      "month": "2026-02",
+      "close": 176.97
+    },
+    {
+      "month": "2026-03",
+      "close": 174.2
+    },
+    {
+      "month": "2026-04",
+      "close": 199.34
+    },
+    {
+      "month": "2026-05",
+      "close": 210.89
+    },
+    {
+      "month": "2026-06",
+      "close": 200.09
+    },
+    {
+      "month": "2026-07",
+      "close": 212.5
+    }
+  ]
+}

@@ -8,15 +8,19 @@ Market Consensus turns the *opinion economy* — long-form podcasts, Reddit, new
 
 ## Why this exists
 
-The most honest market opinions live in **long-form audio**. People argue real convictions for hours on podcasts, and that content is **dark data** — never transcribed, never indexed, invisible to Google and ChatGPT. The moment you transcribe it systematically, you're mining a corpus nobody else has.
+Ask ChatGPT "what does the public think about semiconductors?" and you get a weak answer. The whole product is being *better than that answer* — and the reason it can be is a checklist of things a chatbot structurally can't do:
 
-That's the whole bet. A generic "LLM summarizes some articles" tool is a ChatGPT feature. This is different because of three verbs a chatbot can't do:
+| ChatGPT's public-sentiment answer | What Market Consensus does instead |
+|---|---|
+| Grabs ~5 lucky links | **Systematic sweep** of many posts/threads/episodes |
+| Reads SEO'd *articles* | Reads the **raw voice of real people** — Reddit, forums, podcasts |
+| A paragraph of vibes | A **quantified, reproducible** score, comparable over time |
+| Takes hype at face value | **Filters** bots, shills, and duplicate takes |
+| No memory | **Tracks** the trend over time |
+| Vague sourcing | **Cites** the exact posts/clips |
+| Can't check itself | **Backtests** the read against real price history |
 
-- **Hear** — transcribe audio into a searchable, quantified corpus (a dataset we *manufacture*).
-- **Filter** — separate organic conviction from bots, shills, and coordinated hype.
-- **Test** — check the read against real price history, so we earn claims instead of asserting vibes.
-
-The AI that writes the final report is the *easy* part. The value is the pipeline feeding it.
+The identity of the project is those verbs — **sweep · filter · quantify · track · cite · test** — done over the layer where the public actually talks. Sources are **pluggable**: Reddit and forums are the crowd; long-form **podcasts** (Whisper-transcribed) are the pundit layer and our hardest-to-copy depth lever. The AI that writes the final report is the *easy* part. The value is the engine feeding it.
 
 ---
 

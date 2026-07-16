@@ -24,14 +24,19 @@ of the active slice.
 
 _Last updated: 2026-07 — pivot from stock-news sentiment to crypto/stocks crowd-conviction._
 
-**What exists:**
-- FastAPI skeleton with 5 read-only endpoints over Supabase (`api/`).
-- Supabase-backed store (`pipeline/store.py`), old news pipeline (`pipeline/`).
-- A Reddit scraper (`scrapers/reddit.py`) — reusable for the new direction.
-- Early backtest harness against a DJIA headline dataset (`backtest.py`) — to be
-  repurposed toward price-anchored subject backtests.
+**What exists AND is reusable for Reddit-first Slice 1:**
+- `scrapers/reddit.py` — OAuth scraper returning score / num_comments / upvote_ratio
+  (RSS fallback if no creds). This is both the ingestion path AND the raw signals
+  for authenticity scoring later. Reuse nearly as-is.
+- `yfinance` already in `requirements.txt` — ground-truth price for the backtest.
+- `anthropic` SDK + Supabase store (`pipeline/store.py`) wired up — stance scoring
+  + storage ready.
+- `config.py` — engagement log-weighting, recency decay, confidence-from-spread,
+  min-mention thresholds. Already-considered tuning knobs; carry them forward.
+- FastAPI skeleton, 5 read-only endpoints (`api/`).
 - Scaffolded React + TS + Tailwind dashboard (`web/`) — **paused** until Slice 1
   proves the signal. Do not polish it yet.
+- Old news pipeline + DJIA backtest — repurpose/archive; shape stays, inputs change.
 
 **What does NOT exist yet (the new work):**
 - Podcast ingestion + Whisper transcription.
@@ -45,45 +50,45 @@ _Last updated: 2026-07 — pivot from stock-news sentiment to crypto/stocks crow
 
 ## Decisions to lock before coding (Slice 0)
 
-_These gate everything; make them first. The podcast list is the one thing Claude
-can't pick for you — ask your brother._
+_Reddit-first means fewer gating decisions than the old podcast-first plan —
+no podcast list, no Whisper needed to prove the loop._
 
-- [ ] **Slice-1 subject + proxy:** default **semiconductors → `SOXX`** (concrete,
-      podcast-heavy, clean ground truth). Change only with a reason.
-- [ ] **Podcast shortlist (3–5)** that regularly discuss semis/tech. Write them in
-      `config.py` source registry. ← needs a human with domain taste.
-- [ ] **Keys in `.env`:** Anthropic API key, existing Supabase creds. (Whisper runs
-      local via faster-whisper; `yfinance` needs no key.)
-- [ ] **Transcription choice:** `faster-whisper` local (default, free, slower) vs.
-      Whisper API (paid, faster). Default to local for Slice 1.
+- [ ] **Slice-1 subject + proxy:** default **`NVDA` → NVDA stock price** — Reddit
+      talks in tickers, and a single high-volume name gives the cleanest possible
+      ground truth (the stock *is* the proxy, no ETF indirection). Alt: a sector
+      like semis → `SOXX` if you'd rather aggregate across names. Change with a reason.
+- [ ] **Keys in `.env`:** `REDDIT_CLIENT_ID` / `REDDIT_CLIENT_SECRET` (scraper falls
+      back to RSS without them, but OAuth gives the engagement metadata we want) and
+      `ANTHROPIC_API_KEY`. `yfinance` needs no key.
+- [ ] _(Deferred to Slice 5)_ Podcast shortlist + faster-whisper — not needed until
+      we add audio as source #2.
 
 ---
 
-## Slice 1 — Prove the loop  ⟵ FIRST BUILD
+## Slice 1 — Prove the loop  ⟵ FIRST BUILD (Reddit-first)
 
-_Goal: one subject, a few podcasts, end-to-end, charted against the proxy. If this
-shows the read tracks or leads price **at all**, the project is real._
+_Goal: one subject, Reddit text only, end-to-end, charted against the proxy. No
+transcription — text is the fast path to a working signal. If the read tracks or
+leads price **at all**, the project is real. (Podcasts come in Slice 5.)_
 
-- [ ] **Ingest** (`ingestion/podcasts.py`): read podcast RSS, download recent
-      episodes' audio to local scratch. Dedup by episode GUID.
-- [ ] **Transcribe** (`pipeline/transcribe.py`): audio → timestamped segments via
-      faster-whisper. Store `[{start, end, text}]`. **Capture: hours transcribed.**
-- [ ] **Tag relevance** (`pipeline/entities.py` v0): keep segments about semis
-      (keyword/dictionary match is fine for v0 — no fancy NLP yet).
-- [ ] **Score stance** (`pipeline/stance.py`): Claude Haiku rates each relevant
-      segment direction × conviction (−1…+1) with a FIXED rubric (reproducibility).
-      Use prompt caching on the system prompt. **Capture: item count, cost/1k.**
-- [ ] **Store items** (`pipeline/store.py` extension): write enriched `item` rows
-      (see README data model) — subjects, stance, segments, source.
-- [ ] **Aggregate** (`pipeline/aggregate.py` v0): roll relevant items into one daily
-      "semiconductor conviction" score.
-- [ ] **Chart vs. price** (`analysis/prices.py` + a quick plot): pull `SOXX` via
-      yfinance, overlay the daily read against the ETF.
-- [ ] **LOOK AT IT.** Does the read track / lead / lag price? Write the observation
-      down. This is the whole point of Slice 1.
+- [ ] **Ingest** (reuse `scrapers/reddit.py`): pull posts from investing subreddits.
+      Widen `SUBREDDITS` (add r/wallstreetbets, r/stocks) if targeting a hot ticker.
+- [ ] **Filter to subject** (`pipeline/entities.py` v0): keep posts/comments that
+      mention the subject (ticker + name/aliases; simple match is fine for v0).
+- [ ] **Score stance** (`pipeline/stance.py`): Claude **Haiku** rates each item
+      direction × conviction (−1…+1) with a FIXED rubric (reproducibility). Prompt-
+      cache the system prompt. **Capture: item count, LLM cost/1k.**
+- [ ] **Store items** (extend `pipeline/store.py`): write enriched `item` rows —
+      subject, stance, engagement (score/comments/upvote_ratio), source, timestamp.
+- [ ] **Aggregate** (`pipeline/aggregate.py` v0): roll items into one daily
+      conviction score for the subject (reuse `config.py` engagement/recency weights).
+- [ ] **Chart vs. price** (`analysis/prices.py` + quick plot): pull the proxy via
+      yfinance, overlay the daily read against price.
+- [ ] **LOOK AT IT.** Does the read track / lead / lag price? Write it down. This is
+      the entire point of Slice 1.
 
-**Exit criteria:** a chart of your conviction read vs. `SOXX`, from real transcribed
-podcast audio, with a written first impression.
+**Exit criteria:** a chart of your conviction read vs. the proxy price, from real
+Reddit data, with a written first impression. No audio yet — that's deliberate.
 
 ---
 
