@@ -44,14 +44,22 @@ _Last updated: 2026-07 — pivot from stock-news sentiment to crypto/stocks crow
 - `pgvector` embeddings + subject-query layer + cached `subject_reading`s.
 - Price-anchored backtest of conviction vs. forward returns.
 
-**Active slice:** Slice 1 loop PROVEN (2026-07, `slice1_prove_loop.py`) → next is
-Slice 1.5 (data volume) then Slice 2 (real backtest).
+**Active slice:** Slice 1 — loop proven; pivoted source Reddit → Hacker News to fix
+the data-volume blocker. Re-running on HN, then Slice 2 (real backtest).
 
-**Slice 1 finding (NVDA, 42 relevant WSB posts / 12 months):** the loop runs end to
-end and produces a sensible read. In the months with enough posts (n≥6) conviction
-tracks price coincidentally (Oct '25 high/high, Nov '25 low/low, May '26 pos/high).
-The dramatic-looking "lead" (Mar) and "contrarian top" (Jul) months are n=1 — noise,
-not signal. **Verdict: idea is not disproven; #1 blocker is sample size per period.**
+**Source decision (2026-07):** sources are pluggable and each item carries a
+`source_type` — **"informed"** (Hacker News = practitioners/technical crowd, zero-auth)
+and **"crowd"** (Reddit = retail public, needs OAuth). We do NOT pick one: the identity
+is "honest read of the whole opinion spectrum," and the crowd-vs-informed DIVERGENCE
+is a headline signal for later. Published news *articles* stay OUT (that's the
+sanitized narrative we're beating, not a voice). Reddit blocked on creds for now, so
+HN is Slice 1's default source. (Line: opinion IN, reportage OUT — not expert-vs-public.)
+
+**Slice 1 finding v1 (Reddit, 42 relevant WSB posts / 12 mo):** loop ran end to end,
+sensible read; in months with n≥6 conviction tracked price coincidentally, but most
+months were too sparse (many n=1) to trust. → motivated the HN pivot. HN gives 40
+items/month evenly across 12 months (480 total) with no credentials — data-volume
+blocker solved. Verdict pending the HN re-run.
 
 ---
 
@@ -185,4 +193,14 @@ This completes the architecture story (resume bullet #3)._
 | Cached query latency (ms) | — | |
 | LLM cost / 1k items | — | |
 | Backtest breadth `[N]×[M]` | — | |
-| **Headline finding (verbatim)** | — | |
+| **Headline finding (verbatim)** | "HN 'informed' NVDA conviction, 12 mo: coincident corr w/ price return ≈ 0.00; conviction LEADS next-month return +0.21; recent return → conviction −0.26 (informed crowd leans contrarian to the move). All weak, n=11, not significant — suggestive, needs breadth (Slice 2)." | 2026-07 |
+
+**Slice 1 finding v2 (HN, 202 relevant / 480, 12 mo, NVDA):** loop solid, readings now
+trustworthy (n=11–24/mo). Quantified result above. Interpretation: no same-month
+relationship; a weak *hint* mood leads price (+0.21) and a weak *hint* the informed
+crowd is contrarian to recent moves (−0.26); neither significant at this n. This is the
+honest, correct Slice-1 outcome — idea not disproven, not proven; the −0.26 contrarian
+lean is the most interesting thread. **Next: Slice 2 breadth (many subjects × months)
+turns these hints into a significant test — or kills them.**
+Perf note: 480 sequential Haiku calls took ~45 min (~5.6s each) — **Slice 2 needs
+concurrent scoring** (asyncio/batching) or it won't scale.

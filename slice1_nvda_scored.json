@@ -3,443 +3,2893 @@
   "readings": [
     {
       "month": "2025-08",
-      "consensus": 75.0,
-      "n": 1
+      "consensus": 30.5,
+      "n": 11
     },
     {
       "month": "2025-09",
-      "consensus": 75.0,
-      "n": 1
+      "consensus": 0.9,
+      "n": 22
     },
     {
       "month": "2025-10",
-      "consensus": 54.5,
-      "n": 6
+      "consensus": 7.5,
+      "n": 19
     },
     {
       "month": "2025-11",
-      "consensus": -11.2,
-      "n": 8
+      "consensus": -14.2,
+      "n": 24
     },
     {
       "month": "2025-12",
-      "consensus": -5.0,
-      "n": 2
+      "consensus": -4.7,
+      "n": 16
     },
     {
       "month": "2026-01",
-      "consensus": 30.0,
-      "n": 2
+      "consensus": 9.2,
+      "n": 12
     },
     {
       "month": "2026-02",
-      "consensus": -3.0,
-      "n": 5
+      "consensus": -5.0,
+      "n": 21
     },
     {
       "month": "2026-03",
-      "consensus": 75.0,
-      "n": 1
+      "consensus": 31.4,
+      "n": 14
     },
     {
       "month": "2026-04",
-      "consensus": 34.0,
-      "n": 3
+      "consensus": -17.1,
+      "n": 13
     },
     {
       "month": "2026-05",
-      "consensus": 28.8,
-      "n": 8
+      "consensus": -5.6,
+      "n": 21
     },
     {
       "month": "2026-06",
-      "consensus": -12.5,
-      "n": 4
+      "consensus": -6.5,
+      "n": 13
     },
     {
       "month": "2026-07",
-      "consensus": -35.0,
-      "n": 1
+      "consensus": -2.5,
+      "n": 16
     }
   ],
   "scored": [
     {
-      "source": "reddit/r/wallstreetbets",
-      "title": "Plan B if Nvidia crashes the market tomorrow",
-      "text": "submitted by /u/MysteriousSlice007 [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1thzzx3/plan_b_if_nvidia_crashes_the_market_tomorrow/",
-      "timestamp": "2026-05-19T20:52:55+00:00",
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia, CoreWeave, and Nebius: Inside the Circular Financing of the GPU Boom",
+      "text": "Nvidia, CoreWeave, and Nebius: Inside the Circular Financing of the GPU Boom",
+      "url": "https://news.ycombinator.com/item?id=48873836",
+      "timestamp": "2026-07-11T17:21:49Z",
+      "metadata": {
+        "points": 369,
+        "author": "adletbalzhanov"
+      },
+      "score": 0,
+      "rationale": "Analytical article about GPU financing dynamics, neutral tone, no clear conviction."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia Has Become the Bank Behind the AI Boom",
+      "text": "Nvidia Has Become the Bank Behind the AI Boom",
+      "url": "https://news.ycombinator.com/item?id=48790151",
+      "timestamp": "2026-07-04T23:59:06Z",
+      "metadata": {
+        "points": 10,
+        "author": "insanetechh"
+      },
+      "score": 75,
+      "rationale": "Positive framing of NVDA as essential infrastructure for AI boom."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "China's LongCat-2.0 Becomes the Biggest AI Model Without Nvidia Chips",
+      "text": "China's LongCat-2.0 Becomes the Biggest AI Model Without Nvidia Chips",
+      "url": "https://news.ycombinator.com/item?id=48791362",
+      "timestamp": "2026-07-05T04:58:46Z",
+      "metadata": {
+        "points": 6,
+        "author": "mgh2"
+      },
       "score": -35,
-      "rationale": "Poster anticipates negative NVDA scenario, preparing contingency plans."
+      "rationale": "China developing competitive AI without NVDA chips implies reduced demand/market."
     },
     {
-      "source": "reddit/r/wallstreetbets",
-      "title": "It's GAYMAN.",
-      "text": "It's not FAANG anymore. It's GAYMAN. submitted by /u/Appropriate-Soil-896 [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1omcmnz/its_gayman/",
-      "timestamp": "2025-11-02T09:03:29+00:00",
-      "score": 75,
-      "rationale": "Bullish sentiment: NVDA replacing Facebook in elite mega-cap acronym."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "$10,526 to $1,500,000 in 5 months thanks Google!",
-      "text": "This account started the year with around $150,000 and I was playing NVDA. The stock tanked with everything else in April during liberation day and I was down to $526. I had to deposit another $10,000 to pick myself up and take revenge on the market. Luckily I caught Google on the dip to 148 and I had conviction that Google was going to the moon based on its P/E and great ai plays. I kept buying 5% otm calls 30 days out on red days and selling when the calls were in the money. Then I would open another position with more and more contracts every time. The last push was this weekend before Labor Day I held $450,000 cash and unloaded it on the dip Monday at 207 and bought $4.70 950 contracts of 220 strike calls for 10/17. Those calls were up $91,000 end of the day as you can see from my previous post. Today I sold at $16 per contract. submitted by /u/wanderingtofu [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1n7n2ll/10526_to_1500000_in_5_months_thanks_google/",
-      "timestamp": "2025-09-03T18:38:10+00:00",
-      "score": 75,
-      "rationale": "Heavily bullish on Google, mentions NVDA losses but focuses on Google recovery. Conviction play."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "Fuck everyone. 4.5 years to get to a million without options and I\u2019m done!",
-      "text": "Got to 1 million without options because I\u2019m a pussy. Yes I know it doesn\u2019t count it\u2019s Canadian monopoly money. Started by losing half my position with Nvidia 2022 then made out ok. After that it was space stocks, robinhood, nebius and finally drones with RCAT ONDS and UMAC that got me over the line. Missed out on another 1 million selling micron up only 100%. I\u2019m done waking up losing 100k before lunchtime. I\u2019m going into boring ass ETF bullshit and retiring as a gay bear until I fomo at the real top and lose everything \ud83d\ude24 submitted by /u/WorkingInflations [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1txf6im/fuck_everyone_45_years_to_get_to_a_million/",
-      "timestamp": "2026-06-05T08:45:27+00:00",
-      "score": 15,
-      "rationale": "Mentions NVDA as early position, lost half in 2022, moved on. Neutral."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "Turns out my dumbass might be a genius",
-      "text": "Some of the trades I made were shorting $RGTI for over 40K profit I bought and sold 3k shares of $AMZN from 211 to 223 I bought and sold 5K shares of $NVDA from 179 to 191 I bought the equivalent of 3.4 bitcoins in $ARKB on Friday and sold today for 16K profit+ I made other trades as well. I\u2019ve been constantly compounding wins and selling when gains get outsized. I am currently sitting in $ALGN and DKNG. I will post a picture in the comments of my positions submitted by /u/Diligent-Plane-2640 [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1ohrse7/turns_out_my_dumbass_might_be_a_genius/",
-      "timestamp": "2025-10-27T21:54:35+00:00",
-      "score": 75,
-      "rationale": "Poster bought NVDA at 179, sold at 191\u2014profitable trade. Bullish execution."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "Bought NVDA in 2022 because I liked gaming. 1,000% gain for $197k later",
-      "text": "submitted by /u/Character_Economy928 [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1o1souo/bought_nvda_in_2022_because_i_liked_gaming_1000/",
-      "timestamp": "2025-10-09T01:01:49+00:00",
-      "score": 85,
-      "rationale": "Strong bullish conviction demonstrated by massive realized gains and long-term holding conviction."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "I'll sell when it hits 100m...",
-      "text": "Check my previous post for verification. I have a total of 71k shares of NVDA, but only 43.5k on robinhood. submitted by /u/Knillls [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1repm1d/ill_sell_when_it_hits_100m/",
-      "timestamp": "2026-02-25T20:56:24+00:00",
-      "score": 75,
-      "rationale": "Bullish conviction implied by setting very high exit target; substantial position indicates confidence."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "I finally rest and watch the sunrise on a grateful universe",
-      "text": "Mods bubble popped my first post so let me lay out the positions: NVDA: 300-350k profit bought my first shares in 2016 been in and out since and usually would buy 100k leaps that expire years from the date bought would cash those at around 25k profit MU, AMD, AMZN, AVGO, HCA, NBIS: Usually on big drops I bought tons of shares of these guys and usually around 10-20k far dated options would either ride them out to 0 or make bank. QQQ 0DTE has been godly to me easily have made around 50-75k My biggest gainer by far was Rocket Lab. Had 13,500 shares at like 22 avg during liberation day times but trimmed as it went up to 40 and 50 and completely cashed out right on tax day (I think it was around 70 at the time - feels bad). Have hit massive option plays from previous posts and the rest is history. This year was so fucking stressful. Godspeed my friends see you all at Wendy\u2019s when it\u2019s back at 0. Edit: wow this post blew up there\u2019s no way I can reply to all the questions but I love you all and I definitely didn\u2019t sell shit but will be full cash end of day. Think it\u2019s time I wait for the crash and try and kick this nicotine addiction. \ud83e\udd0d\ud83e\udd0d\ud83e\udd0d\ud83e\udd0d submitted by /u/Any-Cartoonist-7052 [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1tc6trw/i_finally_rest_and_watch_the_sunrise_on_a/",
-      "timestamp": "2026-05-13T17:36:28+00:00",
-      "score": 75,
-      "rationale": "Poster made massive NVDA profits (300-350k), held since 2016, very bullish history."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "discovered an old Fidelity account i forgot about",
-      "text": "I was cleaning out my apartment today and found an old notebook with a login for a fidelity account I made back years ago. Logged in not expecting anything and it made me do 2 factor authentication but couldnt find the app. Spend over an hour on the phone with fidelity rep and they finally got me logged in. Turns out I bought some NVDA back in 2019 at a crazy low price and didn\u2019t even know I had this. Sitting on massive gain. Should I hodl or sell ? Don\u2019t really need the money but it\u2019s nice to have. submitted by /u/Only-Design-2484 [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1tcki02/discovered_an_old_fidelity_account_i_forgot_about/",
-      "timestamp": "2026-05-14T02:14:04+00:00",
-      "score": 75,
-      "rationale": "Holder with massive unrealized gains, asking hodl-vs-sell. Bullish conviction."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "Tried to trade credit spreads, failed miserably ($6.5M margin call)",
-      "text": "Sniped these for $0.01, expecting NVDA to continue its rise and be able to profit on the IV making the spread between legs (haha) bigger. The gain is a facade. I have NO IDEA why I got exercised. But now I\u2019ll take max loss at open, and I\u2019ll owe interest on $7.2M overnight. submitted by /u/Toxicview [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1oktbeg/tried_to_trade_credit_spreads_failed_miserably/",
-      "timestamp": "2025-10-31T12:33:08+00:00",
-      "score": -75,
-      "rationale": "Massive trading loss on NVDA position; poster bearish on strategy/execution, implies NVDA didn't perform as expected."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "What a crazy trap set for all $NVDA bulls",
-      "text": "Nasdaq 600 points tumble in just over an hour. All the Nvidia result bull positions getting hammered. submitted by /u/Lumiaman88 [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1p28edd/what_a_crazy_trap_set_for_all_nvda_bulls/",
-      "timestamp": "2025-11-20T16:57:17+00:00",
-      "score": -75,
-      "rationale": "Poster views NVDA bull positions as caught in a trap, bearish on near-term momentum."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "NVDIA releases statement on Google's success",
-      "text": "Are TPUs being overhyped or are they a threat to their business? I never would have expected a $4T company to publicly react like this over sentiment. submitted by /u/gwszack [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1p6kduo/nvdia_releases_statement_on_googles_success/",
-      "timestamp": "2025-11-25T18:33:17+00:00",
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Chinese hackers reverse engineer NVIDIA GPU to work on a custom PCB with NVLink",
+      "text": "Chinese hackers reverse engineer NVIDIA GPU to work on a custom PCB with NVLink",
+      "url": "https://news.ycombinator.com/item?id=48846232",
+      "timestamp": "2026-07-09T14:13:20Z",
+      "metadata": {
+        "points": 5,
+        "author": "binyu"
+      },
       "score": -35,
-      "rationale": "Implies NVDA feels threatened by TPUs; unusual defensive posture suggests competitive pressure."
+      "rationale": "Reverse engineering threat undermines NVIDIA's proprietary advantage, competitive concern."
     },
     {
-      "source": "reddit/r/wallstreetbets",
-      "title": "My first (real) 1000x",
-      "text": "Wasn't going to post it because I'm not ready to sell. Then I saw the pseudo 1000x poser and decide to post it. Screenshot from boomer brokerage. submitted by /u/finkalot1 [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1sxwzr7/my_first_real_1000x/",
-      "timestamp": "2026-04-28T10:03:12+00:00",
-      "score": 92,
-      "rationale": "Poster celebrating massive gains, holding position, extremely bullish conviction."
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia CEO blasts bosses using AI as a layoff excuse: 'We're scaring people'",
+      "text": "Nvidia CEO blasts bosses using AI as a layoff excuse: 'We're scaring people'",
+      "url": "https://news.ycombinator.com/item?id=48822183",
+      "timestamp": "2026-07-07T19:07:08Z",
+      "metadata": {
+        "points": 4,
+        "author": "haritha1313"
+      },
+      "score": 35,
+      "rationale": "CEO defends AI value against misuse fears; bullish on NVDA fundamentals."
     },
     {
-      "source": "reddit/r/wallstreetbets",
-      "title": "Michael Burry is going all in on shorting the bubble",
-      "text": "Michael Burry goes short on $PLTR and $NVDA in his latest 13F filing. Scion Capital just bought put options on 1M Nvidia shares and 5M Palantir shares. Pure bubble shorting, he's going after the next 2008. submitted by /u/Quixotus [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1ont093/michael_burry_is_going_all_in_on_shorting_the/",
-      "timestamp": "2025-11-04T00:24:58+00:00",
-      "score": -75,
-      "rationale": "Burry shorting NVDA via puts signals strong bearish conviction on bubble risk."
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Chinese Lidar maker with Nvidia ties accused of being cyber risk for U.S.",
+      "text": "Chinese Lidar maker with Nvidia ties accused of being cyber risk for U.S.",
+      "url": "https://news.ycombinator.com/item?id=48817884",
+      "timestamp": "2026-07-07T13:53:06Z",
+      "metadata": {
+        "points": 4,
+        "author": "0in"
+      },
+      "score": -25,
+      "rationale": "Regulatory/geopolitical risk to NVDA via Chinese partnership associations."
     },
     {
-      "source": "reddit/r/wallstreetbets",
-      "title": "Tried explaining covered calls to a date and now I\u2019m banned from Applebee\u2019s.",
-      "text": "Met a girl for drinks after a huge SPY scalp and figured I\u2019d impress her by talking finance. Everything was going great until the check came. She asked: \u201cSo are you paying?\u201d I said: \u201cTechnically yes, but strategically no.\u201d Pulled out my Robinhood app and showed her my open positions. I explained that if my NVDA calls printed Friday morning, this mozzarella stick platter was basically free. She stared at my account balance like a doctor reading terminal lab results. Then she says: \u201cSo you don\u2019t actually have the money?\u201d I said: \u201cNo, no, I have buying power. Completely different.\u201d That\u2019s when the waiter came back and asked if I wanted to split the bill. I told him I don\u2019t believe in diversification. Long story short, her ex picked her up in a lifted F-150, the bartender laughed at me, and I had to wash dishes while watching my options go from -40% to -97% in real time. Worst part is Friday morning they recovered and would\u2019ve covered the date, the appetizers, and possibly a mortgage payment. TL;DR: Diamond handed my dignity. Paper handed my dating life. submitted by /u/BrokeButFunny5 [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1tnpvqv/tried_explaining_covered_calls_to_a_date_and_now/",
-      "timestamp": "2026-05-25T23:47:17+00:00",
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Meituan Trained a 1.6T-Parameter AI Model Without Nvidia GPUs",
+      "text": "Meituan Trained a 1.6T-Parameter AI Model Without Nvidia GPUs",
+      "url": "https://news.ycombinator.com/item?id=48791366",
+      "timestamp": "2026-07-05T04:59:15Z",
+      "metadata": {
+        "points": 3,
+        "author": "mgh2"
+      },
       "score": -35,
-      "rationale": "Self-deprecating humor about NVDA calls losing money; mixed sentiment."
+      "rationale": "Negative for NVDA: competitor achieved major AI model without GPU dependence"
     },
     {
-      "source": "reddit/r/wallstreetbets",
-      "title": "I always thought they were overrated",
-      "text": "submitted by /u/No_Cell6708 [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1p6ahi8/i_always_thought_they_were_overrated/",
-      "timestamp": "2025-11-25T11:52:17+00:00",
-      "score": -45,
-      "rationale": "Poster expresses skepticism about NVDA's valuation/quality, moderately bearish."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "If you bought NVDA instead of a 1080ti at launch you would have ~264 shares worth ~$47,000 today",
-      "text": "submitted by /u/itsdantheichiman [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1mxv57a/if_you_bought_nvda_instead_of_a_1080ti_at_launch/",
-      "timestamp": "2025-08-23T07:35:37+00:00",
-      "score": 75,
-      "rationale": "Strong bullish sentiment. Post highlights exceptional NVDA stock appreciation versus past GPU purchase alternative."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "NVDA earnings 600k yolo",
-      "text": "submitted by /u/Administrative_Rub34 [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1titayv/nvda_earnings_600k_yolo/",
-      "timestamp": "2026-05-20T17:51:53+00:00",
-      "score": 75,
-      "rationale": "Bullish conviction signaled by 'yolo' bet ahead of earnings."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "The moment I buy a thousand dollars worth of puts",
-      "text": "submitted by /u/lancehall08 [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1rbzn1f/the_moment_i_buy_a_thousand_dollars_worth_of_puts/",
-      "timestamp": "2026-02-22T22:23:44+00:00",
-      "score": -75,
-      "rationale": "Poster buying puts signals strong bearish conviction on NVDA."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "NVDA just rugged OpenAI ($100B deal DEAD). My calls are cooked. See you behind Wendy's. \ud83d\udc3b\ud83c\udf08",
-      "text": "submitted by /u/Ok-Lobster7773 [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1qss9kt/nvda_just_rugged_openai_100b_deal_dead_my_calls/",
-      "timestamp": "2026-02-01T07:49:02+00:00",
-      "score": -85,
-      "rationale": "Poster reports deal collapse, expresses extreme bearish conviction, jokes about financial ruin."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "My 41k Savings gone",
-      "text": "I\u2019m from Africa and this money can buy a very nice house in the biggest city in my country. Made most of it on Nvidia and Amazon calls in the beginning of 2024. Then I decided to go all in on one company. Diamond handed a dying company that went bankrupt this week. I kept averaging down for 1 year hoping it will 10x. I\u2019m still processing this loss, I thought shares were safer and here am I. submitted by /u/makshelah [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1psgl6h/my_41k_savings_gone/",
-      "timestamp": "2025-12-21T20:44:25+00:00",
-      "score": -85,
-      "rationale": "User profited from NVDA calls early 2024, then abandoned it for another stock that collapsed. Implies regret about leaving NVDA."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "11,000% gain is cool, how about 22,000%",
-      "text": "submitted by /u/IAMA_dingleberry_AMA [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1o2avcw/11000_gain_is_cool_how_about_22000/",
-      "timestamp": "2025-10-09T16:38:01+00:00",
-      "score": 75,
-      "rationale": "Bullish hyperbole comparing massive historical gains to even larger future ones."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "Sorry for tanking the semi conductor market, i bought $800k worth of NVDA at the top last Friday",
-      "text": "submitted by /u/two_beers_left [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1ukvi14/sorry_for_tanking_the_semi_conductor_market_i/",
-      "timestamp": "2026-07-01T19:29:45+00:00",
-      "score": -35,
-      "rationale": "Self-deprecating humor about poor timing; implies regret but tone is joking."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "Investing changed my life",
-      "text": "The year was 2015. I was working a shit job as a housing consultant at a for profit automotive school. The job sucked but I had plenty of desk time and I used it to research tickers. I had been trading off an on since around 2010 but with only about 1k. I remember buying Macys, Hecla Mining, and bullshit penny stocks until I knew better. I was over trading like a mad man. This was even dumber then because they charged commission of about 7$ per trade during those days. Just young and dumb not really making any money. Wasting company time so no harm no foul. In the beginning of 2015 I received an inheritance from an Aunt for 10k. Which was basically my life savings at that point in time. I could have very easily put this money up my nose but I was intrigued by investing after reading an article about Teslanairres (tsla investors who had made life changing money off shares that iPod around 20 bucks per) During my many hours of researching companies I came across Nvidia. Here was a legacy gaming company that had exposure to many futuristic themes. A CEO that had been there since inception and came across as visionary (yes even at that time). I found his aspirations of self driving, AI , robotics and iot to be very disruptive compared to the current 2015 technology landscape. I began watching his interviews and was particularly interested with an early sit down with Elon Musk. I remember talking to my father in law about it. \u201cWhat if I just plop the whole 10k down on Nvidia?\u201d Too many eggs in one basket was his response. I ended up saying fuggit and doing it my way and in October 2015 I dropped the whole 10k into Nvidia. As I watched Nvidias ascent I realized I had found something on the ground floor an added to my position whenever I could. $200 every other paycheck until I got up to 500shares. It has been a great ride since then. There have been ups and downs and moments of insane volatility that almost spooked me out of my shares. It definitely wasnt a straight arrow up and it took balls of steel to hold this long. So much bullshit -Crypto winter , Andrew Left short selling attacks, Covid selloffs, deepseek bullshit and most recently liberation day. I\u2019m glad to say I stayed the course and only trimmed after massive runs and splits using the money to buy my house, cars, investment properties and drop the rest in a HYSA. Trading and more specifically, Nvidia, changed my entire life. Proudly riding with Jensen submitted by /u/HighlightFeeling4118 [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1q402c9/investing_changed_my_life/",
-      "timestamp": "2026-01-04T20:05:54+00:00",
-      "score": 85,
-      "rationale": "Deeply bullish personal testimony; NVDA investment life-changing decision since 2015."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "1,000% gain is cool, how about 11,000",
-      "text": "I only had a few hundred bucks at the time and just discovered robinhood. Still not selling. submitted by /u/Tatump [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1o1xo0j/1000_gain_is_cool_how_about_11000/",
-      "timestamp": "2025-10-09T05:22:50+00:00",
-      "score": 92,
-      "rationale": "Poster holding massive gains, refusing to sell, implies strong bullish conviction."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "I've made loss in every AI stock!",
-      "text": "I have an anti-midas touch that every trade I make goes south! In 2024 I bought NVDA at $ 950 when they were going up non stop. As per my math, they had a potential to reach $ 1350 at 75 PE. But immediately after I bought, its downtrend started and SMCI announced earnings date without revenue numbers. For this reason, NVDA dropped 10% in one day, so I panicked and sold at $ 760 https://preview.redd.it/d56ajk5fnj8h1.png?width=1313&amp;format=png&amp;auto=webp&amp;s=aec60589e06b042f697633cd052e50a2dbf09dcf Then in Dec, I felt AMD was way oversold and picked up some shares. However at that time AMD was considered Advanced Money Destroyer and it kept tanking whatever the results be. https://preview.redd.it/h9w4bhplnj8h1.png?width=1639&amp;format=png&amp;auto=webp&amp;s=4220b3c64c6ec9aae6e83909359992ea0b950e34 After the deep seek scare in 2025, I bought MRVL shares. They were a strong custom chip player and top contender to AVGO. I thought they will rally up once deep seek scare is over. While other stocks went up MRVL never did. Even though they posted 30-40% revenue growth the stock always kept tanking in 2025. So I exited at 80 or so https://preview.redd.it/tw9xfe5vnj8h1.png?width=1328&amp;format=png&amp;auto=webp&amp;s=46a0d61fdead0412c7ba3d1e01f4c7ef1c47e453 I bought Micron also around this time as their HBM memory was needed for blackwell chips. However that time memory was considered cyclical and Micron kept tanking despite good results https://preview.redd.it/oae7dyt1oj8h1.png?width=1783&amp;format=png&amp;auto=webp&amp;s=fb9d6602b61ae11343ce1dafb7ef2e85caf77f5b I bought Dell in November 2025 assuming they will gain from the AI server demand. Though they posted good results the stock went up only little bit. The commentary was that they have low margins and the top line growth wont go to bottom line. When AVGO results were unimpressive in Dec 2025, Dell tanked. I exited almost at break even. https://preview.redd.it/g96hb8i7pj8h1.png?width=1313&amp;format=png&amp;auto=webp&amp;s=ded84083235ec3eb0d435af7703fd432092951df Since all AI stocks tank after I buy, I thought I'll inverse myself and got a put spread for Sandisk. The stock will pullback a bit was the thesis but jane street somehow found out I have a put spread and so kept pumping the stock higher. https://preview.redd.it/qr7reowhoj8h1.png?width=1299&amp;format=png&amp;auto=webp&amp;s=5afa701895f9c175c9c360ae3114159e03a662bd I feel so shitty and devastated. I didnt but OTM calls, I bought shares in good companies. But they all tanked as soon as I bought. I gave them more time, I waited 2-3 earnings. Nothing helped! Feels like we can make money only if we are destined to! All these companies are now 4-5x the price I bought them. I am scared to touch them due to my painful memories. AI is such an epic bull run of our lifetimes but I got burnt every single time. Everyday I wake up feeling like shit and often think of ending myself. Thankfully these are small plays in my account and my main positions are SPY and QQQ. Those are the only two tickers I've made money in all my life!! I will stick to them and avoid individual stocks :'( Roast me all you want :) submitted by /u/Evening_Control6034 [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1ube9u3/ive_made_loss_in_every_ai_stock/",
-      "timestamp": "2026-06-21T02:26:38+00:00",
-      "score": -65,
-      "rationale": "Poster bought NVDA at $950, panicked-sold at $760. Bearish outcome, regretful tone."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "Nvidia to buy AI chip startup Groq for $20 billion in cash",
-      "text": "Source: https://www.cnbc.com/2025/12/24/nvidia-buying-ai-chip-startup-groq-for-about-20-billion-biggest-deal.html Nvidia has agreed to buy Groq, a designer of high-performance artificial intelligence accelerator chips, for $20 billion in cash, according to Alex Davis, CEO of Disruptive, which led the startup\u2019s latest financing round in September. Davis, whose firm has invested more than half a billion dollars in Groq since the company was founded in 2016, said the deal came together quickly. Groq raised $750 million at a valuation of about $6.9 billion three months ago. Investors in the round included Blackrock and Neuberger Berman, as well as Samsung, Cisco, Altimeter and 1789 Capital, where Donald Trump Jr. is a partner. Groq is expected to alert its investors about the deal later on Wednesday. While the acquisition includes all of Groq\u2019s assets, its nascent Groq cloud business is not part of the transaction, said Davis. It would mark by far Nvidia\u2019s largest deal ever. The chipmaker\u2019s biggest acquisition to date came in 2019 with the purchase of Israeli chip designer Mellanox for close to $7 billion. At the end of October, Nvidia had $60.6 billion in cash and short-term investments, up from $13.3 billion in early 2023. Groq has been targeting revenue of $500 million this year amid booming demand for AI accelerator chips used in speeding up the process for large language models to complete inference-related tasks. The company was not pursuing a sale when it was approached by Nvidia. Colette Kress, Nvidia\u2019s CFO, declined comment on the transaction. Groq was founded in 2016 by a group of former engineers, including Jonathan Ross, the company\u2019s CEO. Ross was one of the creators of Google\u2019s tensor processing unit, or TPU, the company\u2019s custom chip that\u2019s being used by some companies as an alternative to Nvidia\u2019s graphics processing units. In its initial filing with the SEC, announcing a $10.3 million fundraising in late 2016, the company listed as principals Ross and Douglas Wightman, an entrepreneur and former engineer at the Google X \u201cmoonshot factory.\u201d Nvidia has ramped up its investments in chip startups and the broader ecosystem as its cash pile has mounted. The company has backed AI and energy infrastructure company Crusoe, AI model developer Cohere, and boosted its investment in CoreWeave as the AI-centric cloud provider was getting ready to go public this year. In September, Nvidia said it intended to invest up to $100 billion in OpenAI, with the startup committed to deploying at least 10 gigawatts of Nvidia products. The companies have yet to announce a formal deal. That same month, Nvidia said it would invest $5 billion in Intel as part of a partnership. Another chip startup that\u2019s gained traction during the AI boom is Cerebras Systems. The company had planned to go public this year but withdrew its IPO filing in October after announcing that it raised over $1 billion in a fundraising round. In a filing with the SEC, Cerebras said it does not intend to conduct a proposed offering \u201cat this time,\u201d but didn\u2019t provide a reason. A spokesperson told CNBC at the time that the company still hopes to go public as soon as possible. submitted by /u/callsonreddit [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1puxnfu/nvidia_to_buy_ai_chip_startup_groq_for_20_billion/",
-      "timestamp": "2025-12-24T21:20:41+00:00",
-      "score": 75,
-      "rationale": "Major acquisition signals NVDA confidence, market dominance, strategic growth."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "Hit Half a Million \ud83d\ude80",
-      "text": "Hit half a million and gained over $100K in a year. Here are my main holdings\u2026 Amazon - $45,000 Tesla - $36,000 NVIDIA - $30,000 Nebius Group - $21,000 Apple - $13,000 Palo Alto Networks - $10,000 VGT - $26,000 IVV - $20,000 QQQ - $15,000 submitted by /u/Firefighter_Kitchen [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1nwhui3/hit_half_a_million/",
-      "timestamp": "2025-10-02T22:16:50+00:00",
-      "score": 75,
-      "rationale": "NVDA position in profitable portfolio; significant holding demonstrates conviction."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "Oh yeah, I\u2019m getting the fuck out\u2026 \ud83d\udc4b",
-      "text": "Retard this, retard that\u2026 I\u2019m too lazy to post all my trades but I can confirm they\u2019re all retard lucky trades. I think there\u2019s a bull trap coming so for that reason I AM OUT. Good luck to you regards! \u2764\ufe0f submitted by /u/ssmoygugs6 [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1so7cea/oh_yeah_im_getting_the_fuck_out/",
-      "timestamp": "2026-04-17T17:17:42+00:00",
-      "score": -65,
-      "rationale": "Poster exiting position due to predicted bull trap; bearish conviction."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "Google says AI demand forcing 2x capacity growth every 6 months as it targets 1000x scale in 5 years",
-      "text": "No paywall: https://arstechnica.com/ai/2025/11/google-tells-employees-it-must-double-capacity-every-6-months-to-meet-ai-demand/ While AI bubble talk fills the air these days, with fears of overinvestment that could pop at any time, something of a contradiction is brewing on the ground: Companies like Google and OpenAI can barely build infrastructure fast enough to fill their AI needs. During an all-hands meeting earlier this month, Google\u2019s AI infrastructure head Amin Vahdat told employees that the company must double its serving capacity every six months to meet demand for artificial intelligence services, reports CNBC. The comments show a rare look at what Google executives are telling its own employees internally. Vahdat, a vice president at Google Cloud, presented slides to its employees showing the company needs to scale \u201cthe next 1000x in 4-5 years.\u201d While a thousandfold increase in compute capacity sounds ambitious by itself, Vahdat noted some key constraints: Google needs to be able to deliver this increase in capability, compute, and storage networking \u201cfor essentially the same cost and increasingly, the same power, the same energy level,\u201d he told employees during the meeting. \u201cIt won\u2019t be easy but through collaboration and co-design, we\u2019re going to get there.\u201d It\u2019s unclear how much of this \u201cdemand\u201d Google mentioned represents organic user interest in AI capabilities versus the company integrating AI features into existing services like Search, Gmail, and Workspace. But whether users are using the features voluntarily or not, Google isn\u2019t the only tech company struggling to keep up with a growing user base of customers using AI services. Major tech companies are in a race to build out data centers. Google competitor OpenAI is planning to build six massive data centers across the US through its Stargate partnership project with SoftBank and Oracle, committing over $400 billion in the next three years to reach nearly 7 gigawatts of capacity. The company faces similar constraints serving its 800 million weekly ChatGPT users, with even paid subscribers regularly hitting usage limits for features like video synthesis and simulated reasoning models. \u201cThe competition in AI infrastructure is the most critical and also the most expensive part of the AI race,\u201d Vahdat said at the meeting, according to CNBC\u2019s viewing of the presentation. The infrastructure executive explained that Google\u2019s challenge goes beyond simply outspending competitors. \u201cWe\u2019re going to spend a lot,\u201d he said, but noted the real objective is building infrastructure that is \u201cmore reliable, more performant and more scalable than what\u2019s available anywhere else.\u201d The thousandfold scaling challenge One major bottleneck for meeting AI demand has been Nvidia\u2019s lack of capacity to produce enough GPUs that accelerate AI computations. Just a few days ago during a quarterly earnings report, Nvidia said its AI chips are \u201csold out\u201d as it races to meet demand that grew its data center revenue by $10 billion in a single quarter. The lack of chips and other infrastructure constraints affects Google\u2019s ability to deploy new AI features. During the all-hands meeting on November 6, Google CEO Sundar Pichai cited the example of Veo, Google\u2019s video generation tool that received an upgrade last month. \u201cWhen Veo launched, how exciting it was,\u201d Pichai said. \u201cIf we could\u2019ve given it to more people in the Gemini app, I think we would have gotten more users but we just couldn\u2019t because we are at a compute constraint.\u201d At the same meeting, Vahdat\u2019s presentation outlined how Google plans to achieve its massive scaling targets without simply throwing money at the problem. The company plans to rely on three main strategies: building physical infrastructure, developing more efficient AI models, and designing custom silicon chips. Using its own chips means Google does not need to completely rely on Nvidia hardware to build out its AI capabilities. Earlier this month, for example, Google announced the general availability of its seventh-generation Tensor Processing Unit (TPU) called Ironwood. Google claims it is \u201cnearly 30x more power efficient\u201d than its first Cloud TPU from 2018. Given widespread acknowledgment of a potential AI industry bubble, including extended remarks by Pichai in a recent BBC interview, the aggressive plans for AI data center expansion reflect Google\u2019s calculation that the risk of underinvesting exceeds the risk of overcapacity. But it\u2019s a bet that could prove costly if demand doesn\u2019t continue to increase as expected. At the all-hands meeting, Pichai told employees that 2026 will be \u201cintense,\u201d citing both AI competition and pressure to meet cloud and compute demand. Pichai directly addressed employee concerns about a potential AI bubble, acknowledging the topic has been \u201cdefinitely in the zeitgeist.\u201d submitted by /u/callsonreddit [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1p4532c/google_says_ai_demand_forcing_2x_capacity_growth/",
-      "timestamp": "2025-11-22T21:43:22+00:00",
-      "score": 75,
-      "rationale": "Massive AI infrastructure scaling demand strongly bullish for NVDA chips/GPUs."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "2M Gain, $27 NVDA, Not even sure what to do with this.",
-      "text": "submitted by /u/alfred250 [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1ss9pmx/2m_gain_27_nvda_not_even_sure_what_to_do_with_this/",
-      "timestamp": "2026-04-22T03:21:01+00:00",
-      "score": 75,
-      "rationale": "2M gain suggests strong conviction. Uncertainty tone tempers extreme bullish."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "Yes, I held my $MU $160k yolo back at $110/share (for most of the run) 1,058% 1y return.",
-      "text": "My thesis seemed like it ended up being on point back in July 2025. I'm so glad I didn't quit stocks during the tariff tantrum. Was so close to selling everything at $300k and going into real estate. My portfolio is now 30% $MU, 30% MRVL, 15% $ALAB, 15% $NVDA along with some $ALAB, $APH, and $GOOG in that order. I did did do some other trades and sold little by little. Most notable was buying $400k $MRVL at $74 then sold half and put in into OTM LEAPS and also rolling into shorter $SNDK and $MU calls in Nov 2025. It had been a wild ride. I quit my job, bought my in-laws a house, and bought my family dream car Yukon Denali XL for my 3 kids still in car seats. So lots of withdraws. I feel so blessed this can be my life and get to spend it with my young family. $800k in a margin account. $3.7m in me and wife's Roths. $1m in an IRA. Original yolo and thesis back in July 2025: https://www.reddit.com/r/wallstreetbets/s/V1tXlrF522 ps mods let me know if I need to include anything else. submitted by /u/ThomasTanksDown [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1tpg5pp/yes_i_held_my_mu_160k_yolo_back_at_110share_for/",
-      "timestamp": "2026-05-27T19:36:23+00:00",
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Optimizing MiniMax M3 Sparse Attention on Nvidia Blackwell",
+      "text": "Optimizing MiniMax M3 Sparse Attention on Nvidia Blackwell",
+      "url": "https://news.ycombinator.com/item?id=48894306",
+      "timestamp": "2026-07-13T15:34:10Z",
+      "metadata": {
+        "points": 3,
+        "author": "smurda"
+      },
       "score": 45,
-      "rationale": "Portfolio allocation shows 15% NVDA conviction. Positive tone but modest weighting."
+      "rationale": "Technical optimization work showcasing Blackwell capability, moderately positive."
     },
     {
-      "source": "reddit/r/wallstreetbets",
-      "title": "LIVE from the WSB Discord: \"IF INVIDIA ISNT RED BY OPEN ILL SHOW EVERYONE MY BUTTHOLE\"",
-      "text": "Big Papa Jensen is waiting for you, Educational-Fox309. Join here: discord.gg/wsbverse Edit: Despite our collective hopes and dreams, NVDA dipped into open and this person did not have to post hole. submitted by /u/PathMobile [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1rfaw3q/live_from_the_wsb_discord_if_invidia_isnt_red_by/",
-      "timestamp": "2026-02-26T14:00:04+00:00",
-      "score": -15,
-      "rationale": "Jokingly pessimistic about NVDA opening red; crude humor masks mild bearish sentiment."
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "95% of the announced Nvidia Grace Blackwell GPU has yet to be deployed",
+      "text": "95% of the announced Nvidia Grace Blackwell GPU has yet to be deployed",
+      "url": "https://news.ycombinator.com/item?id=48850253",
+      "timestamp": "2026-07-09T18:18:20Z",
+      "metadata": {
+        "points": 3,
+        "author": "doener"
+      },
+      "score": -35,
+      "rationale": "Implies massive unmet demand/deployment lag; suggests execution risk concerns."
     },
     {
-      "source": "reddit/r/wallstreetbets",
-      "title": "What $10,000 invested in these IPO\u2019s is worth today\u2026",
-      "text": "Walmart: $489 million Coca-Cola: $186 million McDonald's: $91 million Home Depot: $85 million Nvidia: $56 million Microsoft: $42 million Oracle: $41.7 million Amazon: $35 million Apple: $30 million Cisco: $19.7 million Disney: $17.3 million Adobe: $14.6 million AMD: $7.4 million Netflix: $7.3 million Costco: $6.3 million FedEx: $5 million Starbucks: $4 million Tesla: $3.7 million eBay: $3.6 million Target: $3.4 million Broadcom: $2.8 million Nike: $2.4 million Alphabet: $1.9 million Mastercard: $1.3 million submitted by /u/Foreign-Policy-02- [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1tg9hjx/what_10000_invested_in_these_ipos_is_worth_today/",
-      "timestamp": "2026-05-18T02:35:27+00:00",
-      "score": 75,
-      "rationale": "NVDA ranked 5th in IPO returns; demonstrates strong historical performance."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "NVIDIA CEO Has Good News for Micron and SanDisk Investors: \u201cThe Memory Shortage to Continue for Several Years\u201d",
-      "text": "Good news for MU &amp; SNDK. \u201cIf the multi-year shortage Huang outlined tonight holds, the recent pullback in MU and SNDK looks like a setup rather than a peak signal.\u201d submitted by /u/Pinkygirl7 [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1u00g3k/nvidia_ceo_has_good_news_for_micron_and_sandisk/",
-      "timestamp": "2026-06-08T07:02:06+00:00",
-      "score": 75,
-      "rationale": "Positive NVIDIA CEO outlook supports memory sector; indirect bullish NVDA sentiment."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "Softbank sells all of its NVDA holdings",
-      "text": "Sorry the news I found is in Japanese but that's alot of gains secured. \u30bd\u30d5\u30c8\u30d0\u30f3\u30afG\u3001\u4fdd\u6709\u3059\u308b\u5168\u3066\u306e\u7c73\u30a8\u30cc\u30d3\u30c7\u30a3\u30a2\u682a\u309258.3\u5104\u30c9\u30eb\u3067\u58f2\u5374 OK now I find the English one. SoftBank Unloads Nvidia Stake for $5.8 Billion in Surprise Move - Bloomberg submitted by /u/FlanTypical8844 [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1ou36pe/softbank_sells_all_of_its_nvda_holdings/",
-      "timestamp": "2025-11-11T07:25:40+00:00",
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Chinese researchers just mapped human brain 478 times faster than an Nvidia A100",
+      "text": "Chinese researchers just mapped human brain 478 times faster than an Nvidia A100",
+      "url": "https://news.ycombinator.com/item?id=48826646",
+      "timestamp": "2026-07-08T02:08:39Z",
+      "metadata": {
+        "points": 2,
+        "author": "ogi_ogi"
+      },
       "score": -25,
-      "rationale": "Major investor exit signals profit-taking; mixed sentiment\u2014gains secured but suggests cooling conviction."
+      "rationale": "Implies NVDA hardware inferior; potential competitive threat to GPU dominance."
     },
     {
-      "source": "reddit/r/wallstreetbets",
-      "title": "The \"AI is dead because oil\" guy has clearly never read an income statement",
-      "text": "So someone posted that whole thing about how Iran war means oil goes up which means energy gets expensive which means AI is dead. And like sure each step on its own isn't crazy but the whole thing is held together with vibes. The part that got me was &quot;opex balloons 3-4x on already razor thin margins.&quot; Razor thin?? MSFT cloud runs ~45% operating margin. NVDA is printing 60%+ net margins. In what world is that razor thin. You can be bearish on AI without just making numbers up. And where does 3-4x even come from. Energy is like 10-15% of total data center costs. If electricity doubled tomorrow that's a 10-15% opex bump, not 300%. The rest is hardware, real estate, cooling. This is stuff you can just google. Also most hyperscalers aren't buying power at spot like some guy mining crypto in his basement. They have multi-year contracts locked in. Microsoft signed a 20-year deal to restart Three Mile Island. Amazon bought a whole nuclear data center campus. Google's been on renewable PPAs since like 2010. Oil going up doesn't mean their electricity bill triples next quarter. For this whole thesis to work you basically need Iran war prolonged, oil to spike AND stay high, that somehow hitting contracted data center rates, crushing margins that are currently enormous, the treasury market dying at the same time, and then China invading Taiwan on top of it. Every single domino has to fall perfectly. And he wants this by January. Honestly if you wanna be bearish on AI there can be a real case, like whether these companies can actually monetize fast enough to justify the insane capex spend. but oil's not it. Trimmed some in March, still long big tech. submitted by /u/Promptfolio [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1s84xuc/the_ai_is_dead_because_oil_guy_has_clearly_never/",
-      "timestamp": "2026-03-30T22:06:30+00:00",
-      "score": 75,
-      "rationale": "Strongly defends NVDA margins against bearish thesis; factual confidence."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "A year ago, Michael Burry sold everything except Estee Lauder. He also bought puts on Nvidia.",
-      "text": "May 19, 2025 \u2026He had been quite bullish on China, owning large Chinese stocks like Alibaba, Baidu, JD.Com, and PDD Holdings. But after selling these stocks, he also purchased put options on these names. Put options are similar to call options but in the opposite direction, essentially betting that a stock price will decline. Burry also purchased put options on Nvidia\u2026 \u2026 Interestingly, Burry's lone remaining long position is the multinational cosmetics company Est\u00e9e Lauder, which is down over 50% in the last year (as of May 16). Scion actually doubled its position in the company in the first quarter... Source: https://finance.yahoo.com/news/nearly-dumping-entire-portfolio-buying-220500241.html submitted by /u/AccelerationFinish [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1u7wup4/a_year_ago_michael_burry_sold_everything_except/",
-      "timestamp": "2026-06-17T01:49:54+00:00",
-      "score": -75,
-      "rationale": "Burry bought puts on NVDA, betting on price decline. Bearish signal."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "Big numbers incoming",
-      "text": "Expectations for revenue this quarter is 65-66billy. I think they easily eclipse that as Jensen tends to guide conservatively. Consensus guide for next quarter is 75 Billy. I actually think that number will be closer to 80. Just obscene amounts of money an even more crazy are their margins. You have Blackwell selling out, orders for Rubin from Meta (more hyperscalers to follow) and then you have next generation Feynman production to keep the train rolling. What else do you want from this company. Bullish submitted by /u/HighlightFeeling4118 [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1refc6x/big_numbers_incoming/",
-      "timestamp": "2026-02-25T14:53:36+00:00",
-      "score": 85,
-      "rationale": "Strong bullish conviction on revenue beat, margin strength, product momentum."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "The movie \"The Big Short\" could theoreticaly single handedly safe us from a major crash for forever",
-      "text": "The fact that there is an AI bubble can't really be denied by anyone at this point probably. Like I mean we all know that Nvidia investing into OpenAI and OpenAI buying chips from Nvidia is inflating the valuation of both massively. We all know that stocks like $BIRD can't just shoot up by 2000% only because of them selling all their main buissness and going all in AI. I don't want to compare it to the dot com bubble or any other crash, because all the companies mentioned are the major companies at this point. Now to how &quot;The Big Short&quot; could save us from any major move. It is rather easy: Everyone wants to be Michael Burry. Even Michael Burry wants to be the movie Michael Burry again (20 out of the last 2 crashes correctly predicted). About a year ago the rather obvious AI bubble was all over social media. What has happened since then? We have pumped all the way higher and the bears got fucked. Are there now less bears? No there are still soooo many. Everyone wants to be the guy having the correct short, because that has the most aura. Who gives a shit if you made a very good trade on Nvidia with 1000% in profit. Surely everyone is happy for you, yes you made it and made money (Not like 90% in here). And? Will you get a movie? No, you won't. Everyone wants to hit a perfect short. What's extra funny is that most people shorting because of Burry or because of the general situation have not even understood the movie. Guys, Burry did not do a perfect short. He was way to early, he had to wait for 2 to 3 years until something finally happened. After all he made around 400-500% profit for that. The only reason it is such a known position is because people somehow believe he is some sort of genius who hit the perfect trade. With the movie being so popular and social media impact there is a slight chance of never running out of bears and people who believe they are the next Michael Burry (Spoiler: most people can't hold an option longer than 1 week and Burry didn't even buy option he bought swaps) submitted by /u/Arc3on [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1tqg22x/the_movie_the_big_short_could_theoreticaly_single/",
-      "timestamp": "2026-05-28T20:50:14+00:00",
-      "score": -45,
-      "rationale": "Bearish on AI bubble sustainability; acknowledges NVDA's inflated valuation concerns."
-    },
-    {
-      "source": "reddit/r/wallstreetbets",
-      "title": "The $100 Billion Megadeal Between OpenAI and Nvidia Is on Ice",
-      "text": "Nvidia CEO Jensen Huang has privately emphasized to industry associates in recent months that the original $100 billion agreement was nonbinding and not finalized, people familiar with the matter said. He has also privately criticized what he has described as a lack of discipline in OpenAI\u2019s business approach and expressed concern about the competition it faces from the likes of Google and Anthropic, some of the people said. submitted by /u/Independent-Cress382 [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1qrmhs9/the_100_billion_megadeal_between_openai_and/",
-      "timestamp": "2026-01-30T23:59:16+00:00",
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "China's Biren seeks US$900M to fund GPU push and challenge Nvidia amid AI boom",
+      "text": "China's Biren seeks US$900M to fund GPU push and challenge Nvidia amid AI boom",
+      "url": "https://news.ycombinator.com/item?id=48804190",
+      "timestamp": "2026-07-06T13:18:04Z",
+      "metadata": {
+        "points": 2,
+        "author": "dstala"
+      },
       "score": -25,
-      "rationale": "CEO privately critical of deal status; nonbinding agreement suggests uncertainty and competitive pressures."
+      "rationale": "Competitively focused article signals emerging challenger to NVDA dominance."
     },
     {
-      "source": "reddit/r/wallstreetbets",
-      "title": "Decade of experience",
-      "text": "I think I should just throw it in ETFs EDIT for more info, Since this is getting eyeballs and people are asking: I\u2019ve been trading for 10 years now. Not rich, not homeless... just a dude who has made every possible mistake, occasionally hit something real, and then promptly fumbled the bag again. Some highlights along the way: ASTS I found ASTS way back during the SPAC era. I bought before it had a ticker, before the hype, before Reddit even knew what space-based 5G was. I spent 5 years accumulating. Over 10,000 shares, plus a stupid amount of calls. My average cost was around $4. I held through it all Dilution Missed launches \u201cWe swear the network is live\u201d investor calls The CEO looking like he was aging in dog years Then 2024 came. I had lost faith. I sold basically everything for a tiny loss. That position would be worth over $1,000,000 today. Instead I took like a $3k loss. NVDA I got in on the first AI run-up, not the late one. Bought $17,000 worth of $100 strike calls mid/late-March 2024. Expiration was April. And so it began. NVDA was unstoppable. Every day I kept thinking, this can't continue... until it reached a point where it was more like, now that's its surpassed a threshold, this can't NOT continue. I bought. It stopped its rocketship upwards almost immediately. But I had faith as I watched my options half, and then half again. Hell, I bought more. At a certain point, I just said screw it, I'm seeing this through, all or nothing. And it DID finally go up. But it didn\u2019t go up-up until shortly AFTER my expiration. I lost it. If I had rolled them out THREE WEEKS at the low point: The profit would have been over $100k. I didn\u2019t roll. I just stared and let time decay eat my soul. GME Yes. I was there. That big spikey spike you see right before the endless dropping. That's it. But I wanted more. So I bought more. I bought the top. Sold the bottom. Bought back in. Sold lower. Repeated like a lab rat pressing a dopamine button. ETH My biggest regret. It's not in the chart but a friend of mine got me on crypto early. I bought around 2,000 ETH at like $17. That would be OVER SIX MILLION today. I did actually make a profit of like $30k here, and at the time I was rather pleased with myself. OVER SIX MILLION if I had held. ALMOST SEVEN. At today's price, $6,799,680. Other Notable Trades / Character Development Moments Random biotech phase \u2014 I turned $4k into $18k and then back to $0 because I \u201cliked the chart.\u201d SPY options era \u2014 I contributed meaningfully to someone else\u2019s Hamptons house. Margin interest that one year: My 1099 literally shows I paid $1,800+ in margin interest to Robinhood in 2021. I paid interest to lose money. What I\u2019ve Learned: The bag is real, but the bag doesn\u2019t wait. If your conviction lasts 5 years but your patience lasts 5 minutes, you are just donating. Rolling options is not optional. Stop losses are probably a good idea. The market rewards psychopaths and people who forget they own things. TLDR: My portfolio isn\u2019t diversified by sector, it\u2019s diversified by types of bad decisions . submitted by /u/wave_dashing [link] [comments]",
-      "url": "https://www.reddit.com/r/wallstreetbets/comments/1ordp9u/decade_of_experience/",
-      "timestamp": "2025-11-08T02:26:39+00:00",
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia Through a Crypto Miner's Eyes",
+      "text": "Nvidia Through a Crypto Miner's Eyes",
+      "url": "https://news.ycombinator.com/item?id=48756136",
+      "timestamp": "2026-07-02T03:23:43Z",
+      "metadata": {
+        "points": 1,
+        "author": "vincentping"
+      },
+      "score": 0,
+      "rationale": "Title suggests analytical perspective on NVDA/crypto mining relationship; no clear bullish/bearish stance."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Major Setbacks for Nvidia Kyber NVL144",
+      "text": "Major Setbacks for Nvidia Kyber NVL144",
+      "url": "https://news.ycombinator.com/item?id=48891678",
+      "timestamp": "2026-07-13T12:27:51Z",
+      "metadata": {
+        "points": 1,
+        "author": "doener"
+      },
+      "score": -65,
+      "rationale": "Post signals significant technical problems with Nvidia's Kyber NVL144 product."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Show HN: Humm \u2013 free, private realtime speech-to-text",
+      "text": "I found the UX of most speech-to-text apps unnecessarily complicated, so I built Humm as a simple, privacy-first alternative. Press a custom hotkey, talk, and the text lands in whatever app you're in. - It runs locally on NVIDIA's Parakeet models - no account and no telemetry - Works on Windows and Mac - You can bring your own key if you'd prefer to use cloud models - Includes a stats page so you can measure timed saved vs typing - Options to set zero local txt or audio retention Under the hood: - Tauri 2 - A modified parakeet.cpp doing realtime transcription, so you see your words as you speak (this feature is windows only for now) - Qwen3 4B for optional on-device cleanup (rather slow but working on making this better) https://humm.so",
+      "url": "https://news.ycombinator.com/item?id=48843345",
+      "timestamp": "2026-07-09T09:46:32Z",
+      "metadata": {
+        "points": 2,
+        "author": "welanes"
+      },
+      "score": 25,
+      "rationale": "Product uses NVIDIA Parakeet models, mentions NVIDIA tech positively in implementation."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Show HN: Trellis2.c \u2013 Local 3D generation with Vulkan and CUDA",
+      "text": "Hi HN, I started this because I wanted something in the spirit of llama.cpp and stable-diffusion.cpp, but for local 3D generation model: native executables, no Python/PyTorch runtime, and both CUDA and Vulkan backends. I\u2019ve mainly tested it on an NVIDIA RTX 4090. I\u2019m particularly interested in Vulkan results on AMD and Intel GPUs, where driver behavior and memory allocation may differ. If you try it, GPU, driver, OS details, and failure logs would be extremely helpful. The main limitation right now is performance. The implementation has not yet been heavily optimized, so inference is currently slower than mature, fully optimized PyTorch or Vulkan backends. There is still substantial room for kernel, memory-use, and scheduling improvements.",
+      "url": "https://news.ycombinator.com/item?id=48931429",
+      "timestamp": "2026-07-16T07:39:49Z",
+      "metadata": {
+        "points": 1,
+        "author": "wimaxs"
+      },
+      "score": 45,
+      "rationale": "Technical project using CUDA/Vulkan; mentions NVIDIA RTX 4090 positively, implies capability."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "SpaceX stock erases all its gains and slides below IPO price in intraday trading",
+      "text": "Still far to high. I love SpaceX as in 'space', they were a great company, doing things nobody else could. Now its a dumb AI company that hands over cash to micron, nvidia and friends who literally print money, while financing that with delusional promises. Many people can soon sell their SpaceX stock, I don't think the S&P will safe them later.",
+      "url": "https://news.ycombinator.com/item?id=48934674",
+      "timestamp": "2026-07-16T13:57:35Z",
+      "metadata": {
+        "points": null,
+        "author": "panick21_"
+      },
       "score": 15,
-      "rationale": "Mixed sentiment: early AI entry was profitable, but poor timing/execution hurt returns. Cautious."
+      "rationale": "Poster mentions NVDA as beneficiary of SpaceX spending, slightly bullish."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia is proposing a beast of a CPU system for Windows PCs",
+      "text": "Nvidia is proposing a beast of a CPU system for Windows PCs",
+      "url": "https://news.ycombinator.com/item?id=48424605",
+      "timestamp": "2026-06-06T12:52:18Z",
+      "metadata": {
+        "points": 332,
+        "author": "tosh"
+      },
+      "score": 65,
+      "rationale": "Positive framing ('beast') of new NVDA CPU initiative for Windows."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Zluda 6 release (run unmodified CUDA applications on non-Nvidia GPUs)",
+      "text": "Zluda 6 release (run unmodified CUDA applications on non-Nvidia GPUs)",
+      "url": "https://news.ycombinator.com/item?id=48730713",
+      "timestamp": "2026-06-30T10:34:25Z",
+      "metadata": {
+        "points": 163,
+        "author": "Tiberium"
+      },
+      "score": -35,
+      "rationale": "ZLUDA enables CUDA apps on non-NVIDIA GPUs, eroding NVIDIA's moat."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "A powerful new chapter for Windows PCs, accelerated by Nvidia RTX Spark",
+      "text": "A powerful new chapter for Windows PCs, accelerated by Nvidia RTX Spark",
+      "url": "https://news.ycombinator.com/item?id=48352693",
+      "timestamp": "2026-06-01T04:45:20Z",
+      "metadata": {
+        "points": 34,
+        "author": "WalterSobchak"
+      },
+      "score": 65,
+      "rationale": "Positive framing of Nvidia RTX technology driving Windows PC innovation."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Michael Burry Just Called Nvidia's SpaceX Chip Deal 'Fugazi.'",
+      "text": "Michael Burry Just Called Nvidia's SpaceX Chip Deal 'Fugazi.'",
+      "url": "https://news.ycombinator.com/item?id=48361912",
+      "timestamp": "2026-06-01T20:06:32Z",
+      "metadata": {
+        "points": 15,
+        "author": "johnbarron"
+      },
+      "score": -75,
+      "rationale": "Burry's 'Fugazi' label suggests fraud/worthlessness. Strong bearish signal."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Tensordyne makes a big bet on log math to beat Nvidia",
+      "text": "Tensordyne makes a big bet on log math to beat Nvidia",
+      "url": "https://news.ycombinator.com/item?id=48626493",
+      "timestamp": "2026-06-22T06:28:37Z",
+      "metadata": {
+        "points": 8,
+        "author": "galaxyLogic"
+      },
+      "score": -25,
+      "rationale": "Competitor emerging with alternative tech; implies NVDA facing challenge."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "I built a suite of 8 AI tools with $0/month in API costs using Nvidia Nim",
+      "text": "I built a suite of 8 AI tools with $0/month in API costs using Nvidia Nim",
+      "url": "https://news.ycombinator.com/item?id=48582980",
+      "timestamp": "2026-06-18T09:35:09Z",
+      "metadata": {
+        "points": 6,
+        "author": "Maazkhanxo"
+      },
+      "score": 75,
+      "rationale": "Poster enthusiastically showcases NVIDIA's practical value/cost savings."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Super Micro Office Raided as Taiwan Expands Nvidia Chip Smuggling Probe",
+      "text": "Super Micro Office Raided as Taiwan Expands Nvidia Chip Smuggling Probe",
+      "url": "https://news.ycombinator.com/item?id=48727631",
+      "timestamp": "2026-06-30T01:44:57Z",
+      "metadata": {
+        "points": 6,
+        "author": "ivewonyoung"
+      },
+      "score": -35,
+      "rationale": "Negative news about Nvidia chip smuggling probe and raids implies regulatory/legal risks."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Show HN: LiveHere \u2013 AI Videos, Self-Hosted Nvidia Cosmos on H200 GPUs",
+      "text": "there is still time to submit - https://ship.builders/ build something cool, and i would love to catchup on the yacht - if you are in sf and coming.. ---- Yacht Hackathon by Composio, Nebius, Tavily - Product Demo Pitch: 30 seconds. That's all a renter gives a listing before they swipe away. LiveHere turns raw listing photos into a cinematic trailer that makes the deal in those 30s: location, neighborhood, vibe, price. Stack: NVIDIA Cosmos, self-deployed on @nebiusai H200 NVLink GPUs @tavilyai enriching the property with real neighborhood context @ship_builders @nvidia @composio @openclaw - Looking forward to expanding on this project on the the Yacht (SF is soooo amazing!!!!!)",
+      "url": "https://news.ycombinator.com/item?id=48502070",
+      "timestamp": "2026-06-12T10:04:03Z",
+      "metadata": {
+        "points": 6,
+        "author": "manas95"
+      },
+      "score": 75,
+      "rationale": "Enthusiastic about using NVIDIA Cosmos and H200 GPUs in production, bullish on capabilities."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Michael Burry's Chart on How Elon Musk-Nvidia Deal Is Putting Retirees at Risk",
+      "text": "Michael Burry's Chart on How Elon Musk-Nvidia Deal Is Putting Retirees at Risk",
+      "url": "https://news.ycombinator.com/item?id=48363850",
+      "timestamp": "2026-06-01T23:17:43Z",
+      "metadata": {
+        "points": 6,
+        "author": "sensanaty"
+      },
+      "score": -65,
+      "rationale": "Burry chart warns of risks to retirees from Musk-Nvidia deal; bearish framing."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Google Is Using Nvidia's Playbook to Build a Rival AI Chip Business",
+      "text": "Google Is Using Nvidia's Playbook to Build a Rival AI Chip Business",
+      "url": "https://news.ycombinator.com/item?id=48603498",
+      "timestamp": "2026-06-19T21:33:23Z",
+      "metadata": {
+        "points": 5,
+        "author": "Brajeshwar"
+      },
+      "score": -35,
+      "rationale": "Implies NVDA facing competitive threat from Google's chip efforts."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Google Is Using Nvidia's Playbook to Build a Rival AI Chip Business",
+      "text": "Google Is Using Nvidia's Playbook to Build a Rival AI Chip Business",
+      "url": "https://news.ycombinator.com/item?id=48595772",
+      "timestamp": "2026-06-19T07:21:34Z",
+      "metadata": {
+        "points": 5,
+        "author": "doener"
+      },
+      "score": -35,
+      "rationale": "Implies NVDA faces competitive threat from Google's rival chip strategy."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia's AI PC push banks on unproven demand beyond niche users",
+      "text": "Nvidia's AI PC push banks on unproven demand beyond niche users",
+      "url": "https://news.ycombinator.com/item?id=48459584",
+      "timestamp": "2026-06-09T11:20:46Z",
+      "metadata": {
+        "points": 5,
+        "author": "1vuio0pswjnm7"
+      },
+      "score": -35,
+      "rationale": "Skeptical of AI PC demand scaling; questions unproven market beyond niche."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Intel: Our upcoming AI chip will be cheaper, run cooler than Nvidia, AMD options",
+      "text": "Intel: Our upcoming AI chip will be cheaper, run cooler than Nvidia, AMD options",
+      "url": "https://news.ycombinator.com/item?id=48361992",
+      "timestamp": "2026-06-01T20:12:23Z",
+      "metadata": {
+        "points": 4,
+        "author": "tambourine_man"
+      },
+      "score": -25,
+      "rationale": "Intel positioning as superior alternative implies competitive threat to NVDA."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Making LLM Training Faster with Unsloth and NVIDIA",
+      "text": "Making LLM Training Faster with Unsloth and NVIDIA",
+      "url": "https://news.ycombinator.com/item?id=48046397",
+      "timestamp": "2026-05-07T07:15:11Z",
+      "metadata": {
+        "points": 129,
+        "author": "segmenta"
+      },
+      "score": 45,
+      "rationale": "Positive framing of NVIDIA in LLM training context, modest enthusiasm."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia Vera CPU Benchmarks: Olympus Cores Delivering Great Performance",
+      "text": "Nvidia Vera CPU Benchmarks: Olympus Cores Delivering Great Performance",
+      "url": "https://news.ycombinator.com/item?id=48291230",
+      "timestamp": "2026-05-27T08:15:35Z",
+      "metadata": {
+        "points": 55,
+        "author": "naves"
+      },
+      "score": 65,
+      "rationale": "Positive benchmark results highlighting strong CPU core performance."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "NVIDIA Goes to Zero",
+      "text": "NVIDIA Goes to Zero",
+      "url": "https://news.ycombinator.com/item?id=48075500",
+      "timestamp": "2026-05-09T14:58:08Z",
+      "metadata": {
+        "points": 54,
+        "author": "tambourine_man"
+      },
+      "score": -95,
+      "rationale": "Extremely bearish prediction; implies total collapse and loss of value."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Judge: Nvidia's Shadow Library Scripts 'Have No Other Purpose' Than Infringement",
+      "text": "Judge: Nvidia's Shadow Library Scripts 'Have No Other Purpose' Than Infringement",
+      "url": "https://news.ycombinator.com/item?id=48038760",
+      "timestamp": "2026-05-06T17:14:57Z",
+      "metadata": {
+        "points": 53,
+        "author": "speckx"
+      },
+      "score": -75,
+      "rationale": "Judge's ruling against Nvidia on IP infringement; significantly negative legal development."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "xAI Is Reportedly Using Just 11% of Its 550k Nvidia GPUs",
+      "text": "xAI Is Reportedly Using Just 11% of Its 550k Nvidia GPUs",
+      "url": "https://news.ycombinator.com/item?id=48001701",
+      "timestamp": "2026-05-03T21:28:57Z",
+      "metadata": {
+        "points": 27,
+        "author": "lossolo"
+      },
+      "score": -35,
+      "rationale": "xAI's massive GPU underutilization suggests weak demand for Nvidia hardware."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Trump's 25% cut on Nvidia chips to China backfired as Beijing blocks H200 sales",
+      "text": "Trump's 25% cut on Nvidia chips to China backfired as Beijing blocks H200 sales",
+      "url": "https://news.ycombinator.com/item?id=48284628",
+      "timestamp": "2026-05-26T19:21:02Z",
+      "metadata": {
+        "points": 21,
+        "author": "frasermarlow"
+      },
+      "score": -35,
+      "rationale": "Geopolitical headwind: tariff backfired, China blocks sales. Moderately bearish for NVDA revenue/China exposure."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Jensen says Nvidia now has 'zero percent' market share in China",
+      "text": "Jensen says Nvidia now has 'zero percent' market share in China",
+      "url": "https://news.ycombinator.com/item?id=48001399",
+      "timestamp": "2026-05-03T20:57:43Z",
+      "metadata": {
+        "points": 11,
+        "author": "iamflimflam1"
+      },
+      "score": -75,
+      "rationale": "CEO admission of complete China market loss is significantly bearish."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Jensen says Nvidia now has '0%' share in China, US export policy 'has backfired'",
+      "text": "Jensen says Nvidia now has '0%' share in China, US export policy 'has backfired'",
+      "url": "https://news.ycombinator.com/item?id=48006929",
+      "timestamp": "2026-05-04T10:41:14Z",
+      "metadata": {
+        "points": 11,
+        "author": "SanjayMehta"
+      },
+      "score": -45,
+      "rationale": "Loses entire China market; CEO calls policy counterproductive. Negative revenue impact."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "US clears H200 chip sales to 10 China firms as Nvidia CEO looks for breakthrough",
+      "text": "US clears H200 chip sales to 10 China firms as Nvidia CEO looks for breakthrough",
+      "url": "https://news.ycombinator.com/item?id=48138714",
+      "timestamp": "2026-05-14T17:47:37Z",
+      "metadata": {
+        "points": 9,
+        "author": "layer8"
+      },
+      "score": 45,
+      "rationale": "Regulatory approval for China chip sales signals breakthrough opportunity for Nvidia."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Supermicro's co-founder smuggled $2.5B in Nvidia-chipped servers to China",
+      "text": "Supermicro's co-founder smuggled $2.5B in Nvidia-chipped servers to China",
+      "url": "https://news.ycombinator.com/item?id=48031699",
+      "timestamp": "2026-05-06T03:13:33Z",
+      "metadata": {
+        "points": 6,
+        "author": "rmason"
+      },
+      "score": -45,
+      "rationale": "Negative legal/compliance issue involving Nvidia chips, moderately bearish sentiment."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia bets $150B on Taiwan as Trump's plan to make US an AI hub backfires",
+      "text": "Nvidia bets $150B on Taiwan as Trump's plan to make US an AI hub backfires",
+      "url": "https://news.ycombinator.com/item?id=48320996",
+      "timestamp": "2026-05-29T09:37:20Z",
+      "metadata": {
+        "points": 6,
+        "author": "rbanffy"
+      },
+      "score": -35,
+      "rationale": "Nvidia choosing Taiwan over US suggests skepticism about Trump's AI hub plan; moderately bearish implication."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "LLMKube \u2013 A Kubernetes operator for local LLMs across Nvidia and Mac fleets",
+      "text": "LLMKube \u2013 A Kubernetes operator for local LLMs across Nvidia and Mac fleets",
+      "url": "https://news.ycombinator.com/item?id=48247414",
+      "timestamp": "2026-05-23T13:17:29Z",
+      "metadata": {
+        "points": 6,
+        "author": "richteach"
+      },
+      "score": 25,
+      "rationale": "Post mentions NVDA hardware as deployment option; mildly positive tech adoption signal."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Even at $5T, Nvidia Is Underappreciated",
+      "text": "Even at $5T, Nvidia Is Underappreciated",
+      "url": "https://news.ycombinator.com/item?id=48228310",
+      "timestamp": "2026-05-21T20:13:53Z",
+      "metadata": {
+        "points": 5,
+        "author": "bookofjoe"
+      },
+      "score": 75,
+      "rationale": "Bullish claim that NVDA remains undervalued despite massive market cap."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia says it has 'largely conceded' China's AI chip market to Huawei",
+      "text": "Nvidia says it has 'largely conceded' China's AI chip market to Huawei",
+      "url": "https://news.ycombinator.com/item?id=48222064",
+      "timestamp": "2026-05-21T13:10:46Z",
+      "metadata": {
+        "points": 5,
+        "author": "Markoff"
+      },
+      "score": -35,
+      "rationale": "Conceding major market segment signals competitive loss, moderately bearish."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Google's SynthID AI watermarking tech is being adopted by OpenAI, Nvidia",
+      "text": "Google's SynthID AI watermarking tech is being adopted by OpenAI, Nvidia",
+      "url": "https://news.ycombinator.com/item?id=48200615",
+      "timestamp": "2026-05-19T22:35:16Z",
+      "metadata": {
+        "points": 5,
+        "author": "jonbaer"
+      },
+      "score": 15,
+      "rationale": "Neutral-to-slightly-positive: Nvidia adoption of watermarking tech suggests legitimacy/partnership, but no strong conviction expressed."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Foxconn confirms cyberattack \u2013 confidential Apple, Nvidia files stolen",
+      "text": "Foxconn confirms cyberattack \u2013 confidential Apple, Nvidia files stolen",
+      "url": "https://news.ycombinator.com/item?id=48120462",
+      "timestamp": "2026-05-13T11:17:28Z",
+      "metadata": {
+        "points": 5,
+        "author": "thm"
+      },
+      "score": -35,
+      "rationale": "Negative news: stolen confidential files suggest operational/security concerns."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "US clears H200 chip sales to 10 China firms as Nvidia CEO looks for breakthrough",
+      "text": "US clears H200 chip sales to 10 China firms as Nvidia CEO looks for breakthrough",
+      "url": "https://news.ycombinator.com/item?id=48161173",
+      "timestamp": "2026-05-16T15:43:33Z",
+      "metadata": {
+        "points": 4,
+        "author": "JumpCrisscross"
+      },
+      "score": 35,
+      "rationale": "Regulatory approval for China sales is moderately positive. Shows market access opening."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia says it has largely conceded China's AI chip market to Huawei",
+      "text": "Nvidia says it has largely conceded China's AI chip market to Huawei",
+      "url": "https://news.ycombinator.com/item?id=48333181",
+      "timestamp": "2026-05-30T06:16:53Z",
+      "metadata": {
+        "points": 4,
+        "author": "KnuthIsGod"
+      },
+      "score": -35,
+      "rationale": "Negative news: NVDA ceding major market to competitor, revenue loss concern."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia on track to be leading CPU supplier too, says CFO",
+      "text": "Nvidia on track to be leading CPU supplier too, says CFO",
+      "url": "https://news.ycombinator.com/item?id=48234550",
+      "timestamp": "2026-05-22T11:45:48Z",
+      "metadata": {
+        "points": 4,
+        "author": "ksec"
+      },
+      "score": 72,
+      "rationale": "CFO confidence in expanding NVDA market share to CPUs signals bullish growth prospects."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia's revenue blows past Wall Street expectations as AI boom accelerates",
+      "text": "Nvidia's revenue blows past Wall Street expectations as AI boom accelerates",
+      "url": "https://news.ycombinator.com/item?id=48225609",
+      "timestamp": "2026-05-21T16:43:08Z",
+      "metadata": {
+        "points": 4,
+        "author": "Brajeshwar"
+      },
+      "score": 75,
+      "rationale": "Beats earnings expectations, AI momentum strong. Bullish headline tone."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia Preparing RTX 5090 Price Increase Due to Rising GDDR7 Memory Costs",
+      "text": "Nvidia Preparing RTX 5090 Price Increase Due to Rising GDDR7 Memory Costs",
+      "url": "https://news.ycombinator.com/item?id=48162419",
+      "timestamp": "2026-05-16T18:09:17Z",
+      "metadata": {
+        "points": 4,
+        "author": "jeffufl"
+      },
+      "score": -25,
+      "rationale": "Price increase signals cost pressures; mildly negative for consumers/demand outlook."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Apple approves driver that lets Nvidia eGPUs work with Arm Macs",
+      "text": "https://xcancel.com/__tinygrad__/status/2039213719155310736",
+      "url": "https://news.ycombinator.com/item?id=47640380",
+      "timestamp": "2026-04-04T16:16:10Z",
+      "metadata": {
+        "points": 527,
+        "author": "naves"
+      },
+      "score": 35,
+      "rationale": "Positive development expands Nvidia eGPU compatibility; moderate bullish sentiment."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "New Rowhammer attacks give complete control of machines running Nvidia GPUs",
+      "text": "New Rowhammer attacks give complete control of machines running Nvidia GPUs",
+      "url": "https://news.ycombinator.com/item?id=47624317",
+      "timestamp": "2026-04-03T08:15:12Z",
+      "metadata": {
+        "points": 132,
+        "author": "01-_-"
+      },
+      "score": -35,
+      "rationale": "Security vulnerability in Nvidia GPUs creates operational risk, moderately bearish."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia should be 'shaking in their boots' as quantum computing battles AI GPUs",
+      "text": "Nvidia should be 'shaking in their boots' as quantum computing battles AI GPUs",
+      "url": "https://news.ycombinator.com/item?id=47773295",
+      "timestamp": "2026-04-15T00:41:55Z",
+      "metadata": {
+        "points": 18,
+        "author": "mgh2"
+      },
+      "score": -35,
+      "rationale": "Bearish framing; suggests NVDA faces existential competitive threat from quantum computing."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Google unveils chips for AI training and inference in latest shot at Nvidia",
+      "text": "Google unveils chips for AI training and inference in latest shot at Nvidia",
+      "url": "https://news.ycombinator.com/item?id=47862510",
+      "timestamp": "2026-04-22T12:16:41Z",
+      "metadata": {
+        "points": 13,
+        "author": "wslh"
+      },
+      "score": -25,
+      "rationale": "Competitive threat to NVDA from Google's custom AI chips."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia's moat is not what it used to be",
+      "text": "For years, the lock-in was dead simple: CUDA. Want top-tier performance? You wrote CUDA. Do that once, and you were all-in on NVIDIA. The ecosystem compounded\u2014libraries, tooling, docs, talent\u2014everything reinforcing the same gravity well. That world is starting to crack. We\u2019re entering a phase where low-level code isn\u2019t a rare skill anymore. Models are capable at generating kernels, bindings, and glue code. Good enough to get a first version running fast and iterate from there. The switching cost to a new accelerator is dropping quickly. What used to require a dedicated team now often looks like a decent prompt plus a few review passes. There\u2019s an old David Wheeler line: All problems in computer science can be solved by another level of indirection. AI Codegen is an abstraction and more. At the same time, the economics are shifting. For many real workloads\u2014especially inference\u2014VRAM matters more than peak FLOPS. You want models resident in memory, batching cleanly, with predictable latency. On a dollars-per-GB basis, AMD is starting to look compelling. Newer cards bring stronger low-precision throughput (FP8/INT4), structured sparsity, and significantly more memory on mainstream SKUs. If you\u2019re running open models and care about cost/throughput, you\u2019re at least evaluating them. Intel is entering the mix as well. Battlemage (Arc Pro B-series) pushes high VRAM configurations with competitive price/perf for local inference. Not dominant, but another viable option that didn\u2019t exist in the CUDA-only world. Then there\u2019s supply. NVIDIA has built enormous demand and maintained pricing power. But scarcity cuts both ways. If you can\u2019t get hardware\u2014or only at extreme prices\u2014people explore alternatives. Startups take what they can get. Infra teams design for heterogeneity. Open source adapts to whatever is available. This is how moats erode: not via a single replacement, but through many small workarounds that become standard. Two datapoints from actually standing up a modern model serving stack: 1. In my recent GLM 5.1 deployment on 8xB200s, getting a novel model to serve reliably was painful. It took me ~12\u201313 minutes of cold starts (many!), random restarts, non-obvious flags, kernel warmups, and graph captures just to reach a stable baseline. Most of that wasn\u2019t \u201cAI\u201d\u2014it was infra whack-a-mole across memory limits, runtimes, and config quirks. 2. Even once it was running, it was fragile. I kept hitting issues like streaming tool calls producing invalid JSON because the model output, server parser, and client SDK were out of sync. Fixing it required patches across multiple layers just to get to consistent outputs. Real systems are leaky\u2014far from clean abstractions. That\u2019s the actual moat: not CUDA, but the entire stack\u2014libraries, compilers, interconnects, and years of ops knowledge. But, it\u2019s early. CUDA isn\u2019t just a platform; it\u2019s a decade-plus of battle-tested infra. Getting something to run is one thing. Getting it to run great at scale is still difficult, performance cliffs in exactly the wrong places. And NVIDIA is moving up the stack aggressively\u2014higher-level APIs, inference tooling, tighter framework integration. Blackwell-class hardware pushes further efficiency (e.g., low-precision compute like FP4) and targets memory-bound inference directly. If abstractions become the battlefield, they\u2019re positioning to control that layer too. So what happens: * Near term: NVIDIA continues to dominate. Demand is still growing fast and they remain the default. * Medium term: the edges fray. Inference becomes more heterogeneous. AMD and Intel pick up share where cost and memory dominate. * Long term: value shifts upward\u2014to models, data, orchestration. Hardware still matters, but becomes more interchangeable at the margin. Bottom line: CUDA used to be a wall. Now it\u2019s closer to a speed bump. AI didn\u2019t remove the moat\u2014it just made it much easier to cross when there\u2019s a reason to.",
+      "url": "https://news.ycombinator.com/item?id=47740552",
+      "timestamp": "2026-04-12T15:03:11Z",
+      "metadata": {
+        "points": 6,
+        "author": "florianleibert"
+      },
+      "score": -62,
+      "rationale": "Argues NVDA's moat eroding; competitors gaining viable ground."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "tinygrad: Apple approved our driver for both AMD and Nvidia",
+      "text": "tinygrad: Apple approved our driver for both AMD and Nvidia",
+      "url": "https://news.ycombinator.com/item?id=47598074",
+      "timestamp": "2026-04-01T07:51:41Z",
+      "metadata": {
+        "points": 6,
+        "author": "tosh"
+      },
+      "score": 45,
+      "rationale": "Positive technical progress for NVDA driver compatibility, moderately bullish."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia executive: AI is more expensive than paying human workers",
+      "text": "Nvidia executive: AI is more expensive than paying human workers",
+      "url": "https://news.ycombinator.com/item?id=47956172",
+      "timestamp": "2026-04-29T23:45:01Z",
+      "metadata": {
+        "points": 5,
+        "author": "generic92034"
+      },
+      "score": -35,
+      "rationale": "Executive admission that AI deployment costs exceed human labor undermines bullish narrative."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "OpenAI Investors\u2013Nvidia, Oracle, More\u2013Fall After AI Giant Misses Revenue Target",
+      "text": "OpenAI Investors\u2013Nvidia, Oracle, More\u2013Fall After AI Giant Misses Revenue Target",
+      "url": "https://news.ycombinator.com/item?id=47934479",
+      "timestamp": "2026-04-28T13:42:11Z",
+      "metadata": {
+        "points": 5,
+        "author": "derwiki"
+      },
+      "score": -45,
+      "rationale": "NVDA fell due to OpenAI missing revenue; negative pressure on AI ecosystem."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Google to sell TPU chips to 'select' customers in latest shot at Nvidia",
+      "text": "Google to sell TPU chips to 'select' customers in latest shot at Nvidia",
+      "url": "https://news.ycombinator.com/item?id=47956706",
+      "timestamp": "2026-04-30T00:52:41Z",
+      "metadata": {
+        "points": 4,
+        "author": "wslh"
+      },
+      "score": -35,
+      "rationale": "Competitive threat from Google TPUs positioning against Nvidia dominance."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia's once-tight bond with gamers is cracking over AI",
+      "text": "Nvidia's once-tight bond with gamers is cracking over AI",
+      "url": "https://news.ycombinator.com/item?id=47824798",
+      "timestamp": "2026-04-19T14:59:35Z",
+      "metadata": {
+        "points": 4,
+        "author": "Brajeshwar"
+      },
+      "score": -35,
+      "rationale": "Negative headline about weakening gaming segment, but measured tone"
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "AI replacing radiologists: Docs slam Nvidia, Anthropic CEOs for false info",
+      "text": "AI replacing radiologists: Docs slam Nvidia, Anthropic CEOs for false info",
+      "url": "https://news.ycombinator.com/item?id=47679063",
+      "timestamp": "2026-04-07T18:04:49Z",
+      "metadata": {
+        "points": 4,
+        "author": "rustoo"
+      },
+      "score": -35,
+      "rationale": "Negative coverage of NVDA CEO's statements; criticism suggests overreach/misleading claims about AI capabilities."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "AMD ROCm: 40x slower at linear algebra than older Nvidia GPUs",
+      "text": "AMD ROCm: 40x slower at linear algebra than older Nvidia GPUs",
+      "url": "https://news.ycombinator.com/item?id=47795743",
+      "timestamp": "2026-04-16T16:23:47Z",
+      "metadata": {
+        "points": 3,
+        "author": "PhilipVinc"
+      },
+      "score": 65,
+      "rationale": "Demonstrates NVDA's competitive advantage in AI/ML workloads vs AMD rival"
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Google Eyes New Chips to Speed Up AI Results, Challenging Nvidia",
+      "text": "Google Eyes New Chips to Speed Up AI Results, Challenging Nvidia",
+      "url": "https://news.ycombinator.com/item?id=47837599",
+      "timestamp": "2026-04-20T17:23:23Z",
+      "metadata": {
+        "points": 3,
+        "author": "mfiguiere"
+      },
+      "score": -25,
+      "rationale": "Acknowledges competitive threat to NVDA from Google's custom chips"
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Jensen Huang says Nvidia is pulling back from OpenAI and Anthropic",
+      "text": "Jensen Huang says Nvidia is pulling back from OpenAI and Anthropic",
+      "url": "https://news.ycombinator.com/item?id=47256781",
+      "timestamp": "2026-03-05T02:33:58Z",
+      "metadata": {
+        "points": 226,
+        "author": "jnord"
+      },
+      "score": -35,
+      "rationale": "Pullback from major AI partners suggests reduced revenue exposure, moderately bearish signal."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia Launches Vera CPU, Purpose-Built for Agentic AI",
+      "text": "Nvidia Launches Vera CPU, Purpose-Built for Agentic AI",
+      "url": "https://news.ycombinator.com/item?id=47404074",
+      "timestamp": "2026-03-16T20:01:02Z",
+      "metadata": {
+        "points": 179,
+        "author": "lewismenelaws"
+      },
+      "score": 65,
+      "rationale": "New product launch signals innovation momentum; moderately bullish but factual tone"
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia DLSS 5 Delivers AI-Powered Breakthrough in Visual Fidelity for Games",
+      "text": "Nvidia DLSS 5 Delivers AI-Powered Breakthrough in Visual Fidelity for Games",
+      "url": "https://news.ycombinator.com/item?id=47403044",
+      "timestamp": "2026-03-16T18:45:45Z",
+      "metadata": {
+        "points": 57,
+        "author": "davikr"
+      },
+      "score": 75,
+      "rationale": "Positive product announcement; 'breakthrough' and 'visual fidelity' convey bullish sentiment."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "How \"Hardwired\" AI Will Destroy Nvidia's Empire and Change the World",
+      "text": "How \"Hardwired\" AI Will Destroy Nvidia's Empire and Change the World",
+      "url": "https://news.ycombinator.com/item?id=47381473",
+      "timestamp": "2026-03-14T21:36:36Z",
+      "metadata": {
+        "points": 23,
+        "author": "amelius"
+      },
+      "score": -75,
+      "rationale": "Author predicts hardwired AI will destroy NVDA's business empire."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia's DLSS 5 uses generative AI to boost photorealism in video games",
+      "text": "Nvidia's DLSS 5 uses generative AI to boost photorealism in video games",
+      "url": "https://news.ycombinator.com/item?id=47417181",
+      "timestamp": "2026-03-17T19:35:24Z",
+      "metadata": {
+        "points": 21,
+        "author": "ianrahman"
+      },
+      "score": 35,
+      "rationale": "Positive product capability announcement, modest bullish tone, no strong conviction"
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia CEO Jensen Huang says 'I think we've achieved AGI'",
+      "text": "Nvidia CEO Jensen Huang says 'I think we've achieved AGI'",
+      "url": "https://news.ycombinator.com/item?id=47495966",
+      "timestamp": "2026-03-23T22:24:09Z",
+      "metadata": {
+        "points": 20,
+        "author": "mmastrac"
+      },
+      "score": 75,
+      "rationale": "CEO's bullish AGI achievement claim strongly signals confidence in Nvidia's AI dominance."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia CEO Jensen Huang says 'I think we've achieved AGI'",
+      "text": "Nvidia CEO Jensen Huang says 'I think we've achieved AGI'",
+      "url": "https://news.ycombinator.com/item?id=47499686",
+      "timestamp": "2026-03-24T07:49:44Z",
+      "metadata": {
+        "points": 13,
+        "author": "iugtmkbdfil834"
+      },
+      "score": 75,
+      "rationale": "CEO bullish claim on AGI achievement signals confidence in AI dominance."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia CEO $30B OpenAI investment 'might be the last'",
+      "text": "Nvidia CEO $30B OpenAI investment 'might be the last'",
+      "url": "https://news.ycombinator.com/item?id=47253496",
+      "timestamp": "2026-03-04T20:42:41Z",
+      "metadata": {
+        "points": 9,
+        "author": "oxag3n"
+      },
+      "score": -15,
+      "rationale": "CEO signals potential end to massive investments; implies market saturation concerns."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Open-Source \"GreenBoost\" Driver Aims to Augment Nvidia GPUs VRAM with System RAM",
+      "text": "Open-Source \"GreenBoost\" Driver Aims to Augment Nvidia GPUs VRAM with System RAM",
+      "url": "https://news.ycombinator.com/item?id=47384557",
+      "timestamp": "2026-03-15T05:15:43Z",
+      "metadata": {
+        "points": 9,
+        "author": "ofrzeta"
+      },
+      "score": 25,
+      "rationale": "Neutral technical announcement. Slightly bullish\u2014expands GPU utility."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia DLSS 5: AI-Powered Breakthrough in Visual Fidelity for Games",
+      "text": "Nvidia DLSS 5: AI-Powered Breakthrough in Visual Fidelity for Games",
+      "url": "https://news.ycombinator.com/item?id=47404166",
+      "timestamp": "2026-03-16T20:07:10Z",
+      "metadata": {
+        "points": 9,
+        "author": "freetonik"
+      },
+      "score": 75,
+      "rationale": "Positive framing of NVDA technology breakthrough; bullish on innovation and capabilities."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "WarpSpeed automatically rewrites Nvidia core library, achieves 3.6-100x speedup",
+      "text": "WarpSpeed automatically rewrites Nvidia core library, achieves 3.6-100x speedup",
+      "url": "https://news.ycombinator.com/item?id=47220409",
+      "timestamp": "2026-03-02T16:45:33Z",
+      "metadata": {
+        "points": 9,
+        "author": "laginimaineb"
+      },
+      "score": 75,
+      "rationale": "Positive technical achievement for NVDA's core library; significant performance gains reported."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia DLSS 5 \u2013 AI-Powered Breakthrough in Visual Fidelity for Games [video]",
+      "text": "Nvidia DLSS 5 \u2013 AI-Powered Breakthrough in Visual Fidelity for Games [video]",
+      "url": "https://news.ycombinator.com/item?id=47408587",
+      "timestamp": "2026-03-17T04:23:06Z",
+      "metadata": {
+        "points": 7,
+        "author": "qingcharles"
+      },
+      "score": 75,
+      "rationale": "Positive framing of NVDA technology breakthrough; enthusiastic tone about advancement."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia's PE sinks to seven-year low as war and AI angst weigh",
+      "text": "Nvidia's PE sinks to seven-year low as war and AI angst weigh",
+      "url": "https://news.ycombinator.com/item?id=47572336",
+      "timestamp": "2026-03-30T09:48:51Z",
+      "metadata": {
+        "points": 7,
+        "author": "1vuio0pswjnm7"
+      },
+      "score": -25,
+      "rationale": "PE compression suggests valuation concerns; mentions angst and headwinds."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Ask HN: What features does a chip require to beat Nvidia in the AI race?",
+      "text": "Nvidia has a lot of strengths that puts them over other competitors. I'm curious to hear from some technical experts in data center, AI labs, and enterprise. I think there's a lot of nuance here beyond just \"faster and more energy efficient\".",
+      "url": "https://news.ycombinator.com/item?id=47457772",
+      "timestamp": "2026-03-20T17:26:51Z",
+      "metadata": {
+        "points": 6,
+        "author": "caloricflow"
+      },
+      "score": 15,
+      "rationale": "Acknowledges NVDA strengths, curious about competition; neutral-to-slightly-bullish."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "DeepSeek withholds latest AI model from Nvidia, AMD",
+      "text": "DeepSeek withholds latest AI model from Nvidia, AMD",
+      "url": "https://news.ycombinator.com/item?id=47161026",
+      "timestamp": "2026-02-26T02:25:43Z",
+      "metadata": {
+        "points": 34,
+        "author": "cmrdporcupine"
+      },
+      "score": -35,
+      "rationale": "DeepSeek bypassing Nvidia/AMD chips suggests reduced demand for their hardware."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "With Nvidia's GB10 Superchip, I'm Running Serious AI Models in My Living Room",
+      "text": "With Nvidia's GB10 Superchip, I'm Running Serious AI Models in My Living Room",
+      "url": "https://news.ycombinator.com/item?id=47097202",
+      "timestamp": "2026-02-21T03:27:51Z",
+      "metadata": {
+        "points": 15,
+        "author": "the_arun"
+      },
+      "score": 75,
+      "rationale": "Enthusiastic about NVDA product capabilities; personal adoption signal."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Piracy Is Only Illegal for You \u2013 Nvidia Sued for Alleged Theft in AI Training [video]",
+      "text": "Piracy Is Only Illegal for You \u2013 Nvidia Sued for Alleged Theft in AI Training [video]",
+      "url": "https://news.ycombinator.com/item?id=47081884",
+      "timestamp": "2026-02-20T00:21:04Z",
+      "metadata": {
+        "points": 14,
+        "author": "givemeethekeys"
+      },
+      "score": -35,
+      "rationale": "Lawsuit accusation of IP theft in AI training. Negative but not catastrophic sentiment."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "AI inference costs dropped up to 10x on Nvidia's Blackwell",
+      "text": "AI inference costs dropped up to 10x on Nvidia's Blackwell",
+      "url": "https://news.ycombinator.com/item?id=46996971",
+      "timestamp": "2026-02-12T23:47:23Z",
+      "metadata": {
+        "points": 7,
+        "author": "CrankyBear"
+      },
+      "score": 75,
+      "rationale": "Major product milestone with 10x cost improvement signals strong competitive advantage."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia insists it isn't Enron, but its AI deals are testing investor faith",
+      "text": "Nvidia insists it isn't Enron, but its AI deals are testing investor faith",
+      "url": "https://news.ycombinator.com/item?id=46865317",
+      "timestamp": "2026-02-03T01:56:04Z",
+      "metadata": {
+        "points": 7,
+        "author": "mgh2"
+      },
+      "score": -45,
+      "rationale": "Skeptical tone comparing NVDA to Enron; questions sustainability of AI deals."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Sam Altman and the day Nvidia's meteoric rise came to an end",
+      "text": "Sam Altman and the day Nvidia's meteoric rise came to an end",
+      "url": "https://news.ycombinator.com/item?id=46896957",
+      "timestamp": "2026-02-05T07:57:27Z",
+      "metadata": {
+        "points": 6,
+        "author": "onurkanbkrc"
+      },
+      "score": -45,
+      "rationale": "Headline implies NVDA's bull run ending; bearish but speculative, not extreme."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia's $100B OpenAI deal has seemingly vanished",
+      "text": "Nvidia's $100B OpenAI deal has seemingly vanished",
+      "url": "https://news.ycombinator.com/item?id=46879350",
+      "timestamp": "2026-02-04T00:05:16Z",
+      "metadata": {
+        "points": 6,
+        "author": "voxadam"
+      },
+      "score": -45,
+      "rationale": "Deal disappearance signals negative sentiment; suggests loss of major revenue opportunity."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia CEO hypes up GTC 2026, promises to unveil world-suprising new chip",
+      "text": "Nvidia CEO hypes up GTC 2026, promises to unveil world-suprising new chip",
+      "url": "https://news.ycombinator.com/item?id=47065667",
+      "timestamp": "2026-02-18T20:08:30Z",
+      "metadata": {
+        "points": 5,
+        "author": "bundie"
+      },
+      "score": 75,
+      "rationale": "CEO hype on upcoming chip unveiling suggests bullish sentiment and innovation confidence."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia CEO says AI-replacement fears tanking software stocks is 'illogical''",
+      "text": "Nvidia CEO says AI-replacement fears tanking software stocks is 'illogical''",
+      "url": "https://news.ycombinator.com/item?id=46897081",
+      "timestamp": "2026-02-05T08:16:26Z",
+      "metadata": {
+        "points": 5,
+        "author": "Rzor"
+      },
+      "score": 35,
+      "rationale": "CEO dismisses AI-replacement fears as illogical; moderately bullish on sentiment."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "OpenAI is unsatisfied with some Nvidia chips and looking for alternatives",
+      "text": "OpenAI is unsatisfied with some Nvidia chips and looking for alternatives",
+      "url": "https://news.ycombinator.com/item?id=46861879",
+      "timestamp": "2026-02-02T21:31:19Z",
+      "metadata": {
+        "points": 5,
+        "author": "layer8"
+      },
+      "score": -35,
+      "rationale": "OpenAI exploring alternatives suggests NVDA chip limitations; moderately bearish but not severe."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia Q4: revenue up 73% YoY, 20% QoQ, income up 94%, still no sales to China",
+      "text": "Nvidia Q4: revenue up 73% YoY, 20% QoQ, income up 94%, still no sales to China",
+      "url": "https://news.ycombinator.com/item?id=47163403",
+      "timestamp": "2026-02-26T08:24:22Z",
+      "metadata": {
+        "points": 5,
+        "author": "aurareturn"
+      },
+      "score": 75,
+      "rationale": "Strong revenue and income growth, but China restrictions risk limits upside."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "DeepSeek trained AI model on Nvidia's best chip despite US ban",
+      "text": "DeepSeek trained AI model on Nvidia's best chip despite US ban",
+      "url": "https://news.ycombinator.com/item?id=47131074",
+      "timestamp": "2026-02-24T00:23:20Z",
+      "metadata": {
+        "points": 5,
+        "author": "geox"
+      },
+      "score": -35,
+      "rationale": "Negative implication: US export ban circumvented, undermines NVDA's moat."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Google Is Exploring Ways to Use Its Financial Might to Take on Nvidia",
+      "text": "Google Is Exploring Ways to Use Its Financial Might to Take on Nvidia",
+      "url": "https://news.ycombinator.com/item?id=47099281",
+      "timestamp": "2026-02-21T10:11:09Z",
+      "metadata": {
+        "points": 5,
+        "author": "JumpCrisscross"
+      },
+      "score": -25,
+      "rationale": "Implies NVDA faces competitive threat from well-funded rival."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "OpenAI sidesteps Nvidia with unusually fast coding model on plate-sized chips",
+      "text": "OpenAI sidesteps Nvidia with unusually fast coding model on plate-sized chips",
+      "url": "https://news.ycombinator.com/item?id=47016620",
+      "timestamp": "2026-02-14T17:53:33Z",
+      "metadata": {
+        "points": 5,
+        "author": "sea-gold"
+      },
+      "score": -35,
+      "rationale": "OpenAI circumventing Nvidia suggests competitive pressure, reduced dependency threat."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia's Stock Is So Stuck Even Blowout Earnings May Not Lift It",
+      "text": "Nvidia's Stock Is So Stuck Even Blowout Earnings May Not Lift It",
+      "url": "https://news.ycombinator.com/item?id=47112541",
+      "timestamp": "2026-02-22T16:51:34Z",
+      "metadata": {
+        "points": 4,
+        "author": "1vuio0pswjnm7"
+      },
+      "score": -35,
+      "rationale": "Bearish on near-term movement despite positive fundamentals; stock trapped."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia rises 7% as Jensen Huang says $660B capex buildout is sustainable",
+      "text": "Nvidia rises 7% as Jensen Huang says $660B capex buildout is sustainable",
+      "url": "https://news.ycombinator.com/item?id=46917486",
+      "timestamp": "2026-02-06T20:06:09Z",
+      "metadata": {
+        "points": 3,
+        "author": "zerosizedweasle"
+      },
+      "score": 65,
+      "rationale": "Positive earnings signal and CEO confidence, but post reports news neutrally without conviction."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "OpenAI Investment Was 'Never a Commitment,' Nvidia's Huang Says",
+      "text": "OpenAI Investment Was 'Never a Commitment,' Nvidia's Huang Says",
+      "url": "https://news.ycombinator.com/item?id=46845889",
+      "timestamp": "2026-02-01T12:53:10Z",
+      "metadata": {
+        "points": 3,
+        "author": "zerosizedweasle"
+      },
+      "score": -15,
+      "rationale": "Huang's clarification that OpenAI investment wasn't binding suggests reduced upside expectations."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "OpenAI sidesteps Nvidia with unusually fast coding model on plate-sized chips",
+      "text": "OpenAI sidesteps Nvidia with unusually fast coding model on plate-sized chips",
+      "url": "https://news.ycombinator.com/item?id=47001301",
+      "timestamp": "2026-02-13T10:50:30Z",
+      "metadata": {
+        "points": 3,
+        "author": "montypod"
+      },
+      "score": -35,
+      "rationale": "OpenAI bypassing Nvidia chips suggests competitive threat to NVDA dominance."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "China's DeepSeek trained AI model on Nvidia's best chip despite US ban",
+      "text": "China's DeepSeek trained AI model on Nvidia's best chip despite US ban",
+      "url": "https://news.ycombinator.com/item?id=47181301",
+      "timestamp": "2026-02-27T15:02:41Z",
+      "metadata": {
+        "points": 3,
+        "author": "YeGoblynQueenne"
+      },
+      "score": -35,
+      "rationale": "Ban workaround undermines NVDA's export restrictions; mixed sentiment on demand vs. geopolitical risk."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "DeepSeek withholds latest AI model V4 from US chipmakers including Nvidia",
+      "text": "DeepSeek withholds latest AI model V4 from US chipmakers including Nvidia",
+      "url": "https://news.ycombinator.com/item?id=47168274",
+      "timestamp": "2026-02-26T16:30:29Z",
+      "metadata": {
+        "points": 3,
+        "author": "iamnothere"
+      },
+      "score": -35,
+      "rationale": "Negative news for Nvidia; withholding suggests reduced demand/access for Nvidia chips."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Cisco unveils new AI networking chip, taking on Broadcom and Nvidia",
+      "text": "Cisco unveils new AI networking chip, taking on Broadcom and Nvidia",
+      "url": "https://news.ycombinator.com/item?id=46960518",
+      "timestamp": "2026-02-10T14:58:36Z",
+      "metadata": {
+        "points": 3,
+        "author": "mgh2"
+      },
+      "score": -15,
+      "rationale": "Cisco competition narrative suggests NVDA faces headwind in networking chips market."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "The $100B megadeal between OpenAI and Nvidia is on ice",
+      "text": "The $100B megadeal between OpenAI and Nvidia is on ice",
+      "url": "https://news.ycombinator.com/item?id=46831702",
+      "timestamp": "2026-01-31T00:02:30Z",
+      "metadata": {
+        "points": 373,
+        "author": "pixelesque"
+      },
+      "score": -35,
+      "rationale": "Deal freeze implies uncertainty; moderately bearish for NVDA revenue outlook."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia Kicks Off the Next Generation of AI with Rubin",
+      "text": "Nvidia Kicks Off the Next Generation of AI with Rubin",
+      "url": "https://news.ycombinator.com/item?id=46544016",
+      "timestamp": "2026-01-08T17:45:54Z",
+      "metadata": {
+        "points": 55,
+        "author": "TSiege"
+      },
+      "score": 75,
+      "rationale": "Product launch announcement conveys optimism; 'next generation' suggests bullish sentiment."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia Reportedly Ends GeForce RTX 5070 Ti Production, RTX 5060 Ti 16 GB Next",
+      "text": "Nvidia Reportedly Ends GeForce RTX 5070 Ti Production, RTX 5060 Ti 16 GB Next",
+      "url": "https://news.ycombinator.com/item?id=46632955",
+      "timestamp": "2026-01-15T14:24:52Z",
+      "metadata": {
+        "points": 54,
+        "author": "ndiddy"
+      },
+      "score": -15,
+      "rationale": "Production end signals demand concerns; new SKU focus suggests market correction."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia is about to challenge 'Intel Inside' with as many as eight Arm laptops",
+      "text": "Nvidia is about to challenge 'Intel Inside' with as many as eight Arm laptops",
+      "url": "https://news.ycombinator.com/item?id=46762127",
+      "timestamp": "2026-01-26T05:18:03Z",
+      "metadata": {
+        "points": 25,
+        "author": "BeetleB"
+      },
+      "score": 35,
+      "rationale": "Nvidia expanding ARM laptop offerings signals competitive growth momentum."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia to shift 2028 chip production to Intel, reshaping TSMC strategy",
+      "text": "Nvidia to shift 2028 chip production to Intel, reshaping TSMC strategy",
+      "url": "https://news.ycombinator.com/item?id=46812930",
+      "timestamp": "2026-01-29T17:02:25Z",
+      "metadata": {
+        "points": 19,
+        "author": "akyuu"
+      },
+      "score": -25,
+      "rationale": "Shift away from TSMC to Intel signals hedging strategy, mild strategic concern."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia CEO: AI doomerism has done a lot of damage and is not helpful to society",
+      "text": "Nvidia CEO: AI doomerism has done a lot of damage and is not helpful to society",
+      "url": "https://news.ycombinator.com/item?id=46586629",
+      "timestamp": "2026-01-12T10:40:06Z",
+      "metadata": {
+        "points": 11,
+        "author": "smurda"
+      },
+      "score": 35,
+      "rationale": "CEO dismisses AI doomerism as harmful; implicit confidence in NVDA's AI future."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Building Autonomous Vehicles That Reason with Nvidia Alpamayo",
+      "text": "Building Autonomous Vehicles That Reason with Nvidia Alpamayo",
+      "url": "https://news.ycombinator.com/item?id=46513875",
+      "timestamp": "2026-01-06T15:53:27Z",
+      "metadata": {
+        "points": 10,
+        "author": "erhuve"
+      },
+      "score": 75,
+      "rationale": "Bullish framing of Nvidia's autonomous vehicle technology advancement."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "China's customs agents told Nvidia's H200 chips are not permitted",
+      "text": "China's customs agents told Nvidia's H200 chips are not permitted",
+      "url": "https://news.ycombinator.com/item?id=46615263",
+      "timestamp": "2026-01-14T12:29:44Z",
+      "metadata": {
+        "points": 9,
+        "author": "zerosizedweasle"
+      },
+      "score": -45,
+      "rationale": "China export ban on H200 chips creates headwind for NVDA revenue."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia suppliers halt H200 output after China blocks chip",
+      "text": "Nvidia suppliers halt H200 output after China blocks chip",
+      "url": "https://news.ycombinator.com/item?id=46655085",
+      "timestamp": "2026-01-17T03:56:27Z",
+      "metadata": {
+        "points": 8,
+        "author": "SanjayMehta"
+      },
+      "score": -65,
+      "rationale": "China export block disrupts H200 production; negative supply/revenue impact."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "China asks tech firms to halt orders for Nvidia's H200 chips",
+      "text": "China asks tech firms to halt orders for Nvidia's H200 chips",
+      "url": "https://news.ycombinator.com/item?id=46529555",
+      "timestamp": "2026-01-07T17:41:39Z",
+      "metadata": {
+        "points": 8,
+        "author": "giuliomagnifico"
+      },
+      "score": -45,
+      "rationale": "China halting H200 orders significantly restricts NVDA revenue stream."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia set to supplant Apple as TSMC's top customer",
+      "text": "Nvidia set to supplant Apple as TSMC's top customer",
+      "url": "https://news.ycombinator.com/item?id=46773269",
+      "timestamp": "2026-01-26T23:34:22Z",
+      "metadata": {
+        "points": 7,
+        "author": "JumpCrisscross"
+      },
+      "score": 75,
+      "rationale": "TSMC dominance signals strong demand, bullish for NVDA trajectory."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "The Nvidia Rubin Platform: Six New Chips, One AI Supercomputer",
+      "text": "The Nvidia Rubin Platform: Six New Chips, One AI Supercomputer",
+      "url": "https://news.ycombinator.com/item?id=46506850",
+      "timestamp": "2026-01-05T23:46:21Z",
+      "metadata": {
+        "points": 7,
+        "author": "my123"
+      },
+      "score": 45,
+      "rationale": "Announcement of new Rubin chip platform shows innovation, moderately bullish but neutral framing."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia's $20B antitrust loophole",
+      "text": "Nvidia's $20B antitrust loophole",
+      "url": "https://news.ycombinator.com/item?id=46403559",
+      "timestamp": "2025-12-27T17:42:46Z",
+      "metadata": {
+        "points": 549,
+        "author": "ossa-ma"
+      },
+      "score": -35,
+      "rationale": "Concern about regulatory/antitrust risk; 'loophole' framing suggests worry."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "I got an Nvidia GH200 server for \u20ac7.5k on Reddit and converted it to a desktop",
+      "text": "I got an Nvidia GH200 server for \u20ac7.5k on Reddit and converted it to a desktop",
+      "url": "https://news.ycombinator.com/item?id=46222237",
+      "timestamp": "2025-12-10T19:19:17Z",
+      "metadata": {
+        "points": 373,
+        "author": "dnhkng"
+      },
+      "score": 45,
+      "rationale": "Positive sentiment about Nvidia hardware acquisition; practical use case demonstrates value."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia takes $5B stake in Intel under September agreement",
+      "text": "Nvidia takes $5B stake in Intel under September agreement",
+      "url": "https://news.ycombinator.com/item?id=46423010",
+      "timestamp": "2025-12-29T17:32:08Z",
+      "metadata": {
+        "points": 224,
+        "author": "taubek"
+      },
+      "score": 35,
+      "rationale": "Bullish signal: NVDA investing $5B in competitor shows confidence, strategic positioning."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia just paid $20B for a company that missed its revenue target by 75%",
+      "text": "Nvidia just paid $20B for a company that missed its revenue target by 75%",
+      "url": "https://news.ycombinator.com/item?id=46403041",
+      "timestamp": "2025-12-27T16:47:13Z",
+      "metadata": {
+        "points": 220,
+        "author": "joshcsimmons"
+      },
+      "score": -45,
+      "rationale": "Critical of acquisition; underperforming target suggests poor deal valuation."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia plans heavy cuts to GPU supply in early 2026",
+      "text": "Nvidia plans heavy cuts to GPU supply in early 2026",
+      "url": "https://news.ycombinator.com/item?id=46301904",
+      "timestamp": "2025-12-17T16:46:45Z",
+      "metadata": {
+        "points": 60,
+        "author": "tareqak"
+      },
+      "score": -45,
+      "rationale": "Supply cuts signal reduced demand outlook, moderately bearish for NVDA."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia Acquires Schedmd",
+      "text": "Nvidia Acquires Schedmd",
+      "url": "https://news.ycombinator.com/item?id=46277190",
+      "timestamp": "2025-12-15T17:08:01Z",
+      "metadata": {
+        "points": 32,
+        "author": "jbd"
+      },
+      "score": 45,
+      "rationale": "Acquisition news is moderately bullish; shows NVDA expanding capabilities/portfolio."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia: Too Many Red Flags \u2013 Ratings Downgrade",
+      "text": "Nvidia: Too Many Red Flags \u2013 Ratings Downgrade",
+      "url": "https://news.ycombinator.com/item?id=46117478",
+      "timestamp": "2025-12-02T04:17:01Z",
+      "metadata": {
+        "points": 26,
+        "author": "zerosizedweasle"
+      },
+      "score": -75,
+      "rationale": "Downgrade announcement with multiple red flags signals bearish conviction."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Trump greenlights Nvidia H200 AI chip sales to China, says Xi responded pos",
+      "text": "Trump greenlights Nvidia H200 AI chip sales to China, says Xi responded pos",
+      "url": "https://news.ycombinator.com/item?id=46198093",
+      "timestamp": "2025-12-08T21:47:01Z",
+      "metadata": {
+        "points": 18,
+        "author": "paulkrush"
+      },
+      "score": 75,
+      "rationale": "Trump approval of NVDA chip sales to China is bullish for revenue/market access."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia isn't enron so what is it",
+      "text": "Nvidia isn't enron so what is it",
+      "url": "https://news.ycombinator.com/item?id=46201341",
+      "timestamp": "2025-12-09T04:50:34Z",
+      "metadata": {
+        "points": 12,
+        "author": "enchanted-gian"
+      },
+      "score": 0,
+      "rationale": "Poster questions NVDA's legitimacy; neither bullish nor bearish, seeks clarification."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia Puts 100-Hour Monthly Limit on All GeForce Now Subscriptions",
+      "text": "Nvidia Puts 100-Hour Monthly Limit on All GeForce Now Subscriptions",
+      "url": "https://news.ycombinator.com/item?id=46368339",
+      "timestamp": "2025-12-23T19:13:19Z",
+      "metadata": {
+        "points": 11,
+        "author": "speckx"
+      },
+      "score": -35,
+      "rationale": "Restrictive policy change limits GeForce Now value proposition, negative for user experience."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia-Groq deal is structured to keep 'fiction of competition alive'",
+      "text": "Nvidia-Groq deal is structured to keep 'fiction of competition alive'",
+      "url": "https://news.ycombinator.com/item?id=46397041",
+      "timestamp": "2025-12-26T22:30:00Z",
+      "metadata": {
+        "points": 11,
+        "author": "1vuio0pswjnm7"
+      },
+      "score": -35,
+      "rationale": "Skeptical of deal structure; implies Nvidia anticompetitive practices, fictional competition"
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia allowed to sell its H200 chips to China, the gov takes a 25% cut",
+      "text": "Nvidia allowed to sell its H200 chips to China, the gov takes a 25% cut",
+      "url": "https://news.ycombinator.com/item?id=46214652",
+      "timestamp": "2025-12-10T06:15:29Z",
+      "metadata": {
+        "points": 10,
+        "author": "BiteCode_dev"
+      },
+      "score": 35,
+      "rationale": "Mixed sentiment: new China sales opportunity offset by significant government tax burden."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "US taking 25% cut of Nvidia chip sales \"makes no sense,\" experts say",
+      "text": "US taking 25% cut of Nvidia chip sales \"makes no sense,\" experts say",
+      "url": "https://news.ycombinator.com/item?id=46224608",
+      "timestamp": "2025-12-10T22:10:11Z",
+      "metadata": {
+        "points": 9,
+        "author": "gametorch"
+      },
+      "score": -35,
+      "rationale": "Policy criticism suggests headwinds for NVDA revenue/margins; moderately bearish tone."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia Plans to Reduce RTX 50 Production by Up to 40% in Early 2026",
+      "text": "Nvidia Plans to Reduce RTX 50 Production by Up to 40% in Early 2026",
+      "url": "https://news.ycombinator.com/item?id=46304304",
+      "timestamp": "2025-12-17T19:27:30Z",
+      "metadata": {
+        "points": 9,
+        "author": "akyuu"
+      },
+      "score": -35,
+      "rationale": "Production cuts suggest demand weakness or supply issues; moderately bearish."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia open sources the synthetic data framework used to build Nemotron datasets",
+      "text": "NVIDIA just open sourced NeMo Data Designer, the synthetic data framework used internally to build both pre-training and post-training datasets for Nemotron. It lets you define an entire synthetic data pipeline directly in Python: structured outputs, statistical samplers, LLM-generated columns, dependency-aware field relationships, Python/SQL/remote validators, and optional LLM-as-judge scoring. Supports quick preview mode for fast iteration before scaling up. Install: ``` pip install data-designer ``` A minimal example: ``` from data_designer.essentials import * data_designer = DataDesigner() config = DataDesignerConfigBuilder() config.add_column( SamplerColumnConfig( name=\"product_category\", sampler_type=SamplerType.CATEGORY, params=CategorySamplerParams( values=[\"Electronics\", \"Clothing\", \"Home & Kitchen\", \"Books\"] ), ) ) config.add_column( LLMTextColumnConfig( name=\"review\", model_alias=\"nvidia-text\", prompt=\"Write a short product review for a {{ product_category }} item.\" ) ) preview = data_designer.preview(config_builder=config) preview.display_sample_record() ``` This release also incorporates the synthetic data tech my team originally built at Gretel (now part of NVIDIA), now generally available for anyone to use or extend. Repo: https://github.com/NVIDIA-NeMo/DataDesigner",
+      "url": "https://news.ycombinator.com/item?id=46136055",
+      "timestamp": "2025-12-03T16:02:01Z",
+      "metadata": {
+        "points": 8,
+        "author": "alexwatson405"
+      },
+      "score": 75,
+      "rationale": "Open-sourcing valuable AI framework signals confidence, developer ecosystem strength."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "The Hater's Guide to Nvidia",
+      "text": "The Hater's Guide to Nvidia",
+      "url": "https://news.ycombinator.com/item?id=46117221",
+      "timestamp": "2025-12-02T03:38:03Z",
+      "metadata": {
+        "points": 8,
+        "author": "PessimalDecimal"
+      },
+      "score": -45,
+      "rationale": "Critical framing suggests bearish/skeptical stance on Nvidia, though tone is satirical."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Peter Thiel sells off all Nvidia stock, stirring bubble fears",
+      "text": "Peter Thiel sells off all Nvidia stock, stirring bubble fears",
+      "url": "https://news.ycombinator.com/item?id=45948477",
+      "timestamp": "2025-11-16T21:19:08Z",
+      "metadata": {
+        "points": 212,
+        "author": "hypeatei"
+      },
+      "score": -45,
+      "rationale": "Major investor exit signals concern; implies overvaluation/bubble risk."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Michael Burry a.k.a. \"Big Short\",discloses $1.1B bet against Nvidia&Palantir",
+      "text": "Michael Burry a.k.a. \"Big Short\",discloses $1.1B bet against Nvidia&Palantir",
+      "url": "https://news.ycombinator.com/item?id=45813734",
+      "timestamp": "2025-11-04T17:44:12Z",
+      "metadata": {
+        "points": 195,
+        "author": "selim17"
+      },
+      "score": -75,
+      "rationale": "Large short bet by credible contrarian investor; strong bearish signal."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia is gearing up to sell servers instead of just GPUs and components",
+      "text": "Nvidia is gearing up to sell servers instead of just GPUs and components",
+      "url": "https://news.ycombinator.com/item?id=45926439",
+      "timestamp": "2025-11-14T13:18:09Z",
+      "metadata": {
+        "points": 178,
+        "author": "giuliomagnifico"
+      },
+      "score": 45,
+      "rationale": "Bullish on expansion into higher-margin business; neutral tone suggests measured optimism."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Michael Burry is back with two bets against Nvidia and Palantir",
+      "text": "Michael Burry is back with two bets against Nvidia and Palantir",
+      "url": "https://news.ycombinator.com/item?id=45823313",
+      "timestamp": "2025-11-05T14:38:27Z",
+      "metadata": {
+        "points": 62,
+        "author": "jb1991"
+      },
+      "score": -45,
+      "rationale": "Bearish signal: prominent investor Burry shorting NVDA shows conviction against stock."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Michael Burry bets against Nvidia and Palantir [video]",
+      "text": "Michael Burry bets against Nvidia and Palantir [video]",
+      "url": "https://news.ycombinator.com/item?id=45815852",
+      "timestamp": "2025-11-04T21:02:51Z",
+      "metadata": {
+        "points": 36,
+        "author": "mgh2"
+      },
+      "score": -75,
+      "rationale": "Burry short positioning signals strong bearish conviction on NVDA."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "In leaked recording, Nvidia CEO says its insane managers aren't using AI enough",
+      "text": "In leaked recording, Nvidia CEO says its insane managers aren't using AI enough",
+      "url": "https://news.ycombinator.com/item?id=46048915",
+      "timestamp": "2025-11-25T18:24:23Z",
+      "metadata": {
+        "points": 25,
+        "author": "randycupertino"
+      },
+      "score": 45,
+      "rationale": "CEO bullish on AI adoption internally; slight concern about management execution."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Did Nvidia Just Prove There Is No AI Bubble",
+      "text": "Did Nvidia Just Prove There Is No AI Bubble",
+      "url": "https://news.ycombinator.com/item?id=46100815",
+      "timestamp": "2025-11-30T21:55:15Z",
+      "metadata": {
+        "points": 21,
+        "author": "lukax"
+      },
+      "score": 75,
+      "rationale": "Title suggests bullish conviction that NVDA fundamentals validate AI sector viability."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia shares rise on stronger-than-expected revenue, forecast",
+      "text": "Nvidia shares rise on stronger-than-expected revenue, forecast",
+      "url": "https://news.ycombinator.com/item?id=45986741",
+      "timestamp": "2025-11-19T23:27:08Z",
+      "metadata": {
+        "points": 16,
+        "author": "mgh2"
+      },
+      "score": 65,
+      "rationale": "Positive news on revenue beat and guidance, implies bullish sentiment."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Led by Nvidia, the AI industry has plans to reindustrialise America",
+      "text": "Led by Nvidia, the AI industry has plans to reindustrialise America",
+      "url": "https://news.ycombinator.com/item?id=45781088",
+      "timestamp": "2025-11-01T12:22:28Z",
+      "metadata": {
+        "points": 14,
+        "author": "andsoitis"
+      },
+      "score": 35,
+      "rationale": "Nvidia leading positive reindustrialization narrative; optimistic but factual framing."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia Says It's Not Enron in Private Memo Refuting Accounting Questions",
+      "text": "Nvidia Says It's Not Enron in Private Memo Refuting Accounting Questions",
+      "url": "https://news.ycombinator.com/item?id=46044886",
+      "timestamp": "2025-11-25T11:44:07Z",
+      "metadata": {
+        "points": 8,
+        "author": "zerosizedweasle"
+      },
+      "score": -25,
+      "rationale": "Defensive accounting comparison suggests credibility concerns exist, mildly negative."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia's Jensen Huang: 'China is going to win the AI race,' FT reports",
+      "text": "Nvidia's Jensen Huang: 'China is going to win the AI race,' FT reports",
+      "url": "https://news.ycombinator.com/item?id=45833436",
+      "timestamp": "2025-11-06T10:02:50Z",
+      "metadata": {
+        "points": 8,
+        "author": "zekrioca"
+      },
+      "score": -35,
+      "rationale": "CEO's bearish China AI dominance statement implies competitive pressure concerns."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia reportedly no longer supplying VRAM to GPU partners due to memory crunch",
+      "text": "Nvidia reportedly no longer supplying VRAM to GPU partners due to memory crunch",
+      "url": "https://news.ycombinator.com/item?id=46075101",
+      "timestamp": "2025-11-28T02:52:23Z",
+      "metadata": {
+        "points": 8,
+        "author": "lysp"
+      },
+      "score": -35,
+      "rationale": "Supply constraints and reduced partner support signal operational pressure, mildly bearish."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia stock falls 4% on report Meta will use Google AI chips",
+      "text": "Nvidia stock falls 4% on report Meta will use Google AI chips",
+      "url": "https://news.ycombinator.com/item?id=46046873",
+      "timestamp": "2025-11-25T15:44:09Z",
+      "metadata": {
+        "points": 7,
+        "author": "01-_-"
+      },
+      "score": -45,
+      "rationale": "Post reports negative news about NVDA losing market share to Google."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "US Stocks Slump Anew After Nvidia Results Fail to Quiet AI Angst",
+      "text": "US Stocks Slump Anew After Nvidia Results Fail to Quiet AI Angst",
+      "url": "https://news.ycombinator.com/item?id=45999487",
+      "timestamp": "2025-11-20T23:44:37Z",
+      "metadata": {
+        "points": 7,
+        "author": "zerosizedweasle"
+      },
+      "score": -45,
+      "rationale": "Nvidia results disappointed market; failed to ease AI sector concerns."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia rumored to stop bundling memory with GPUs, squeezing smaller partners",
+      "text": "Nvidia rumored to stop bundling memory with GPUs, squeezing smaller partners",
+      "url": "https://news.ycombinator.com/item?id=46069119",
+      "timestamp": "2025-11-27T13:38:34Z",
+      "metadata": {
+        "points": 7,
+        "author": "davikr"
+      },
+      "score": -25,
+      "rationale": "Negative rumor about bundling strategy, implies competitive disadvantage for partners."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia's Jensen Huang says China 'will win' AI race with US",
+      "text": "Nvidia's Jensen Huang says China 'will win' AI race with US",
+      "url": "https://news.ycombinator.com/item?id=45828273",
+      "timestamp": "2025-11-05T21:28:21Z",
+      "metadata": {
+        "points": 6,
+        "author": "moosedman"
+      },
+      "score": -35,
+      "rationale": "Bullish on China's AI prospects implies competitive threat to NVDA's US dominance."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "New Chinese optical quantum chip allegedly 1,000x faster than Nvidia GPUs",
+      "text": "New Chinese optical quantum chip allegedly 1,000x faster than Nvidia GPUs",
+      "url": "https://news.ycombinator.com/item?id=45936461",
+      "timestamp": "2025-11-15T10:31:01Z",
+      "metadata": {
+        "points": 6,
+        "author": "thunderbong"
+      },
+      "score": -35,
+      "rationale": "Implies potential technological disruption to Nvidia's GPU dominance."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Tech company CTO and others indicted for exporting Nvidia chips to China",
+      "text": "Tech company CTO and others indicted for exporting Nvidia chips to China",
+      "url": "https://news.ycombinator.com/item?id=46010050",
+      "timestamp": "2025-11-21T22:57:10Z",
+      "metadata": {
+        "points": 6,
+        "author": "jnord"
+      },
+      "score": -35,
+      "rationale": "Regulatory/legal risk to NVDA; indictment signals enforcement against chip exports."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia's Profit Jumps 65% to $31.9B. Is It Enough for Wall St.?",
+      "text": "Nvidia's Profit Jumps 65% to $31.9B. Is It Enough for Wall St.?",
+      "url": "https://news.ycombinator.com/item?id=45992910",
+      "timestamp": "2025-11-20T14:29:03Z",
+      "metadata": {
+        "points": 6,
+        "author": "thelastgallon"
+      },
+      "score": 25,
+      "rationale": "Bullish earnings beat, but headline skepticism tempers enthusiasm slightly."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Peter Thiel's Fund Sold Off Nvidia Stake in Third Quarter",
+      "text": "Peter Thiel's Fund Sold Off Nvidia Stake in Third Quarter",
+      "url": "https://news.ycombinator.com/item?id=45952770",
+      "timestamp": "2025-11-17T11:43:02Z",
+      "metadata": {
+        "points": 6,
+        "author": "nabla9"
+      },
+      "score": -25,
+      "rationale": "Thiel fund selling NVDA stake suggests reduced conviction, mildly bearish signal."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia CEO Jensen Huang backtracks after saying China will win AI race",
+      "text": "Nvidia CEO Jensen Huang backtracks after saying China will win AI race",
+      "url": "https://news.ycombinator.com/item?id=45835726",
+      "timestamp": "2025-11-06T14:36:54Z",
+      "metadata": {
+        "points": 6,
+        "author": "voxadam"
+      },
+      "score": -35,
+      "rationale": "Backtracking suggests weakness in conviction; implies competitive concerns about China."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "New Chinese optical quantum chip allegedly 1,000x faster than Nvidia GPUs for AI",
+      "text": "New Chinese optical quantum chip allegedly 1,000x faster than Nvidia GPUs for AI",
+      "url": "https://news.ycombinator.com/item?id=45939787",
+      "timestamp": "2025-11-15T19:09:22Z",
+      "metadata": {
+        "points": 6,
+        "author": "openmaze"
+      },
+      "score": -35,
+      "rationale": "Implies future competitive threat to NVDA's AI dominance; bearish undertone."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia says its GPUs are a 'generation ahead' of Google's AI chips",
+      "text": "Nvidia says its GPUs are a 'generation ahead' of Google's AI chips",
+      "url": "https://news.ycombinator.com/item?id=46053932",
+      "timestamp": "2025-11-26T03:34:55Z",
+      "metadata": {
+        "points": 5,
+        "author": "kjhughes"
+      },
+      "score": 45,
+      "rationale": "Company claims competitive superiority; bullish but unverified marketing statement."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia earnings: more questions than answers on the state of the AI bubble",
+      "text": "Nvidia earnings: more questions than answers on the state of the AI bubble",
+      "url": "https://news.ycombinator.com/item?id=45995803",
+      "timestamp": "2025-11-20T18:18:39Z",
+      "metadata": {
+        "points": 5,
+        "author": "petethomas"
+      },
+      "score": -25,
+      "rationale": "Skeptical framing suggests uncertainty about NVDA fundamentals, AI sustainability concerns."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Alibaba Cloud says it cut Nvidia AI GPU use by 82% with new pooling system",
+      "text": "Paper: https://dl.acm.org/doi/10.1145/3731569.3764815",
+      "url": "https://news.ycombinator.com/item?id=45643163",
+      "timestamp": "2025-10-20T12:31:22Z",
+      "metadata": {
+        "points": 523,
+        "author": "hd4"
+      },
+      "score": -42,
+      "rationale": "Alibaba's 82% GPU reduction signals demand weakness for NVDA chips."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia takes $1B stake in Nokia",
+      "text": "Nvidia takes $1B stake in Nokia",
+      "url": "https://news.ycombinator.com/item?id=45734486",
+      "timestamp": "2025-10-28T15:53:52Z",
+      "metadata": {
+        "points": 304,
+        "author": "kjhughes"
+      },
+      "score": 35,
+      "rationale": "Strategic investment signals confidence in NVDA's growth direction."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Circular Financing: Does Nvidia's $110B Bet Echo the Telecom Bubble?",
+      "text": "Circular Financing: Does Nvidia's $110B Bet Echo the Telecom Bubble?",
+      "url": "https://news.ycombinator.com/item?id=45473033",
+      "timestamp": "2025-10-04T13:06:32Z",
+      "metadata": {
+        "points": 249,
+        "author": "miltava"
+      },
+      "score": -45,
+      "rationale": "Skeptical comparison to telecom bubble; questions sustainability of massive capex."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Microsoft CTO says he wants to swap most AMD and Nvidia GPUs for homemade chips",
+      "text": "Microsoft CTO says he wants to swap most AMD and Nvidia GPUs for homemade chips",
+      "url": "https://news.ycombinator.com/item?id=45463642",
+      "timestamp": "2025-10-03T14:48:36Z",
+      "metadata": {
+        "points": 192,
+        "author": "fork-bomber"
+      },
+      "score": -65,
+      "rationale": "CTO's intention to replace NVDA GPUs with proprietary chips signals competitive threat."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia DGX Spark: great hardware, early days for the ecosystem",
+      "text": "Nvidia DGX Spark: great hardware, early days for the ecosystem",
+      "url": "https://news.ycombinator.com/item?id=45586776",
+      "timestamp": "2025-10-15T00:49:25Z",
+      "metadata": {
+        "points": 189,
+        "author": "GavinAnderegg"
+      },
+      "score": 65,
+      "rationale": "Bullish on hardware quality, cautious on ecosystem maturity."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "A kernel stack use-after-free: Exploiting Nvidia's GPU Linux drivers",
+      "text": "A kernel stack use-after-free: Exploiting Nvidia's GPU Linux drivers",
+      "url": "https://news.ycombinator.com/item?id=45592585",
+      "timestamp": "2025-10-15T13:52:15Z",
+      "metadata": {
+        "points": 172,
+        "author": "mustache_kimono"
+      },
+      "score": -45,
+      "rationale": "Security vulnerability in NVDA's GPU drivers; bearish but technical/niche concern."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia has produced the first Blackwell wafer on US soil",
+      "text": "Nvidia has produced the first Blackwell wafer on US soil",
+      "url": "https://news.ycombinator.com/item?id=45639654",
+      "timestamp": "2025-10-20T02:12:24Z",
+      "metadata": {
+        "points": 164,
+        "author": "kristianp"
+      },
+      "score": 75,
+      "rationale": "Significant positive milestone: first Blackwell wafer domestically produced, bullish technical progress."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "NVIDIA DGX Spark In-Depth Review: A New Standard for Local AI Inference",
+      "text": "NVIDIA DGX Spark In-Depth Review: A New Standard for Local AI Inference",
+      "url": "https://news.ycombinator.com/item?id=45575127",
+      "timestamp": "2025-10-14T01:07:45Z",
+      "metadata": {
+        "points": 115,
+        "author": "yvbbrjdr"
+      },
+      "score": 75,
+      "rationale": "Positive framing of new NVIDIA product as setting standards."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "New attacks are diluting secure enclave defenses from Nvidia, AMD, and Intel",
+      "text": "New attacks are diluting secure enclave defenses from Nvidia, AMD, and Intel",
+      "url": "https://news.ycombinator.com/item?id=45746753",
+      "timestamp": "2025-10-29T13:44:31Z",
+      "metadata": {
+        "points": 72,
+        "author": "voxadam"
+      },
+      "score": -25,
+      "rationale": "Security vulnerability news creates mild bearish sentiment; technical concern outweighs catastrophe."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia DGX Spark and Apple Mac Studio = 4x Faster LLM Inference with EXO 1.0",
+      "text": "Nvidia DGX Spark and Apple Mac Studio = 4x Faster LLM Inference with EXO 1.0",
+      "url": "https://news.ycombinator.com/item?id=45611912",
+      "timestamp": "2025-10-16T23:30:36Z",
+      "metadata": {
+        "points": 61,
+        "author": "edelsohn"
+      },
+      "score": 45,
+      "rationale": "Highlights NVDA strength with DGX Spark performance gains, moderately bullish."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Top analyst on Nvidia fueling bubble: We've seen this before. It was Enron, Tyco",
+      "text": "Top analyst on Nvidia fueling bubble: We've seen this before. It was Enron, Tyco",
+      "url": "https://news.ycombinator.com/item?id=45510726",
+      "timestamp": "2025-10-08T00:41:37Z",
+      "metadata": {
+        "points": 32,
+        "author": "zerosizedweasle"
+      },
+      "score": -85,
+      "rationale": "Analyst equates NVDA to fraud cases Enron/Tyco; heavily bearish bubble warning."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia storms past $5T valuation as AI boom powers meteoric rise",
+      "text": "Nvidia storms past $5T valuation as AI boom powers meteoric rise",
+      "url": "https://news.ycombinator.com/item?id=45746808",
+      "timestamp": "2025-10-29T13:49:20Z",
+      "metadata": {
+        "points": 24,
+        "author": "monkeydust"
+      },
+      "score": 75,
+      "rationale": "Bullish headline celebrating NVDA's milestone valuation and AI-driven growth."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia Has Been Supplying NDA'ed Docs to Red Hat for Helping NVK Driver",
+      "text": "Nvidia Has Been Supplying NDA'ed Docs to Red Hat for Helping NVK Driver",
+      "url": "https://news.ycombinator.com/item?id=45440726",
+      "timestamp": "2025-10-01T17:46:17Z",
+      "metadata": {
+        "points": 15,
+        "author": "freedomben"
+      },
+      "score": 0,
+      "rationale": "Neutral report of Nvidia technical collaboration. No bullish or bearish sentiment."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Alibaba Cloud: AI Models, Reducing Footprint of Nvidia GPUs, and Cloud Streaming",
+      "text": "Alibaba Cloud: AI Models, Reducing Footprint of Nvidia GPUs, and Cloud Streaming",
+      "url": "https://news.ycombinator.com/item?id=45628361",
+      "timestamp": "2025-10-18T16:01:04Z",
+      "metadata": {
+        "points": 13,
+        "author": "ekianjo"
+      },
+      "score": -35,
+      "rationale": "Alibaba reducing NVDA GPU footprint suggests competitive threat, negative for NVDA."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "AMD could beat Nvidia to launching AI GPUs on the cutting-edge 2nm node",
+      "text": "AMD could beat Nvidia to launching AI GPUs on the cutting-edge 2nm node",
+      "url": "https://news.ycombinator.com/item?id=45529071",
+      "timestamp": "2025-10-09T15:28:51Z",
+      "metadata": {
+        "points": 9,
+        "author": "frozenseven"
+      },
+      "score": -25,
+      "rationale": "Implies NVDA faces competitive threat; AMD first-mover advantage on 2nm."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Clustering Nvidia DGX Spark and M3 Ultra Mac Studio for 4x Faster LLM Inference",
+      "text": "Clustering Nvidia DGX Spark and M3 Ultra Mac Studio for 4x Faster LLM Inference",
+      "url": "https://news.ycombinator.com/item?id=45603467",
+      "timestamp": "2025-10-16T09:58:47Z",
+      "metadata": {
+        "points": 8,
+        "author": "alexandercheema"
+      },
+      "score": 45,
+      "rationale": "Technical post highlighting NVDA DGX capabilities, moderately bullish on product performance."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "xAI is set to spend $18B+ to acquire ~300K Nvidia chips for Colossus 2 project",
+      "text": "xAI is set to spend $18B+ to acquire ~300K Nvidia chips for Colossus 2 project",
+      "url": "https://news.ycombinator.com/item?id=45495548",
+      "timestamp": "2025-10-06T19:55:34Z",
+      "metadata": {
+        "points": 7,
+        "author": "donsupreme"
+      },
+      "score": 75,
+      "rationale": "Large enterprise chip purchase signals strong NVDA demand."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "China's analogue AI chip could work 1k times faster than Nvidia GPU: study",
+      "text": "China's analogue AI chip could work 1k times faster than Nvidia GPU: study",
+      "url": "https://news.ycombinator.com/item?id=45715377",
+      "timestamp": "2025-10-26T21:31:06Z",
+      "metadata": {
+        "points": 7,
+        "author": "JSR_FDED"
+      },
+      "score": -45,
+      "rationale": "Headline presents potential competitive threat to NVDA with superior performance claims."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Valve Developer Gets Initial DLSS Support Working on FOSS Nvidia \"NVK\" Driver",
+      "text": "Valve Developer Gets Initial DLSS Support Working on FOSS Nvidia \"NVK\" Driver",
+      "url": "https://news.ycombinator.com/item?id=45591139",
+      "timestamp": "2025-10-15T12:07:14Z",
+      "metadata": {
+        "points": 7,
+        "author": "LorenDB"
+      },
+      "score": 65,
+      "rationale": "Technical progress on NVIDIA open-source driver capabilities is positive development"
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "OpenAI and Nvidia announce partnership to deploy 10GW of Nvidia systems",
+      "text": "OpenAI and Nvidia announce partnership to deploy 10GW of Nvidia systems",
+      "url": "https://news.ycombinator.com/item?id=45335474",
+      "timestamp": "2025-09-22T16:10:15Z",
+      "metadata": {
+        "points": 473,
+        "author": "meetpateltech"
+      },
+      "score": 85,
+      "rationale": "Major partnership announcement validates Nvidia demand, significant infrastructure deployment"
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Processing Strings 109x Faster Than Nvidia on H100",
+      "text": "Processing Strings 109x Faster Than Nvidia on H100",
+      "url": "https://news.ycombinator.com/item?id=45304807",
+      "timestamp": "2025-09-19T18:24:46Z",
+      "metadata": {
+        "points": 216,
+        "author": "ashvardanian"
+      },
+      "score": -45,
+      "rationale": "Claims competitor outperforms NVDA H100 by 109x; bearish implication."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Intel Arc Celestial dGPU seems to be first casualty of Nvidia partnership",
+      "text": "Intel Arc Celestial dGPU seems to be first casualty of Nvidia partnership",
+      "url": "https://news.ycombinator.com/item?id=45301679",
+      "timestamp": "2025-09-19T13:51:29Z",
+      "metadata": {
+        "points": 125,
+        "author": "LorenDB"
+      },
+      "score": 65,
+      "rationale": "Implies NVDA dominance forcing Intel competitor cancellation."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia to Invest $5B in Intel",
+      "text": "Nvidia to Invest $5B in Intel",
+      "url": "https://news.ycombinator.com/item?id=45288271",
+      "timestamp": "2025-09-18T11:24:34Z",
+      "metadata": {
+        "points": 89,
+        "author": "mmarian"
+      },
+      "score": 35,
+      "rationale": "NVDA strategic investment signals confidence, bullish but modest tone."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Processing Strings 109x Faster Than Nvidia on H100",
+      "text": "Processing Strings 109x Faster Than Nvidia on H100",
+      "url": "https://news.ycombinator.com/item?id=45319791",
+      "timestamp": "2025-09-21T03:30:07Z",
+      "metadata": {
+        "points": 34,
+        "author": "samspenc"
+      },
+      "score": -45,
+      "rationale": "Claims competitor tech outperforms NVDA H100 by 109x; implies NVDA advantage overstated."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "China bans tech companies from buying Nvidia's AI chips",
+      "text": "China bans tech companies from buying Nvidia's AI chips",
+      "url": "https://news.ycombinator.com/item?id=45275070",
+      "timestamp": "2025-09-17T12:32:31Z",
+      "metadata": {
+        "points": 17,
+        "author": "MonkeyClub"
+      },
+      "score": -45,
+      "rationale": "Ban reduces Nvidia's addressable market; moderately bearish outlook."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia's OpenAI Deal Fuels 'Circular' Financing Concerns",
+      "text": "Nvidia's OpenAI Deal Fuels 'Circular' Financing Concerns",
+      "url": "https://news.ycombinator.com/item?id=45355041",
+      "timestamp": "2025-09-24T01:13:30Z",
+      "metadata": {
+        "points": 14,
+        "author": "polrjoy"
+      },
+      "score": -35,
+      "rationale": "Headline expresses skepticism/concern about NVDA deal structure; implies negative implications."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Show HN: Flox \u2013 Nvidia CUDA available for the Nix ecosystem",
+      "text": "Hey Everyone! Ron here, part of the NixOS Foundation and building Flox. Just coming out of this years NixCon and pretty excited to show hn below :) As of today, NVIDIA officially recognizes Canonical, SUSE, CIQ, and Nix\u2014via Flox\u2014as supported distributors for CUDA. Full blog - https://developer.nvidia.com/blog/developers-can-now-get-cud... This is a huge win for the Nix community. For years, CUDA on Nix was possible but painful\u2014builds could take hours, and redistributing prebuilt binaries was blocked by NVIDIA's licensing requirements. NVIDIA's growing engagement with key Linux distributions reflects the company's evolution in working with open source communities. Now, for the first time, NVIDIA is allowing these vendors to package and serve the CUDA Toolkit and CUDA-accelerated packages directly from their package repositories. That means Ubuntu users can get CUDA via `apt`, SUSE users via `zypper`, Rocky Linux users via `dnf`, and Nix users simply by declaring CUDA dependencies in their Nix expressions, `shell.nix` files, or flakes. Across all four platforms, developers can now pull in prebuilt, prepatched CUDA software\u2014including huge packages like PyTorch, TensorFlow, TensorRT, OpenCV, ffmpeg, and more. On Nix (my own bias showing), setup is straightforward: just add Flox's cache as an `extra-substituter` in your `nix.conf` or `configuration.nix`.",
+      "url": "https://news.ycombinator.com/item?id=45203103",
+      "timestamp": "2025-09-10T20:24:01Z",
+      "metadata": {
+        "points": 14,
+        "author": "ronef"
+      },
+      "score": 35,
+      "rationale": "NVIDIA officially supports Flox/Nix for CUDA distribution. Positive ecosystem expansion."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia bets big on Intel with $5B stake and chip partnership",
+      "text": "Nvidia bets big on Intel with $5B stake and chip partnership",
+      "url": "https://news.ycombinator.com/item?id=45288356",
+      "timestamp": "2025-09-18T11:33:47Z",
+      "metadata": {
+        "points": 11,
+        "author": "ckastner"
+      },
+      "score": 45,
+      "rationale": "NVDA investing $5B in Intel signals confidence in partnership/market."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "China bans its biggest tech companies from acquiring Nvidia chips",
+      "text": "China bans its biggest tech companies from acquiring Nvidia chips",
+      "url": "https://news.ycombinator.com/item?id=45274556",
+      "timestamp": "2025-09-17T11:41:45Z",
+      "metadata": {
+        "points": 11,
+        "author": "dworks"
+      },
+      "score": -45,
+      "rationale": "Regulatory headwind reduces Nvidia's addressable market; moderately bearish."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia Unveils Rubin CPX Amidst Chart-Topping Blackwell Ultra MLPerf Results",
+      "text": "Nvidia Unveils Rubin CPX Amidst Chart-Topping Blackwell Ultra MLPerf Results",
+      "url": "https://news.ycombinator.com/item?id=45185177",
+      "timestamp": "2025-09-09T17:18:15Z",
+      "metadata": {
+        "points": 11,
+        "author": "rbanffy"
+      },
+      "score": 75,
+      "rationale": "New product announcements and superior benchmark results indicate positive momentum and innovation."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "China tells its tech companies to stop buying all of Nvidia's AI chips",
+      "text": "China tells its tech companies to stop buying all of Nvidia's AI chips",
+      "url": "https://news.ycombinator.com/item?id=45273396",
+      "timestamp": "2025-09-17T08:43:53Z",
+      "metadata": {
+        "points": 9,
+        "author": "jmsflknr"
+      },
+      "score": -35,
+      "rationale": "Negative headline suggesting demand loss; moderately bearish for NVDA revenue."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "CoreWeave signs $6.3B order with Nvidia to cover unsold cloud capacity thru 2032",
+      "text": "CoreWeave signs $6.3B order with Nvidia to cover unsold cloud capacity thru 2032",
+      "url": "https://news.ycombinator.com/item?id=45255697",
+      "timestamp": "2025-09-15T22:23:42Z",
+      "metadata": {
+        "points": 8,
+        "author": "thoughtpeddler"
+      },
+      "score": 75,
+      "rationale": "Major long-term revenue contract signals strong demand, bullish for NVDA."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia says two mystery customers accounted for 39% of Q2 revenue",
+      "text": "Nvidia says two mystery customers accounted for 39% of Q2 revenue",
+      "url": "https://news.ycombinator.com/item?id=45088963",
+      "timestamp": "2025-09-01T02:44:53Z",
+      "metadata": {
+        "points": 8,
+        "author": "colinprince"
+      },
+      "score": -25,
+      "rationale": "Customer concentration risk concerns investors; lack of diversification raises vulnerability."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "2:4 Semi-Structured Sparsity: 27% Faster AI Inference on NVIDIA Hardware",
+      "text": "2:4 Semi-Structured Sparsity: 27% Faster AI Inference on NVIDIA Hardware",
+      "url": "https://news.ycombinator.com/item?id=45357053",
+      "timestamp": "2025-09-24T06:39:59Z",
+      "metadata": {
+        "points": 7,
+        "author": "HappyTeam"
+      },
+      "score": 45,
+      "rationale": "Technical achievement highlighting NVIDIA's AI inference speed advantage."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "China bans tech companies from buying Nvidia's AI chips",
+      "text": "China bans tech companies from buying Nvidia's AI chips",
+      "url": "https://news.ycombinator.com/item?id=45288101",
+      "timestamp": "2025-09-18T10:56:10Z",
+      "metadata": {
+        "points": 7,
+        "author": "mihau"
+      },
+      "score": -45,
+      "rationale": "Negative news for NVDA revenue; China market access restricted."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Processing Strings 109x Faster Than Nvidia on H100",
+      "text": "Processing Strings 109x Faster Than Nvidia on H100",
+      "url": "https://news.ycombinator.com/item?id=45321848",
+      "timestamp": "2025-09-21T11:34:46Z",
+      "metadata": {
+        "points": 6,
+        "author": "binarymax"
+      },
+      "score": -45,
+      "rationale": "Implies competitor outperforms NVDA H100 significantly; bearish for NVDA."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "China says preliminary probe shows Nvidia violated anti-monopoly law",
+      "text": "China says preliminary probe shows Nvidia violated anti-monopoly law",
+      "url": "https://news.ycombinator.com/item?id=45247659",
+      "timestamp": "2025-09-15T09:10:10Z",
+      "metadata": {
+        "points": 6,
+        "author": "belter"
+      },
+      "score": -65,
+      "rationale": "Regulatory violation news creates bearish sentiment; China antitrust finding is negative."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia Is a National Security Risk",
+      "text": "Nvidia Is a National Security Risk",
+      "url": "https://news.ycombinator.com/item?id=45213639",
+      "timestamp": "2025-09-11T16:49:05Z",
+      "metadata": {
+        "points": 5,
+        "author": "giuliomagnifico"
+      },
+      "score": -75,
+      "rationale": "Strong bearish framing; national security risk implies serious threat/concern."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "China rules that Nvidia violated its antitrust laws",
+      "text": "China rules that Nvidia violated its antitrust laws",
+      "url": "https://news.ycombinator.com/item?id=45250452",
+      "timestamp": "2025-09-15T14:56:22Z",
+      "metadata": {
+        "points": 5,
+        "author": "mikece"
+      },
+      "score": -45,
+      "rationale": "Antitrust ruling is moderately negative for NVDA's China business prospects."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia just spent over $900M on Enfabrica CEO, technology licenses",
+      "text": "Nvidia just spent over $900M on Enfabrica CEO, technology licenses",
+      "url": "https://news.ycombinator.com/item?id=45299144",
+      "timestamp": "2025-09-19T08:05:12Z",
+      "metadata": {
+        "points": 5,
+        "author": "michaelnoguera"
+      },
+      "score": 35,
+      "rationale": "Bullish signal: significant acquisition spending shows Nvidia aggressive expansion strategy."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "How Nvidia Is Backstopping America's AI Boom",
+      "text": "How Nvidia Is Backstopping America's AI Boom",
+      "url": "https://news.ycombinator.com/item?id=45362643",
+      "timestamp": "2025-09-24T16:29:01Z",
+      "metadata": {
+        "points": 5,
+        "author": "doener"
+      },
+      "score": 75,
+      "rationale": "Bullish framing: Nvidia positioned as critical infrastructure supporting AI growth."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Running GPT-OSS-120B at 500 tokens per second on Nvidia GPUs",
+      "text": "Running GPT-OSS-120B at 500 tokens per second on Nvidia GPUs",
+      "url": "https://news.ycombinator.com/item?id=44819968",
+      "timestamp": "2025-08-07T02:28:47Z",
+      "metadata": {
+        "points": 247,
+        "author": "philipkiely"
+      },
+      "score": 75,
+      "rationale": "Demonstrates strong NVDA GPU performance capability; bullish technical validation."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia results show spending on A.I. infrastructure remains robust",
+      "text": "Nvidia results show spending on A.I. infrastructure remains robust",
+      "url": "https://news.ycombinator.com/item?id=45045328",
+      "timestamp": "2025-08-27T21:11:27Z",
+      "metadata": {
+        "points": 50,
+        "author": "cuttothechase"
+      },
+      "score": 65,
+      "rationale": "Positive outlook on AI infrastructure demand; robust spending signals bullish momentum."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia and AMD to pay 15% of China chip sale revenues to US Government",
+      "text": "Nvidia and AMD to pay 15% of China chip sale revenues to US Government",
+      "url": "https://news.ycombinator.com/item?id=44858340",
+      "timestamp": "2025-08-10T21:13:15Z",
+      "metadata": {
+        "points": 40,
+        "author": "mfiguiere"
+      },
+      "score": -25,
+      "rationale": "Regulatory burden reduces profitability; negative but not catastrophic for NVDA."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "A power shortage could short-circuit Nvidia's rise",
+      "text": "A power shortage could short-circuit Nvidia's rise",
+      "url": "https://news.ycombinator.com/item?id=45059892",
+      "timestamp": "2025-08-29T03:39:40Z",
+      "metadata": {
+        "points": 37,
+        "author": "1vuio0pswjnm7"
+      },
+      "score": -45,
+      "rationale": "Bearish concern: power shortage threatens Nvidia's growth trajectory."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Two mystery customers alone responsible for ~40% of Nvidia's quarterly revenue",
+      "text": "Two mystery customers alone responsible for ~40% of Nvidia's quarterly revenue",
+      "url": "https://news.ycombinator.com/item?id=45076715",
+      "timestamp": "2025-08-30T17:59:25Z",
+      "metadata": {
+        "points": 35,
+        "author": "giuliomagnifico"
+      },
+      "score": -35,
+      "rationale": "Concentration risk concern; revenue dependency on undisclosed major customers"
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia: No Backdoors. No Kill Switches. No Spyware",
+      "text": "Nvidia: No Backdoors. No Kill Switches. No Spyware",
+      "url": "https://news.ycombinator.com/item?id=44803027",
+      "timestamp": "2025-08-05T19:26:22Z",
+      "metadata": {
+        "points": 32,
+        "author": "robotswantdata"
+      },
+      "score": 75,
+      "rationale": "Post highlights strong security/trust features; bullish tone emphasizing product integrity."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Trump Administration to Take 15% Cut of Nvidia and AMD Chip Sales to China",
+      "text": "Trump Administration to Take 15% Cut of Nvidia and AMD Chip Sales to China",
+      "url": "https://news.ycombinator.com/item?id=44860387",
+      "timestamp": "2025-08-11T02:51:09Z",
+      "metadata": {
+        "points": 20,
+        "author": "ExMachina73"
+      },
+      "score": -35,
+      "rationale": "Policy headwind reducing China revenue by 15%, negative for NVDA earnings."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia trains 10T model in 4 bit precision (NVFP4)",
+      "text": "Nvidia trains 10T model in 4 bit precision (NVFP4)",
+      "url": "https://news.ycombinator.com/item?id=45029191",
+      "timestamp": "2025-08-26T16:54:51Z",
+      "metadata": {
+        "points": 9,
+        "author": "opcode84"
+      },
+      "score": 75,
+      "rationale": "Technical achievement demonstrates Nvidia's AI/computing leadership. Bullish."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia Blackwell Ultra (GB300): -97% INT8/FP64,+50% FP4 Dense,+55% VRAM,+114% At",
+      "text": "Nvidia Blackwell Ultra (GB300): -97% INT8/FP64,+50% FP4 Dense,+55% VRAM,+114% At",
+      "url": "https://news.ycombinator.com/item?id=45049879",
+      "timestamp": "2025-08-28T08:41:30Z",
+      "metadata": {
+        "points": 8,
+        "author": "Sweepi"
+      },
+      "score": 75,
+      "rationale": "Bullish on Blackwell specs: massive improvements in performance metrics and capacity."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Trump opens door to sales of version of Nvidia's next-gen AI chips in China",
+      "text": "Trump opens door to sales of version of Nvidia's next-gen AI chips in China",
+      "url": "https://news.ycombinator.com/item?id=44883938",
+      "timestamp": "2025-08-13T02:03:45Z",
+      "metadata": {
+        "points": 7,
+        "author": "insane_dreamer"
+      },
+      "score": 35,
+      "rationale": "Potential market expansion positive, but hedged by 'version of' uncertainty."
+    },
+    {
+      "source": "hackernews",
+      "source_type": "informed",
+      "title": "Nvidia is dominating the S&P 500 more than any company in at least 44 years",
+      "text": "Nvidia is dominating the S&P 500 more than any company in at least 44 years",
+      "url": "https://news.ycombinator.com/item?id=44848950",
+      "timestamp": "2025-08-09T18:36:16Z",
+      "metadata": {
+        "points": 6,
+        "author": "Terretta"
+      },
+      "score": 75,
+      "rationale": "Post highlights Nvidia's exceptional market dominance and historical performance strength."
     }
   ],
   "prices": [

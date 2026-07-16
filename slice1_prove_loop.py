@@ -1,28 +1,38 @@
-"""Slice 1 — prove the loop (Reddit-first, one subject).
+"""Slice 1 — prove the loop (source-pluggable, one subject).
 
 The whole point: run the ENTIRE vertical end-to-end on a single subject and see
-whether "what Reddit says" tracks "what the price did." If it does — even weakly —
-the core idea holds and everything else is widening/deepening (see docs/BUILD_PLAN.md).
+whether "what the conversation says" tracks "what the price did." If it does — even
+weakly — the core idea holds and everything else is widening/deepening (see
+docs/BUILD_PLAN.md).
 
-This is deliberately the GENERAL engine, parameterized by subject: the same code
-that runs on NVDA runs on any ticker. NVDA is just the first thing we point it at,
-because it has huge Reddit volume and a clean ground truth (its own stock price).
+This is deliberately the GENERAL engine, parameterized by subject AND source: the
+same downstream code (filter → stance → aggregate → chart) runs on any subject and
+any source. Sources are pluggable and each carries a `source_type`:
+    * "informed" — practitioners/technical crowd (Hacker News). No credentials.
+    * "crowd"    — retail public (Reddit). Needs OAuth for good volume.
+We keep source_type on every item so a reading can later be sliced crowd-only vs.
+informed-only, and the DIVERGENCE between them becomes a headline signal.
+
+Default source is Hacker News: zero-auth, full-text search with date ranges, and —
+for subjects like chips/AI/NVDA — genuinely high-signal, substantive discussion.
 
 The stages (each will graduate into its own module later — noted inline):
     fetch  →  filter to subject  →  score stance  →  aggregate  →  chart vs price
-    reddit    (search query)        Claude Haiku     by month      yfinance
+   hn/reddit   (relevance)          Claude Haiku     by month      yfinance
 
 Run:
-    venv/bin/python slice1_prove_loop.py NVDA
-    venv/bin/python slice1_prove_loop.py TSLA --ticker TSLA
+    venv/bin/python slice1_prove_loop.py NVDA                 # HN (default)
+    venv/bin/python slice1_prove_loop.py SEMIS               # semiconductors → SOXX
+    venv/bin/python slice1_prove_loop.py NVDA --source reddit # needs Reddit creds
+    venv/bin/python slice1_prove_loop.py NVDA --source both
 
-Notes / honest limitations for Slice 1:
-  * We pull Reddit *search, top-of-year* to get subject-specific posts with real
-    timestamps spread across time. "Top" is engagement-biased (not a representative
-    daily sample), which is fine for the Slice-1 bar ("does the loop work + is there
-    any signal"). Slice 2 replaces this with proper day-by-day accumulation.
-  * No Reddit OAuth needed — uses the public search RSS. With OAuth (Slice 1.5) we'd
-    get upvote/comment counts for engagement weighting and more posts.
+Honest limitations for Slice 1:
+  * HN skews technical/practitioner ("informed"), not the retail crowd — a different
+    slice of opinion, and the right one for chips/AI. Reddit ("crowd") adds the other
+    half once creds are available.
+  * We sample the top items per month by relevance, not a representative daily census
+    — fine for the Slice-1 bar ("does the loop work + is there any signal"). Slice 2
+    replaces this with proper day-by-day accumulation.
 """
 
 from __future__ import annotations
@@ -47,12 +57,20 @@ from scrapers.utils import USER_AGENT, polite_get, to_iso
 # ----------------------------------------------------------------------------
 SUBJECTS = {
     "NVDA": {
-        "query": "NVDA OR Nvidia",
+        "hn_query": "Nvidia",                 # HN discusses the company by name, not ticker
+        "reddit_query": "NVDA OR Nvidia",
         "proxy": "NVDA",
         "subreddits": ["wallstreetbets", "stocks", "investing", "NVDA_Stock"],
     },
+    "SEMIS": {
+        "hn_query": "semiconductor",
+        "reddit_query": "semiconductor OR semis OR chips",
+        "proxy": "SOXX",                      # semiconductor ETF = the sector's price
+        "subreddits": ["stocks", "investing", "semiconductors"],
+    },
     "TSLA": {
-        "query": "TSLA OR Tesla",
+        "hn_query": "Tesla",
+        "reddit_query": "TSLA OR Tesla",
         "proxy": "TSLA",
         "subreddits": ["wallstreetbets", "stocks", "investing", "teslainvestorsclub"],
     },
@@ -81,7 +99,7 @@ def fetch_reddit_posts(subject: dict, per_sub: int = 100) -> list[dict]:
     for sub in subject["subreddits"]:
         url = f"https://www.reddit.com/r/{sub}/search.rss"
         params = {
-            "q": subject["query"],
+            "q": subject["reddit_query"],
             "restrict_sr": "1",   # search within this subreddit only
             "sort": "top",
             "t": "year",
@@ -112,10 +130,12 @@ def fetch_reddit_posts(subject: dict, per_sub: int = 100) -> list[dict]:
             records.append(
                 {
                     "source": f"reddit/r/{sub}",
+                    "source_type": "crowd",
                     "title": title,
                     "text": _strip_html(summary) or title,
                     "url": link,
                     "timestamp": ts,
+                    "metadata": {},
                 }
             )
         print(f"  r/{sub}: +{len(records) - n_before} posts")
@@ -124,11 +144,97 @@ def fetch_reddit_posts(subject: dict, per_sub: int = 100) -> list[dict]:
 
 
 def _strip_html(s: str) -> str:
-    """Very light tag strip — enough to hand clean text to the model."""
+    """Strip tags + unescape entities — enough to hand clean text to the model.
+
+    Handles HN's hex entities (&#x27; etc.) and named entities via html.unescape.
+    """
+    import html
     import re
-    text = re.sub(r"<[^>]+>", " ", s)
-    text = re.sub(r"&#\d+;", " ", text)
+    text = re.sub(r"<[^>]+>", " ", s or "")
+    text = html.unescape(text)
     return re.sub(r"\s+", " ", text).strip()
+
+
+# ============================================================================
+# STAGE 1 (alt source) — FETCH HACKER NEWS  (→ future ingestion/hackernews.py)
+# ============================================================================
+def fetch_hn_posts(subject: dict, months_back: int = 12, per_month: int = 40) -> list[dict]:
+    """Fetch subject-specific HN stories + comments via the Algolia search API.
+
+    No credentials. We query month-by-month so every month gets coverage (a single
+    relevance search would cluster around a few big threads). Each item is tagged
+    source_type="informed" — HN is the practitioner/technical slice of opinion.
+    """
+    import calendar
+    from datetime import datetime, timezone
+
+    import requests
+
+    query = subject["hn_query"]
+    records: list[dict] = []
+    seen: set[str] = set()
+
+    now = datetime.now(timezone.utc)
+    year, month = now.year, now.month
+    for _ in range(months_back):
+        start = datetime(year, month, 1, tzinfo=timezone.utc)
+        last_day = calendar.monthrange(year, month)[1]
+        end = datetime(year, month, last_day, 23, 59, 59, tzinfo=timezone.utc)
+        start_i, end_i = int(start.timestamp()), int(end.timestamp())
+
+        try:
+            resp = requests.get(
+                "https://hn.algolia.com/api/v1/search",
+                params={
+                    "query": query,
+                    "tags": "(story,comment)",
+                    "numericFilters": f"created_at_i>={start_i},created_at_i<={end_i}",
+                    "hitsPerPage": str(per_month),
+                },
+                headers={"User-Agent": USER_AGENT},
+                timeout=20,
+            )
+            resp.raise_for_status()
+            hits = resp.json().get("hits", [])
+        except Exception as e:  # noqa: BLE001
+            print(f"  ! HN {year}-{month:02d}: fetch failed ({e.__class__.__name__}), skipping")
+            hits = []
+
+        n_before = len(records)
+        for hit in hits:
+            oid = hit.get("objectID")
+            if not oid or oid in seen:
+                continue
+            seen.add(oid)
+
+            if hit.get("comment_text"):
+                title = hit.get("story_title") or "(comment)"
+                text = _strip_html(hit["comment_text"])
+            else:
+                title = hit.get("title") or ""
+                text = _strip_html(hit.get("story_text") or "") or title
+            if not text:
+                continue
+
+            records.append(
+                {
+                    "source": "hackernews",
+                    "source_type": "informed",
+                    "title": title,
+                    "text": text,
+                    "url": f"https://news.ycombinator.com/item?id={oid}",
+                    "timestamp": hit.get("created_at"),  # already ISO-8601
+                    "metadata": {"points": hit.get("points"), "author": hit.get("author")},
+                }
+            )
+        print(f"  HN {year}-{month:02d}: +{len(records) - n_before}")
+
+        # step back one month
+        month -= 1
+        if month == 0:
+            month, year = 12, year - 1
+
+    return records
 
 
 # ============================================================================
@@ -275,8 +381,8 @@ def make_chart(subject_name: str, readings: list[dict], prices: list[dict], out_
     ax1.axhline(0, color="#c3c9d2", lw=1, ls="--")
     ax1.plot(r_months, r_vals, color="#3E6DDA", lw=2, marker="o", ms=5)
     ax1.fill_between(r_months, r_vals, 0, color="#3E6DDA", alpha=0.10)
-    ax1.set_ylabel("Reddit conviction\n(−100…+100)")
-    ax1.set_title(f"Market Consensus — Slice 1: does the Reddit read track the price?  ·  {subject_name}",
+    ax1.set_ylabel("Conviction\n(−100…+100)")
+    ax1.set_title(f"Market Consensus — Slice 1: does the read track the price?  ·  {subject_name}",
                   loc="left", fontsize=12, fontweight="bold")
     ax1.set_ylim(-100, 100)
     for r in readings:  # annotate sample size so sparse months are visible
@@ -300,6 +406,8 @@ def make_chart(subject_name: str, readings: list[dict], prices: list[dict], out_
 def main() -> int:
     parser = argparse.ArgumentParser(description="Slice 1 — prove the loop on one subject.")
     parser.add_argument("subject", nargs="?", default="NVDA", help="subject key (default: NVDA)")
+    parser.add_argument("--source", choices=["hn", "reddit", "both"], default="hn",
+                        help="opinion source (default: hn — zero-auth, 'informed' slice)")
     parser.add_argument("--ticker", help="override the price proxy ticker")
     parser.add_argument("--limit", type=int, default=0, help="cap posts scored (0 = no cap; useful for a cheap smoke test)")
     args = parser.parse_args()
@@ -319,11 +427,19 @@ def main() -> int:
     t0 = time.time()
     print(f"\n=== Slice 1: {key}  (proxy {subject['proxy']}) ===\n")
 
-    print("1) fetch reddit posts")
-    records = fetch_reddit_posts(subject)
-    print(f"   → {len(records)} unique posts\n")
+    print(f"1) fetch posts  (source: {args.source})")
+    records: list[dict] = []
+    if args.source in ("hn", "both"):
+        records += fetch_hn_posts(subject)
+    if args.source in ("reddit", "both"):
+        records += fetch_reddit_posts(subject)
+    print(f"   → {len(records)} unique items")
+    by_type = defaultdict(int)
+    for r in records:
+        by_type[r.get("source_type", "?")] += 1
+    print(f"   breakdown: {dict(by_type)}\n")
     if not records:
-        print("No posts fetched (Reddit may be rate-limiting this IP). Try again, or add OAuth creds.")
+        print("No items fetched. (Reddit needs OAuth / may rate-limit; HN should always work.)")
         return 1
     if args.limit:
         records = records[: args.limit]
@@ -331,7 +447,10 @@ def main() -> int:
 
     print("2/3) filter to subject + score stance (Claude Haiku)")
     scored = score_stance(records, key)
-    print(f"   → {len(scored)} relevant scored posts\n")
+    kept_by_type = defaultdict(int)
+    for r in scored:
+        kept_by_type[r.get("source_type", "?")] += 1
+    print(f"   → {len(scored)} relevant scored items  {dict(kept_by_type)}\n")
     if not scored:
         print("Nothing scored relevant — can't aggregate. Widen subreddits or check the query.")
         return 1
