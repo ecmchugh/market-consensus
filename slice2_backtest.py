@@ -61,6 +61,20 @@ BASKET = [
     ("SNOW", "Snowflake"), ("ARM", "Arm"), ("SMCI", "Supermicro"), ("DELL", "Dell"),
 ]
 
+# Crypto basket: attention/narrative-driven and less efficient than large-cap equity —
+# where sentiment SHOULD show up if it shows up anywhere. Proxy = yfinance USD pair;
+# HN query = the name HN actually uses. (ticker, HN query).
+CRYPTO_BASKET = [
+    ("BTC-USD", "Bitcoin"), ("ETH-USD", "Ethereum"), ("SOL-USD", "Solana"),
+    ("DOGE-USD", "Dogecoin"), ("XRP-USD", "XRP"), ("ADA-USD", "Cardano"),
+    ("AVAX-USD", "Avalanche"), ("LINK-USD", "Chainlink"), ("DOT-USD", "Polkadot"),
+    ("LTC-USD", "Litecoin"),
+]
+
+
+def get_basket(universe: str):
+    return CRYPTO_BASKET if universe == "crypto" else BASKET
+
 
 # ----------------------------------------------------------------------------
 # Per-subject pipeline (with caching)
@@ -177,6 +191,8 @@ def main() -> int:
     ap.add_argument("--windows", type=int, default=0,
                     help="how many periods back (0 = auto: 12 months / 52 weeks)")
     ap.add_argument("--workers", type=int, default=10, help="concurrent scoring workers")
+    ap.add_argument("--universe", choices=["tech", "crypto"], default="tech",
+                    help="which basket to test (default: tech)")
     ap.add_argument("--subjects", help="comma-separated tickers to override the basket")
     args = ap.parse_args()
 
@@ -188,15 +204,15 @@ def main() -> int:
 
     if args.subjects:
         want = {s.strip().upper() for s in args.subjects.split(",")}
-        lookup = dict(BASKET)
+        lookup = dict(BASKET + CRYPTO_BASKET)
         basket = [(t, lookup.get(t, t)) for t in want]  # fall back to ticker as query
-    elif args.period == "week":
-        basket = BASKET[:10]  # weekly needs high-volume names to populate weeks
     else:
-        basket = BASKET
+        basket = get_basket(args.universe)
+        if args.universe == "tech" and args.period == "week":
+            basket = basket[:10]  # weekly needs high-volume names to populate weeks
 
     t0 = time.time()
-    print(f"\n=== Slice 2: {len(basket)} subjects, {args.period}ly, "
+    print(f"\n=== Slice 2 [{args.universe}]: {len(basket)} subjects, {args.period}ly, "
           f"{args.per_window}/{args.period} × {windows}, {args.workers} workers ===\n")
 
     per_subject = {"coincident": [], "lead": [], "lag": []}

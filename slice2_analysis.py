@@ -31,18 +31,18 @@ import random
 from pathlib import Path
 
 from slice2_backtest import (
-    BASKET,
     CACHE_DIR,
     _demean,
+    get_basket,
     pearson,
     subject_series,
 )
 
 
-def _load_cached_series(period: str, per_window: int, horizon: int):
+def _load_cached_series(period: str, per_window: int, horizon: int, universe: str):
     """Return {ticker: (conviction[], return_at_horizon[])} from cached scores."""
     out = {}
-    for ticker, _q in BASKET:
+    for ticker, _q in get_basket(universe):
         cache = CACHE_DIR / f"{ticker}_{period}_{per_window}.json"
         if not cache.exists():
             continue
@@ -110,6 +110,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--period", choices=["month", "week"], default="month")
     ap.add_argument("--per-window", type=int, default=15)
+    ap.add_argument("--universe", choices=["tech", "crypto"], default="tech")
     ap.add_argument("--iters", type=int, default=5000)
     ap.add_argument("--seed", type=int, default=42)
     args = ap.parse_args()
@@ -120,10 +121,10 @@ def main() -> int:
         print(f"No cache for period={args.period}, per_window={args.per_window}. Run slice2_backtest.py first.")
         return 1
 
-    print(f"\n=== Slice 2 significance ({args.period}ly, per_window={args.per_window}, {args.iters} iters) ===\n")
+    print(f"\n=== Slice 2 significance [{args.universe}] ({args.period}ly, per_window={args.per_window}, {args.iters} iters) ===\n")
 
     # Headline: LEAD (t+1).
-    lead = _load_cached_series(args.period, args.per_window, horizon=1)
+    lead = _load_cached_series(args.period, args.per_window, horizon=1, universe=args.universe)
     print(f"subjects with usable series: {len(lead)}")
     obs, p = permutation_test(lead, args.iters)
     lo, hi = bootstrap_ci(lead, args.iters)
@@ -140,7 +141,7 @@ def main() -> int:
     # Horizon sweep — does it decay like a real signal?
     print("\nhorizon sweep (pooled r):")
     for h in (0, 1, 2):
-        pairs = _load_cached_series(args.period, args.per_window, horizon=h)
+        pairs = _load_cached_series(args.period, args.per_window, horizon=h, universe=args.universe)
         r = _pooled_r(pairs)
         label = {0: "t   (coincident)", 1: "t+1 (lead)", 2: "t+2 (lead)"}[h]
         print(f"  {label:<18} {r:+.3f}" if r is not None else f"  {label:<18} n/a")

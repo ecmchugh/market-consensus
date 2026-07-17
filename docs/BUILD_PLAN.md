@@ -51,8 +51,23 @@ for a fast signal). Pipeline is now period-aware (month|week) end to end.
 **Slice 2 monthly result (24 names × 12 mo, 1811 items):** LEAD r=+0.13 but permutation
 p=0.076 (NOT significant), bootstrap CI includes zero, horizon jagged → no reliable
 monthly predictive signal. Most robust thread: coincident −0.16 (informed mood leans
-CONTRARIAN to the same-month move). → chose "finer resolution" next: weekly re-test on
-top-10 high-volume names × 52 weeks (running).
+CONTRARIAN to same-month move).
+
+**Slice 2 WEEKLY result (10 names × 52 wk, 2528 items, 410 pairs):** clean NULL —
+lead r=+0.01 (perm p=0.82), coincident +0.02, lag +0.07, horizon flat at zero, 6/10
+positive (coin flip). NOTE: the monthly coincident −0.16 did NOT replicate weekly →
+it was likely a small-sample artifact, not a real contrarian structure.
+
+**Cumulative honest conclusion:** HN "informed" sentiment on large-cap tech has NO
+detectable relationship to price at monthly OR weekly resolution. Resolution is
+exhausted (daily HN volume too thin). The signal, if it exists, isn't here — the
+open levers are UNIVERSE (large-cap tech is the most-efficient, hardest case) and
+SOURCE (informed ≠ the crowd that moves price). Recommended next experiment: test a
+crypto universe (attention-driven, less efficient, HN-discussed, zero-auth via
+yfinance BTC-USD/ETH-USD) — directly tests whether the null is a universe artifact.
+The "test" verb did its job: it stopped us building a dashboard on a signal that
+isn't there. Product value can rest on measurement/aggregation + an HONEST backtest,
+not on predictive alpha.
 
 **Source decision (2026-07):** sources are pluggable and each item carries a
 `source_type` — **"informed"** (Hacker News = practitioners/technical crowd, zero-auth)
