@@ -22,7 +22,56 @@ of the active slice.
 
 ## Current state (keep this honest)
 
-_Last updated: 2026-07 — pivot from stock-news sentiment to crypto/stocks crowd-conviction._
+_Last updated: 2026-07-20 — direction locked: production RAG consensus engine (Big Tech resume framing)._
+
+---
+
+## ACTIVE DIRECTION (locked 2026-07-20) — read this first; it supersedes the slice notes below
+
+**What we're building:** an **"ask any market subject" production RAG consensus engine.**
+A user submits any tradeable subject (stock / sector / coin, resolved dynamically — no
+hardcoded list) → the system mines where it's discussed (HN + Reddit), scores each take
+(concurrent Haiku), **retrieves semantically from a stored pgvector corpus**, aggregates
+a quantified/deduped/**cited** consensus (Claude Sonnet synthesis), **caches** it, and —
+because every subject is tradeable — attaches the **honest price backtest as an
+always-on credibility panel**. Deployed live.
+
+**Why this framing (see memory [[bigtech-resume-reframe]], [[product-scope-markets]]):**
+recruiting for Big Tech, so resume value = *engineering*, not predictive alpha. The
+Slice 1–2 null (no reliable price lead) costs nothing — honest measurement is the story.
+Resume surface: RAG + vector search, LLM cost-split (Haiku-for-volume / Sonnet-once +
+prompt caching), async throughput, deployed running system. Scope is **markets only** so
+the backtest (the hardest-to-fake feature) always applies.
+
+**Two codebases to reconcile:** the WORKING engine is `slice1_prove_loop.py`
+(fetch → concurrent Haiku scoring → aggregate → price → chart; concurrency already done).
+The `pipeline/` + `api/` + Supabase `daily_consensus` is a legacy news pipeline to
+retire/park. Build = graduate the slice-1 monolith into reusable modules.
+
+**Locked decisions:** hybrid coverage (live-fetch novel subjects + accumulate/embed) ·
+local sentence-transformers (MiniLM) embeddings · LLM subject-resolver (always → proxy) ·
+retire the old news pipeline.
+
+**Build sequence (thin slice first):**
+- [x] **P1 — Graduate the engine into modules.** Split the `slice1` monolith into
+      `ingestion/sources.py`, `pipeline/stance.py`, `pipeline/aggregate.py`. No behavior
+      change; `slice1_prove_loop.py` re-exports the 4 names slice2 needs. Verified:
+      imports + slice2 chain + pure-function parity (2026-07-20).
+- [ ] **P2 — Subject resolver** (`pipeline/subjects.py`): Haiku maps an arbitrary string →
+      (search terms, proxy symbol). Replaces the hardcoded `SUBJECTS` dict.
+- [ ] **P3 — Item storage + embeddings** (`pipeline/embed.py`, `store.py`): enable
+      pgvector; `item` table; write scored+embedded items, deduped by source id.
+- [ ] **P4 — Query path** (`pipeline/query.py`): subject → resolve → fetch-if-thin →
+      semantic search → aggregate → Sonnet cited report → cache `subject_reading`.
+      **← first demo-able milestone: terminal query → cited reading, second call instant.**
+- [ ] **P5 — API:** `POST /subjects/query` (cached-if-recent), `GET /subjects/{s}/latest|history|backtest`.
+- [ ] **P6 — Backtest as a feature:** wire existing backtest → lead/lag panel per subject.
+- [ ] **P7 — Frontend:** wire the paused React dashboard (search → gauge · report w/ receipts · trend · backtest).
+- [ ] **P8 — Deploy live:** Railway (API+worker) · Vercel (frontend) · Supabase (data).
+- [ ] **P9 — Resume metrics:** cold-vs-cached latency, scoring throughput, LLM cost/1k, cache-hit rate, corpus size.
+
+---
+
 
 **What exists AND is reusable for Reddit-first Slice 1:**
 - `scrapers/reddit.py` — OAuth scraper returning score / num_comments / upvote_ratio
@@ -68,6 +117,24 @@ yfinance BTC-USD/ETH-USD) — directly tests whether the null is a universe arti
 The "test" verb did its job: it stopped us building a dashboard on a signal that
 isn't there. Product value can rest on measurement/aggregation + an HONEST backtest,
 not on predictive alpha.
+
+**Slice 2 CRYPTO weekly result (2026-07):** INCONCLUSIVE — a source-coverage wall,
+not a signal result. Only 3/10 coins had enough HN volume to test (BTC 172 relevant,
+ETH 145, XRP 23); the other 7 were too sparse (ADA 6, LINK 2, DOT 3…). Two causes:
+(a) HN is a tech/infra crowd that discusses BTC/ETH but barely covers altcoins;
+(b) generic alt names pull homonym noise (Algolia "Cardano" → the mathematician,
+"Avalanche" → snow, "Chainlink" → fence), which the stance filter correctly rejects
+→ near-zero relevant. Pooled 3-coin lead r=+0.06, perm p=0.71, bootstrap CI
+[−0.27, +0.97] — the CI is enormous; this carries ~no information. **Conclusion: HN
+cannot test the crypto universe (only BTC/ETH viable). Testing crypto properly needs a
+crypto-NATIVE crowd source (Reddit r/CryptoCurrency, Farcaster, StockTwits), which
+reopens the source/credentials problem.**
+
+**FORK (2026-07):** predictive-alpha question is now blocked — large-cap = powered
+null; crypto = can't cover via HN. Either (A) integrate a crypto-native source to
+test crypto for real, or (B) accept the honest accumulated result and pivot to the
+product (superior measurement + honest backtest as a credibility feature), where HN's
+strong BTC/ETH/AI-infra coverage is genuinely useful. Awaiting user decision.
 
 **Source decision (2026-07):** sources are pluggable and each item carries a
 `source_type` — **"informed"** (Hacker News = practitioners/technical crowd, zero-auth)
