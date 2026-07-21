@@ -16,3 +16,8 @@ data/*.csv
 slice2_*.png
 slice2_*.json
 .slice2_cache/
+
+# Local item store (corpus + cached readings) and subject-resolver cache — the
+# LocalItemStore backend; regenerable, not source. (pgvector is the prod backend.)
+*.db
+.subject_cache.json

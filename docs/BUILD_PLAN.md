@@ -57,18 +57,31 @@ retire the old news pipeline.
       `ingestion/sources.py`, `pipeline/stance.py`, `pipeline/aggregate.py`. No behavior
       change; `slice1_prove_loop.py` re-exports the 4 names slice2 needs. Verified:
       imports + slice2 chain + pure-function parity (2026-07-20).
-- [ ] **P2 — Subject resolver** (`pipeline/subjects.py`): Haiku maps an arbitrary string →
-      (search terms, proxy symbol). Replaces the hardcoded `SUBJECTS` dict.
-- [ ] **P3 — Item storage + embeddings** (`pipeline/embed.py`, `store.py`): enable
-      pgvector; `item` table; write scored+embedded items, deduped by source id.
-- [ ] **P4 — Query path** (`pipeline/query.py`): subject → resolve → fetch-if-thin →
-      semantic search → aggregate → Sonnet cited report → cache `subject_reading`.
-      **← first demo-able milestone: terminal query → cited reading, second call instant.**
-- [ ] **P5 — API:** `POST /subjects/query` (cached-if-recent), `GET /subjects/{s}/latest|history|backtest`.
-- [ ] **P6 — Backtest as a feature:** wire existing backtest → lead/lag panel per subject.
+- [x] **P2 — Subject resolver** (`pipeline/subjects.py`): Haiku maps an arbitrary string →
+      (search terms, proxy symbol). Verified on stock/sector/crypto/theme (NVDA, URA,
+      BTC-USD, QQQ, XBI). Disk-cached. (2026-07-20)
+- [x] **P3 — Item storage + embeddings** (`pipeline/embed.py` = fastembed/ONNX MiniLM 384-d;
+      `pipeline/itemstore.py` = swappable `ItemStore`; `LocalItemStore` SQLite+numpy cosine
+      now, pgvector migration in `db/pgvector_schema.sql` for when Supabase is restored).
+      Verified: embed + dedup + semantic ranking. (2026-07-20)
+- [x] **P4 — Query path** (`pipeline/query.py`): resolve → fetch-if-thin → score → embed/store
+      → semantic search → aggregate → Sonnet cited report → cache. **DEMO WORKS:** "Nvidia"
+      → 46 scored items, cited bull/bear brief, cold 24s / cached 0ms. (2026-07-20)
+- [x] **P5 — API** (`api/main.py` rewritten): `POST /subjects/query` (cached-if-recent, 422
+      for non-market subjects), `GET /subjects/{s}/latest|history|backtest`, `/corpus/stats`,
+      `/health`. Legacy `daily_consensus` routes retired. Store made thread-safe for FastAPI's
+      threadpool. Verified via TestClient. (2026-07-20)
+- [x] **P6 — Backtest as a feature** (`analysis/subject_backtest.py`): per-subject conviction
+      vs proxy returns → lead/coincident/lag Pearson r, honest thin-data flagging; wired into
+      every financial reading. Verified (NVDA 4-mo: lead −0.33, flagged thin). (2026-07-20)
 - [ ] **P7 — Frontend:** wire the paused React dashboard (search → gauge · report w/ receipts · trend · backtest).
 - [ ] **P8 — Deploy live:** Railway (API+worker) · Vercel (frontend) · Supabase (data).
-- [ ] **P9 — Resume metrics:** cold-vs-cached latency, scoring throughput, LLM cost/1k, cache-hit rate, corpus size.
+      `SupabaseItemStore` (pgvector) is now WRITTEN and gated behind `CONSENSUS_BACKEND=supabase`
+      (default stays local SQLite). To activate: restore the paused Supabase project (DNS
+      currently doesn't resolve), run `db/pgvector_schema.sql`, set the env var, and verify
+      against the live project (the backend has not been exercised end-to-end yet). Then deploy.
+- [ ] **P9 — Resume metrics:** cold-vs-cached latency (have: 24s / 0ms), scoring throughput,
+      LLM cost/1k, cache-hit rate, corpus size.
 
 ---
 
@@ -279,9 +292,12 @@ This completes the architecture story (resume bullet #3)._
 | Sources live | 1 (Reddit RSS search, WSB) | 2026-07 |
 | % chatter down-weighted `[X]` | — | |
 | Cluster-collapse ratio | — | |
-| Cached query latency (ms) | — | |
-| LLM cost / 1k items | — | |
-| Backtest breadth `[N]×[M]` | — | |
+| Cached query latency (ms) | cold 24s → cached ~0ms (NVDA, P4) | 2026-07-20 |
+| LLM cost / 1k items | ~$0.49–0.69 / 1k (Haiku stance, ~287 in / 41 out tok) | 2026-07-20 |
+| Concurrency speedup | 7.7× (16 items 15.7s→2.1s; 0.98s→0.13s/item, 8 workers) | 2026-07-20 |
+| Embeddings | 384-dim (fastembed/ONNX MiniLM), local, $0 | 2026-07-20 |
+| Prompt-cache NOTE | does NOT fire — stance sys prompt ~250 tok < Haiku 4096 min. Do NOT claim caching as a working optimization. | 2026-07-20 |
+| Backtest breadth `[N]×[M]` | wired per-subject (lead/coincident/lag + perm/CI); breadth from Slice 2 = 24×12 | 2026-07-20 |
 | **Headline finding (verbatim)** | "Slice 2, 24 large-cap tech names × 12 mo, 1811 HN items, 257 pooled pairs: mood does NOT reliably predict next-month return. LEAD r=+0.13 but permutation p=0.076 (not sig at .05), bootstrap 95% CI [−0.03,+0.28] includes zero, horizon jagged (−0.16 / +0.13 / −0.03). 17/24 names positive. The one robust-ish thread: COINCIDENT r=−0.16 — informed mood leans CONTRARIAN to the same-month move (echoes Slice-1 lag −0.26). Honest verdict: no significant monthly predictive signal on this universe; contrarian structure is the interesting lead." | 2026-07 |
 
 **Slice 1 finding v2 (HN, 202 relevant / 480, 12 mo, NVDA):** loop solid, readings now

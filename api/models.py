@@ -1,75 +1,71 @@
 """Pydantic response models for the API.
 
-These type and document the JSON the API returns (and drive the auto-generated
-/docs). `from_row` maps a raw Supabase `daily_consensus` row into the response
-shape — including tidying the stored JSONB (e.g. top_themes is stored as
-[["NVDA", 9], ...] and served as [{"theme": "NVDA", "count": 9}, ...]).
+These type and document the JSON the API returns and drive the auto-generated
+OpenAPI/Swagger docs. They mirror the dicts produced by `pipeline.query` and
+`pipeline.itemstore`; FastAPI validates/coerces the returned dicts against them,
+dropping internal keys and filling optionals for cached-from-store readings that
+carry fewer fields than a freshly computed one.
 """
+
+from __future__ import annotations
 
 from pydantic import BaseModel
 
 
-class Theme(BaseModel):
-    theme: str
-    count: int
+class Citation(BaseModel):
+    """One receipt behind the report — a real post the synthesis cited as [n]."""
+
+    n: int
+    source: str
+    url: str | None = None
+    score: int
+    quote: str
 
 
-class TickerSentiment(BaseModel):
-    ticker: str
-    score: float
-    label: str
-    mentions: int
-    confidence: str
+class Backtest(BaseModel):
+    """Lead/coincident/lag of conviction vs. the proxy's forward returns.
+
+    Correlations are null when there are too few periods to compute honestly
+    (see `note`). `series` is passed through untyped so the raw per-period
+    {period, conviction, price, return} objects reach the client unchanged.
+    """
+
+    period: str | None = None
+    n_periods: int | None = None
+    proxy: str | None = None
+    lead_r: float | None = None
+    coincident_r: float | None = None
+    lag_r: float | None = None
+    n_pairs: dict[str, int] | None = None
+    series: list[dict] = []
+    note: str | None = None
 
 
-class HistoryPoint(BaseModel):
-    """One day in the trend series — just what a chart needs."""
+class Reading(BaseModel):
+    """A consensus reading for a subject. Fields optional so a cached row (which
+    stores fewer fields than a freshly computed reading) validates cleanly."""
 
-    run_date: str
-    consensus_score: float
-    label: str
-    contested: bool
+    subject: str
+    display: str | None = None
+    input: str | None = None
+    proxy: str | None = None
+    asset_type: str | None = None
+    is_financial: bool
+    computed_at: str | None = None
+    label: str | None = None
+    consensus_score: float | None = None
+    conviction: float | None = None
+    dispersion: float | None = None
+    volume: int | None = None
+    report_md: str | None = None
+    citations: list[Citation] = []
+    backtest: Backtest | None = None
+    cached: bool | None = None
 
-    @classmethod
-    def from_row(cls, row: dict) -> "HistoryPoint":
-        return cls(
-            run_date=str(row["run_date"]),
-            consensus_score=row["consensus_score"],
-            label=row["label"],
-            contested=row["contested"],
-        )
+
+class CorpusStats(BaseModel):
+    items: int
 
 
-class ConsensusDay(BaseModel):
-    run_date: str
-    consensus_score: float
-    label: str
-    confidence: str
-    contested: bool
-    dispersion: float
-    item_count: int
-    contributing_count: int
-    tier_means: dict[str, float]
-    tickers: list[TickerSentiment]
-    top_themes: list[Theme]
-    bull_signals: list[str]
-    bear_signals: list[str]
-
-    @classmethod
-    def from_row(cls, row: dict) -> "ConsensusDay":
-        return cls(
-            run_date=str(row["run_date"]),
-            consensus_score=row["consensus_score"],
-            label=row["label"],
-            confidence=row["confidence"],
-            contested=row["contested"],
-            dispersion=row["dispersion"],
-            item_count=row["item_count"],
-            contributing_count=row["contributing_count"],
-            tier_means=row.get("tier_means") or {},
-            tickers=[TickerSentiment(**t) for t in (row.get("tickers") or [])],
-            top_themes=[Theme(theme=t[0], count=t[1])
-                        for t in (row.get("top_themes") or [])],
-            bull_signals=row.get("bull_signals") or [],
-            bear_signals=row.get("bear_signals") or [],
-        )
+class Health(BaseModel):
+    status: str
