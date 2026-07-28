@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+/**
+ * Design tokens.
+ *
+ * Declared as plain CSS custom properties on :root (so they can flip with the
+ * viewer's color scheme) and exposed to Tailwind via `@theme inline`, which makes
+ * `bg-surface`, `text-ink-2`, `border-line` etc. resolve at runtime rather than
+ * being frozen at build time. That is what lets one set of utility classes serve
+ * both light and dark.
+ *
+ * Tone colors (bull/bear/neutral) are chosen to clear 4.5:1 against their own
+ * surface in both schemes — a sentiment read that can't be seen isn't a read.
+ */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-accent: var(--accent);
+  --color-bull: var(--bull);
+  --color-bear: var(--bear);
+  --color-flat: var(--flat);
+}
+
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f7f8fa;
+  --line: #e4e7ec;
+  --line-strong: #d2d7df;
+  --ink: #14171c;
+  --ink-2: #444b58;
+  --ink-3: #79808d;
+  --accent: #2f6df6;
+  --bull: #0f7a48;
+  --bear: #c22e2b;
+  --flat: #8a6410;
+  --shadow-bar: 0 1px 6px rgb(20 23 28 / 0.08);
+  --shadow-bar-active: 0 2px 14px rgb(20 23 28 / 0.13);
+  --shadow-card: 0 1px 2px rgb(20 23 28 / 0.04);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d0f13;
+    --surface: #14171d;
+    --surface-2: #191d24;
+    --line: #262b34;
+    --line-strong: #333945;
+    --ink: #eef1f5;
+    --ink-2: #b2b9c5;
+    --ink-3: #7d8593;
+    --accent: #7aa4ff;
+    --bull: #3ecb87;
+    --bear: #ff6f66;
+    --flat: #dfae4d;
+    --shadow-bar: 0 1px 6px rgb(0 0 0 / 0.5);
+    --shadow-bar-active: 0 2px 16px rgb(0 0 0 / 0.62);
+    --shadow-card: 0 1px 2px rgb(0 0 0 / 0.3);
+    color-scheme: dark;
+  }
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Tabular figures everywhere numbers are compared down a column. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+.shadow-bar {
+  box-shadow: var(--shadow-bar);
+}
+.shadow-bar-active {
+  box-shadow: var(--shadow-bar-active);
+}
+.shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+/* Fade/rise used when results land, and by the staged progress list. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-rise {
+  animation: rise 0.34s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes sweep {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(320%);
+  }
+}
+.animate-sweep {
+  animation: sweep 1.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise,
+  .animate-sweep {
+    animation: none;
+  }
+}

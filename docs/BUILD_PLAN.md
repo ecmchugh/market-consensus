@@ -22,7 +22,14 @@ of the active slice.
 
 ## Current state (keep this honest)
 
-_Last updated: 2026-07-20 — direction locked: production RAG consensus engine (Big Tech resume framing)._
+_Last updated: 2026-07-27 — P1–P7 done. The product is now usable end to end: type a subject
+in the browser, get a cited reading with a backtest. Only P8 (deploy) and P9 (metrics) remain._
+
+**Run it locally:**
+```
+CONSENSUS_DB=demo_corpus.db uvicorn api.main:app --port 8000   # API  (demo corpus, 106 items)
+cd web && npm install && npm run dev                            # UI   → http://localhost:5173
+```
 
 ---
 
@@ -74,12 +81,61 @@ retire the old news pipeline.
 - [x] **P6 — Backtest as a feature** (`analysis/subject_backtest.py`): per-subject conviction
       vs proxy returns → lead/coincident/lag Pearson r, honest thin-data flagging; wired into
       every financial reading. Verified (NVDA 4-mo: lead −0.33, flagged thin). (2026-07-20)
-- [ ] **P7 — Frontend:** wire the paused React dashboard (search → gauge · report w/ receipts · trend · backtest).
-- [ ] **P8 — Deploy live:** Railway (API+worker) · Vercel (frontend) · Supabase (data).
-      `SupabaseItemStore` (pgvector) is now WRITTEN and gated behind `CONSENSUS_BACKEND=supabase`
-      (default stays local SQLite). To activate: restore the paused Supabase project (DNS
-      currently doesn't resolve), run `db/pgvector_schema.sql`, set the env var, and verify
-      against the live project (the backend has not been exercised end-to-end yet). Then deploy.
+- [x] **P7 — Frontend** (`web/`): search-engine-style SPA — centered hero search bar → results
+      (gauge · cited report · backtest · trend). NOT a wiring job: the paused scaffold targeted
+      the retired `ConsensusDay`/`/consensus/*` pipeline and had no `main.tsx` at all, so the
+      whole data layer + every component is new. Built against the real `Reading` contract.
+      No chart library — gauge/backtest/trend are hand-rolled SVG (55 kB gzipped total).
+      Light+dark, responsive, `?q=` deep links, `/` to focus, staged progress for the cold path.
+      **Verified end to end in a headless browser** against the live API on real data (2026-07-27).
+      Four defects found and fixed while verifying:
+        · `subject_reading` never persisted `display`/`asset_type` → every CACHED read lost the
+          human name and showed "NVDA" instead of "Nvidia". Added both columns + migration on
+          SQLite *and* `db/pgvector_schema.sql`, so the two backends stay in parity.
+        · Sonnet synthesis was truncating mid-sentence — `max_tokens=600` was below what the
+          model actually writes. Raised to 1200; report now closes properly and uses all 14 cites.
+        · Report renderer only understood `**bold**` headers; the model also emits `## ATX`,
+          which leaked a literal `#` into the UI. Handles both now.
+        · Backtest `note` is dual-purpose (real caveat vs. neutral description) and was being
+          rendered unconditionally inside the warning box; now only the caveat form shows.
+      Also added `CONSENSUS_DB` env override so the demo corpus can be served without moving files.
+- [ ] **P8 — Deploy live.** Broken into steps; do them in order.
+
+  - [x] **P8.1 — Abuse + spend guards** (`api/limits.py`), 2026-07-28. `POST /subjects/query`
+        was unauthenticated, unthrottled, and spends money (~1 Haiku call per post + 1 Sonnet
+        per cold run, ~40s) with `allow_origins=["*"]` — a loop could have drained the API key.
+        Now guarded three ways:
+          · **Per-IP sliding-window rate limit** (`QUERY_RATE_LIMIT`, default 20/hr), applied as
+            a FastAPI dependency so it runs BEFORE subject resolution — which is itself an LLM
+            call, so spraying novel subjects can't run up resolver cost.
+          · **Global daily cold-run budget** (`DAILY_COLD_QUERY_BUDGET`, default 100/UTC day).
+            Counted from `subject_reading` rows written today rather than an in-memory counter,
+            so the cap SURVIVES A RESTART. Needed a new `count_readings_since()` on both stores.
+          · **CORS from `ALLOWED_ORIGINS`**, defaulting to localhost — an unconfigured deploy is
+            CLOSED, so forgetting the env var breaks the frontend loudly instead of silently
+            reopening the paid endpoint to the whole internet.
+        Cached readings are explicitly FREE: the endpoint checks the cache (`query.get_fresh_cached`)
+        before consulting the budget, so a spent budget never blocks an already-computed subject.
+        Verified by `tests/test_limits.py` (22 assertions, all pass) — the repo's first test.
+        NOTE: rate limiter is per-process; >1 worker multiplies the effective limit. Fine for a
+        single-instance deploy, needs shared state (Redis) if it ever scales out.
+        COST NOTE: an early, non-hermetic version of that test fell through to a REAL cold run
+        for "Palantir" (~180 Haiku + 1 Sonnet). The test is now fully stubbed with a tripwire
+        asserting the paid path is never reached; the stray PLTR reading is still in demo_corpus.db.
+  - [ ] **P8.2 — Seed the corpus** with 20–30 subjects so the site isn't a cold start for every
+        visitor and the trend/backtest panels have real history instead of n=4. Deliberate spend —
+        confirm the subject count and expected cost before running in bulk.
+  - [ ] **P8.3 — Ship it:** Railway (API + persistent volume for the SQLite corpus) · Vercel
+        (static `web/dist`, `VITE_API_BASE` → Railway origin) · set `ALLOWED_ORIGINS` to the
+        Vercel origin. **Decision (2026-07-28): deploy on `LocalItemStore`, not Supabase.** The
+        Supabase project is still paused (`vutdzotimyrxqhhxpbhy.supabase.co` does not resolve)
+        and `SupabaseItemStore` has never been run against a live project — shipping onto an
+        untested backend is a bad first deploy. SQLite on a mounted volume is genuinely right at
+        this scale; pgvector stays as the documented scaling path behind `CONSENSUS_BACKEND`.
+        Gotcha to verify: `fastembed` downloads its ONNX model at runtime — needs a writable
+        cache dir and makes the first request on a fresh container slow.
+  - [ ] **P8.4 — Known architectural debt:** the 42s synchronous POST is fragile behind real
+        proxies/browsers. Works, but 202-and-poll is the correct shape if it causes trouble.
 - [ ] **P9 — Resume metrics:** cold-vs-cached latency (have: 24s / 0ms), scoring throughput,
       LLM cost/1k, cache-hit rate, corpus size.
 
@@ -287,12 +343,13 @@ This completes the architecture story (resume bullet #3)._
 
 | Metric | Value | Captured when |
 |---|---|---|
-| Corpus items `[N]` | 42 relevant / 100 fetched (NVDA, Slice 1) | 2026-07 |
+| Corpus items `[N]` | 106 (NVDA, demo corpus after P7 verification runs) | 2026-07-27 |
+| Frontend bundle | 55 kB gzipped (171 kB raw), zero chart/markdown deps | 2026-07-27 |
 | Hours of audio transcribed | — (no audio yet) | |
 | Sources live | 1 (Reddit RSS search, WSB) | 2026-07 |
 | % chatter down-weighted `[X]` | — | |
 | Cluster-collapse ratio | — | |
-| Cached query latency (ms) | cold 24s → cached ~0ms (NVDA, P4) | 2026-07-20 |
+| Cached query latency (ms) | cold 42s → cached 8ms (NVDA, 106 items, measured through the API at P7) | 2026-07-27 |
 | LLM cost / 1k items | ~$0.49–0.69 / 1k (Haiku stance, ~287 in / 41 out tok) | 2026-07-20 |
 | Concurrency speedup | 7.7× (16 items 15.7s→2.1s; 0.98s→0.13s/item, 8 workers) | 2026-07-20 |
 | Embeddings | 384-dim (fastembed/ONNX MiniLM), local, $0 | 2026-07-20 |

@@ -2,53 +2,80 @@
  * Response types mirroring the FastAPI Pydantic models in `api/models.py`.
  * Keep these in lockstep with the backend — they are the contract the whole
  * dashboard binds to.
+ *
+ * Nearly every field on `Reading` is optional because a reading served from the
+ * cache stores fewer fields than a freshly computed one (see the docstring on
+ * `api.models.Reading`). Treat anything but `subject`/`is_financial` as maybe-absent.
  */
 
-/** One entry in `top_themes` — a recurring topic and how often it surfaced. */
-export interface Theme {
-  theme: string;
-  count: number;
+/** One receipt behind the report — a real post the synthesis cited as [n]. */
+export interface Citation {
+  n: number;
+  source: string;
+  url: string | null;
+  /** Stance of this post, −100 (very bearish) … +100 (very bullish). */
+  score: number;
+  quote: string;
+}
+
+/** One period in the backtest series: the read, the proxy price, the forward return. */
+export interface BacktestPoint {
+  period: string;
+  conviction: number | null;
+  price: number | null;
+  /** Fractional return over the period, e.g. 0.0579 = +5.79%. Null where unknown. */
+  return: number | null;
 }
 
 /**
- * Per-ticker read for a day. Note we surface `label` (the tone) and `mentions`,
- * NOT the raw `score` — this is a mood gauge, not a price call.
+ * Lead/coincident/lag of conviction vs. the proxy's returns.
+ * Correlations are null when there were too few periods to compute honestly —
+ * `note` carries the caveat (e.g. "thin — interpret with caution").
  */
-export interface TickerSentiment {
-  ticker: string;
-  score: number;
-  label: string;
-  mentions: number;
-  confidence: string;
+export interface Backtest {
+  period: string | null;
+  n_periods: number | null;
+  proxy: string | null;
+  lead_r: number | null;
+  coincident_r: number | null;
+  lag_r: number | null;
+  n_pairs: Record<string, number> | null;
+  series: BacktestPoint[];
+  note: string | null;
 }
 
-/** One day in the trend series — just what the chart needs. */
-export interface HistoryPoint {
-  run_date: string;
-  consensus_score: number;
-  label: string;
-  contested: boolean;
+/** A consensus reading for one market subject — the core object of the whole app. */
+export interface Reading {
+  /** Canonical store key (the proxy ticker), e.g. "NVDA". */
+  subject: string;
+  /** Human-facing name from the resolver, e.g. "Nvidia". */
+  display: string | null;
+  /** Whatever the user actually typed. */
+  input: string | null;
+  /** Tradeable proxy symbol the backtest runs against. */
+  proxy: string | null;
+  asset_type: string | null;
+  is_financial: boolean;
+  computed_at: string | null;
+  /** "bullish" | "bearish" | "neutral" — the backend's own bucketing. */
+  label: string | null;
+  /** Mean stance, −100…+100. The headline number. */
+  consensus_score: number | null;
+  /** Mean |stance| — how strongly views are held, regardless of direction. */
+  conviction: number | null;
+  /** Stdev of stance — how much the crowd disagrees. */
+  dispersion: number | null;
+  /** Number of scored posts behind this reading. */
+  volume: number | null;
+  report_md: string | null;
+  citations: Citation[];
+  backtest: Backtest | null;
+  cached: boolean | null;
 }
 
-/** The full consensus for a single day (`/consensus/latest`, `/consensus/{date}`). */
-export interface ConsensusDay {
-  run_date: string;
-  consensus_score: number;
-  label: string;
-  confidence: string;
-  contested: boolean;
-  dispersion: number;
-  item_count: number;
-  contributing_count: number;
-  tier_means: Record<string, number>;
-  tickers: TickerSentiment[];
-  top_themes: Theme[];
-  bull_signals: string[];
-  bear_signals: string[];
+export interface CorpusStats {
+  items: number;
 }
 
 /** Coarse tone bucket derived from a numeric score. Drives color + label everywhere. */
-export type Tone = "bullish" | "bearish" | "mixed";
-
-/** Where the currently displayed data came from — surfaced subtly in the UI. */
-export type DataSource = "live" | "sample";
+export type Tone = "bullish" | "bearish" | "neutral";

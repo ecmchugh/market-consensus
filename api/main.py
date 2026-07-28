@@ -10,10 +10,13 @@ Run locally:
     -> interactive docs at http://localhost:8000/docs
 """
 
-from fastapi import FastAPI, HTTPException
+import os
+
+from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
+from api import limits
 from api.models import Backtest, CorpusStats, Health, Reading
 from pipeline import query, subjects
 from pipeline.itemstore import get_store
@@ -24,12 +27,16 @@ app = FastAPI(
     version="0.2.0",
 )
 
-# The dashboard runs on a different origin (Vercel/localhost). Read-mostly public
-# data, so permissive origins are fine for now; tighten to the deployed frontend
-# origin in production. POST is allowed for /subjects/query.
+# Origins allowed to call this API, comma-separated in ALLOWED_ORIGINS. Defaults to
+# the local dev servers, so an unconfigured deploy is closed rather than open —
+# forgetting the env var breaks the frontend loudly instead of silently exposing
+# the paid endpoint to every origin on the internet.
+DEFAULT_ORIGINS = "http://localhost:5173,http://127.0.0.1:5173"
+ALLOWED_ORIGINS = [o.strip() for o in os.getenv("ALLOWED_ORIGINS", DEFAULT_ORIGINS).split(",") if o.strip()]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=ALLOWED_ORIGINS,
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
@@ -56,9 +63,22 @@ def corpus_stats():
     return {"items": get_store().corpus_size()}
 
 
-@app.post("/subjects/query", response_model=Reading)
+@app.post("/subjects/query", response_model=Reading, dependencies=[Depends(limits.enforce_rate_limit)])
 def subjects_query(req: QueryRequest):
-    """Run (or return cached) consensus reading for a subject. The one heavy path."""
+    """Run (or return cached) consensus reading for a subject. The one heavy path.
+
+    Guarded two ways (see api/limits.py): a per-IP rate limit runs as a dependency
+    BEFORE this body — so subject resolution, itself an LLM call, is also covered —
+    and a global daily budget caps total cold runs. The budget is checked only when
+    the request would actually be a cold run; serving an existing cached reading
+    costs nothing and so is never refused for budget reasons.
+    """
+    if not req.force_refresh:
+        cached = query.get_fresh_cached(req.subject)
+        if cached is not None:
+            return cached
+
+    limits.enforce_daily_budget(get_store())
     reading = query.run_query(req.subject, force_refresh=req.force_refresh, quiet=True)
     if not reading.get("is_financial"):
         raise HTTPException(

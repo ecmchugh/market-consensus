@@ -1,0 +1,7 @@
+# Dev/test-only dependencies. Install with:
+#     pip install -r requirements.txt -r requirements-dev.txt
+#
+# Run the test suite (plain scripts, no test runner needed):
+#     PYTHONPATH=. python tests/test_limits.py
+
+httpx>=0.27        # required by fastapi.testclient.TestClient

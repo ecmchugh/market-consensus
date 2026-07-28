@@ -112,11 +112,36 @@ def _synthesize(subject_display: str, agg: dict, citations: list[dict]) -> str:
     client = anthropic.Anthropic()
     resp = client.messages.create(
         model=SYNTH_MODEL,
-        max_tokens=600,
+        # Headroom over the ~150-word target: at 600 the model was overrunning its
+        # brief and getting cut off mid-sentence, which surfaced as a truncated
+        # report in the UI. Generous ceiling; normal responses stop well short.
+        max_tokens=1200,
         system=[{"type": "text", "text": _SYNTH_SYSTEM, "cache_control": {"type": "ephemeral"}}],
         messages=[{"role": "user", "content": user}],
     )
     return "".join(b.text for b in resp.content if b.type == "text").strip()
+
+
+def _fresh_cached_for_key(key: str, max_age_hours: float) -> dict | None:
+    """Cached reading for a resolved key if it's newer than `max_age_hours`, else None."""
+    cached = get_store().get_latest_reading(key)
+    if not cached or not cached.get("computed_at"):
+        return None
+    age_h = (datetime.now(timezone.utc) - datetime.fromisoformat(cached["computed_at"])).total_seconds() / 3600
+    if age_h > max_age_hours:
+        return None
+    cached["cached"] = True
+    return cached
+
+
+def get_fresh_cached(subject_str: str, max_age_hours: float = 24.0) -> dict | None:
+    """Cached reading for a free-text subject, or None if this would be a cold run.
+
+    Exists so the API can distinguish "free" from "costs money" before charging a
+    request against the daily spend budget (see api/limits.py). Subject resolution
+    is disk-cached, so this stays cheap on the common path.
+    """
+    return _fresh_cached_for_key(_subject_key(subjects.resolve(subject_str)), max_age_hours)
 
 
 def run_query(subject_str: str, *, force_refresh: bool = False, max_age_hours: float = 24.0,
@@ -139,13 +164,10 @@ def run_query(subject_str: str, *, force_refresh: bool = False, max_age_hours: f
 
     # 1) Serve fresh cache if we have it.
     if not force_refresh:
-        cached = store.get_latest_reading(key)
-        if cached and cached.get("computed_at"):
-            age_h = (datetime.now(timezone.utc) - datetime.fromisoformat(cached["computed_at"])).total_seconds() / 3600
-            if age_h <= max_age_hours:
-                log(f"  cache hit for {key} ({age_h:.1f}h old) — returning instantly")
-                cached["cached"] = True
-                return cached
+        cached = _fresh_cached_for_key(key, max_age_hours)
+        if cached is not None:
+            log(f"  cache hit for {key} — returning instantly")
+            return cached
 
     if not resolved.get("is_financial") or not resolved.get("proxy"):
         log(f"  '{subject_str}' has no tradeable proxy — out of scope (markets only).")

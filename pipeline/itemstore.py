@@ -19,6 +19,7 @@ float32 bytes; pgvector stores them natively as `vector(384)`.
 from __future__ import annotations
 
 import json
+import os
 import sqlite3
 import threading
 from datetime import datetime, timezone
@@ -26,7 +27,10 @@ from pathlib import Path
 
 import numpy as np
 
-DEFAULT_DB_PATH = Path("corpus.db")
+# Which SQLite file the local backend opens. Override with CONSENSUS_DB — e.g.
+# `CONSENSUS_DB=demo_corpus.db uvicorn api.main:app` to serve the bundled demo
+# corpus without touching the working one.
+DEFAULT_DB_PATH = Path(os.getenv("CONSENSUS_DB") or "corpus.db")
 
 
 def _now_iso() -> str:
@@ -55,6 +59,16 @@ class ItemStore:
         raise NotImplementedError
 
     def get_reading_history(self, subject: str, limit: int = 90) -> list[dict]:  # pragma: no cover
+        raise NotImplementedError
+
+    def count_readings_since(self, since_iso: str) -> int:  # pragma: no cover
+        """Readings computed at/after `since_iso`.
+
+        Every cold query writes exactly one reading, so this is the count of cold
+        runs in a window — which is what the API's daily spend cap is built on
+        (see api/limits.py). Derived from stored rows rather than an in-memory
+        counter so the cap survives a process restart.
+        """
         raise NotImplementedError
 
 
@@ -101,6 +115,8 @@ class LocalItemStore(ItemStore):
                 volume          INTEGER,
                 proxy           TEXT,
                 is_financial    INTEGER,
+                display         TEXT,            -- human name from the resolver ("Nvidia")
+                asset_type      TEXT,            -- stock | crypto | sector | etf …
                 report_md       TEXT,
                 citations       TEXT,            -- json
                 backtest        TEXT,            -- json (null until computed)
@@ -109,7 +125,7 @@ class LocalItemStore(ItemStore):
             """
         )
         # Lightweight migration: add columns introduced after a db was first created.
-        for col, decl in [("label", "TEXT")]:
+        for col, decl in [("label", "TEXT"), ("display", "TEXT"), ("asset_type", "TEXT")]:
             try:
                 self._conn.execute(f"ALTER TABLE subject_reading ADD COLUMN {col} {decl}")
             except sqlite3.OperationalError:
@@ -196,8 +212,8 @@ class LocalItemStore(ItemStore):
                 """
                 INSERT OR REPLACE INTO subject_reading
                     (subject, computed_at, label, consensus_score, conviction, dispersion,
-                     volume, proxy, is_financial, report_md, citations, backtest)
-                VALUES (?,?,?,?,?,?,?,?,?,?,?,?)
+                     volume, proxy, is_financial, display, asset_type, report_md, citations, backtest)
+                VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)
                 """,
                 (
                     reading["subject"],
@@ -209,6 +225,8 @@ class LocalItemStore(ItemStore):
                     reading.get("volume"),
                     reading.get("proxy"),
                     int(bool(reading.get("is_financial"))),
+                    reading.get("display"),
+                    reading.get("asset_type"),
                     reading.get("report_md"),
                     json.dumps(reading.get("citations") or []),
                     json.dumps(reading["backtest"]) if reading.get("backtest") is not None else None,
@@ -238,6 +256,15 @@ class LocalItemStore(ItemStore):
                 (subject, limit),
             ).fetchall()
         return [self._reading_row_to_dict(r) for r in rows]
+
+    def count_readings_since(self, since_iso: str) -> int:
+        # computed_at is stored as an ISO-8601 string, which sorts lexicographically
+        # in chronological order for a fixed offset — both sides are UTC here.
+        with self._lock:
+            row = self._conn.execute(
+                "SELECT COUNT(*) FROM subject_reading WHERE computed_at >= ?", (since_iso,)
+            ).fetchone()
+        return int(row[0]) if row else 0
 
 
 class SupabaseItemStore(ItemStore):
@@ -313,8 +340,8 @@ class SupabaseItemStore(ItemStore):
     def save_reading(self, reading: dict) -> None:
         row = {k: reading.get(k) for k in (
             "subject", "computed_at", "label", "consensus_score", "conviction",
-            "dispersion", "volume", "proxy", "is_financial", "report_md",
-            "citations", "backtest")}
+            "dispersion", "volume", "proxy", "is_financial", "display", "asset_type",
+            "report_md", "citations", "backtest")}
         row["computed_at"] = row.get("computed_at") or _now_iso()
         # citations/backtest are jsonb — the client serializes dict/list natively.
         self._client.table("subject_reading").upsert(
@@ -330,6 +357,13 @@ class SupabaseItemStore(ItemStore):
         resp = (self._client.table("subject_reading").select("*")
                 .eq("subject", subject).order("computed_at", desc=False).limit(limit).execute())
         return resp.data or []
+
+    def count_readings_since(self, since_iso: str) -> int:
+        # head=True asks PostgREST for the count only — no rows come back.
+        resp = (self._client.table("subject_reading")
+                .select("subject", count="exact", head=True)
+                .gte("computed_at", since_iso).execute())
+        return int(resp.count or 0)
 
 
 _STORE: ItemStore | None = None

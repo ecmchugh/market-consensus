@@ -41,11 +41,17 @@ create table if not exists subject_reading (
     volume          integer,
     proxy           text,
     is_financial    boolean,
+    display         text,                 -- human name from the resolver ("Nvidia")
+    asset_type      text,                 -- stock | crypto | sector | etf …
     report_md       text,
     citations       jsonb,
     backtest        jsonb,
     primary key (subject, computed_at)
 );
+
+-- For databases created before display/asset_type existed (mirrors the SQLite migration).
+alter table subject_reading add column if not exists display    text;
+alter table subject_reading add column if not exists asset_type text;
 
 -- Cosine similarity search helper (pgvector's <=> is cosine distance = 1 - similarity).
 -- Usage: select * from match_items('[...384 floats...]'::vector, 200, 'NVDA');
