@@ -21,3 +21,10 @@ slice2_*.json
 # LocalItemStore backend; regenerable, not source. (pgvector is the prod backend.)
 *.db
 .subject_cache.json
+
+# ...EXCEPT the deploy seed. This one snapshot IS shipped: it's baked into the
+# Docker image and copied onto the volume on first boot (scripts/bootstrap_corpus.py),
+# so a fresh deploy comes up populated instead of making every visitor pay the ~40s
+# cold path. Regenerate with: cp corpus.db seed/corpus.seed.db
+# Tradeoff: ~12MB binary in git, and a new blob in history each time it's refreshed.
+!seed/corpus.seed.db

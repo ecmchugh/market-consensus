@@ -1,0 +1,25 @@
+# Keep the build context small and the image free of local-only state.
+venv/
+web/node_modules/
+web/dist/
+node_modules/
+__pycache__/
+**/__pycache__/
+*.pyc
+.git/
+.github/
+
+# Local secrets must never enter an image layer.
+.env
+
+# Local databases. The ONLY corpus that ships is seed/corpus.seed.db, which
+# scripts/bootstrap_corpus.py copies onto the volume on first boot.
+*.db
+!seed/corpus.seed.db
+
+# Regenerable run artifacts.
+.slice2_cache/
+data/*.csv
+*.png
+slice1_nvda_scored.json
+.subject_cache.json

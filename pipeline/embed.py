@@ -12,8 +12,17 @@ similarity search (or the local SQLite fallback) in the item store.
 
 from __future__ import annotations
 
+import os
+
 MODEL_NAME = "BAAI/bge-small-en-v1.5"
 DIM = 384  # dimensionality of the vectors this model emits
+
+# Where fastembed keeps the downloaded ONNX weights. Unset locally → fastembed's
+# default (a temp dir). That default is wrong in a container: /tmp does not survive
+# a restart, so every deploy would re-download the model on the first request and
+# stall it. The Dockerfile sets this to a baked-in image path and pre-downloads at
+# BUILD time, so runtime never fetches anything.
+CACHE_DIR = os.getenv("FASTEMBED_CACHE") or None
 
 _model = None
 
@@ -24,7 +33,8 @@ def _get_model():
     if _model is None:
         from fastembed import TextEmbedding
 
-        _model = TextEmbedding(model_name=MODEL_NAME)
+        kwargs = {"cache_dir": CACHE_DIR} if CACHE_DIR else {}
+        _model = TextEmbedding(model_name=MODEL_NAME, **kwargs)
     return _model
 
 
