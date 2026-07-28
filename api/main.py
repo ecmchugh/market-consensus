@@ -20,6 +20,7 @@ from api import limits
 from api.models import Backtest, CorpusStats, Health, Reading
 from pipeline import query, subjects
 from pipeline.itemstore import get_store
+from pipeline.stance import StanceScoringError
 
 app = FastAPI(
     title="Market Consensus API",
@@ -79,7 +80,19 @@ def subjects_query(req: QueryRequest):
             return cached
 
     limits.enforce_daily_budget(get_store())
-    reading = query.run_query(req.subject, force_refresh=req.force_refresh, quiet=True)
+    try:
+        reading = query.run_query(req.subject, force_refresh=req.force_refresh, quiet=True)
+    except StanceScoringError as e:
+        # Scoring broke (expired key, exhausted credits, sustained upstream errors).
+        # Surface it as a service fault — the one thing it must never do is fall
+        # through as an empty reading, which the UI would render as "no discussion
+        # found" and blame the subject for our outage.
+        print(f"ERROR: stance scoring failed for {req.subject!r}: {e}")
+        raise HTTPException(
+            status_code=503,
+            detail="Upstream scoring is unavailable right now, so this reading can't be computed. "
+                   "Cached subjects still work. Please try again later.",
+        ) from e
     if not reading.get("is_financial"):
         raise HTTPException(
             status_code=422,

@@ -103,15 +103,25 @@ finally:
     main.get_store, main.query.run_query = orig_store, orig_run
 
 # --- cached path is free: served even with the budget fully exhausted -----
+# get_fresh_cached is stubbed rather than leaning on a real row in demo_corpus.db:
+# readings expire after 24h, so a DB-backed version of this assertion passes or
+# fails depending on how recently someone ran a query. Flaky tests get ignored.
+FAKE_CACHED = {"subject": "NVDA", "display": "Nvidia", "is_financial": True,
+               "consensus_score": 7.3, "volume": 106, "cached": True}
+orig_fresh = main.query.get_fresh_cached
 main.get_store = lambda: StubStore(10_000)
+main.query.get_fresh_cached = lambda *a, **k: dict(FAKE_CACHED)
 try:
     r = client.post("/subjects/query", json={"subject": "Nvidia"})
     check("cached query 200 despite exhausted budget", r.status_code == 200, f"got {r.status_code}")
     check("cached response flagged cached", r.status_code == 200 and r.json().get("cached") is True)
 finally:
-    main.get_store = orig_store
+    main.get_store, main.query.get_fresh_cached = orig_store, orig_fresh
 
 # --- per-IP rate limit ----------------------------------------------------
+# Same reasoning as above: serve a stub cached reading so this measures the limiter
+# rather than the age of whatever is in the DB.
+main.query.get_fresh_cached = lambda *a, **k: dict(FAKE_CACHED)
 limits._query_limiter = limits.SlidingWindowLimiter(3, 3600)
 codes = [client.post("/subjects/query", json={"subject": "Nvidia"}).status_code for _ in range(5)]
 check("rate limit trips after exactly 3", codes[:3] == [200, 200, 200] and codes[3] == 429, f"codes={codes}")
