@@ -27,7 +27,13 @@ from pydantic import BaseModel, Field
 from scrapers import utils  # noqa: F401
 
 MODEL = "claude-haiku-4-5"
-_CACHE_PATH = Path(".subject_cache.json")
+
+# Where resolved subjects are memoized. Override with SUBJECT_CACHE — in the
+# container this points at the persistent volume, for two reasons: the cache is
+# written at runtime (every novel subject adds an entry), and without it EVERY
+# query pays a Haiku call to resolve its subject string, including queries that
+# then hit a fully cached reading and do no other work.
+_CACHE_PATH = Path(os.getenv("SUBJECT_CACHE") or ".subject_cache.json")
 
 
 class ResolvedSubject(BaseModel):

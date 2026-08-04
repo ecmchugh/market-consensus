@@ -226,6 +226,15 @@ def fetch_podcasts(alias_index: dict[str, list[str]], *, shows: list[str] | None
                 continue
 
             log(f"    {ep.title[:60]}  ~{sorted(subjects)[:4]}")
+            # An episode we can't transcribe *in this run's configuration* must not be
+            # recorded as handled. Marking it would mean --no-whisper permanently
+            # burned the entire All-In back catalogue: those episodes publish no
+            # transcript, so they'd sit in `seen` and never be retried once Whisper
+            # was enabled. Only intrinsic skips (below) are persisted.
+            if not allow_whisper and not ep.transcript_url:
+                log(f"      (no published transcript; needs whisper — leaving for a later run)")
+                continue
+
             try:
                 segs = get_segments(ep, allow_whisper=allow_whisper, quiet=quiet)
             except Exception as e:

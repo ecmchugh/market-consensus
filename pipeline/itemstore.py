@@ -61,6 +61,16 @@ class ItemStore:
     def get_reading_history(self, subject: str, limit: int = 90) -> list[dict]:  # pragma: no cover
         raise NotImplementedError
 
+    def existing_ids(self, ids: list[str]) -> set[str]:  # pragma: no cover
+        """Which of `ids` are already stored.
+
+        Lets callers skip re-scoring items the corpus already holds. Dedup at write
+        time is too late: stance scoring happens BEFORE storage, so a nightly
+        refresh would pay a Haiku call per already-known item and then throw the
+        result away.
+        """
+        raise NotImplementedError
+
     def count_readings_since(self, since_iso: str) -> int:  # pragma: no cover
         """Readings computed at/after `since_iso`.
 
@@ -288,6 +298,18 @@ class LocalItemStore(ItemStore):
             ).fetchone()
         return int(row[0]) if row else 0
 
+    def existing_ids(self, ids: list[str]) -> set[str]:
+        if not ids:
+            return set()
+        found: set[str] = set()
+        with self._lock:
+            # Chunked to stay under SQLite's bound-parameter limit.
+            for i in range(0, len(ids), 500):
+                chunk = ids[i:i + 500]
+                q = f"SELECT external_id FROM item WHERE external_id IN ({','.join('?' * len(chunk))})"
+                found.update(r[0] for r in self._conn.execute(q, chunk))
+        return found
+
     # --- podcast episode bookkeeping ---------------------------------------
     def seen_episode_guids(self) -> set[str]:
         """Every episode guid already handled, whatever the outcome."""
@@ -404,6 +426,16 @@ class SupabaseItemStore(ItemStore):
         resp = (self._client.table("subject_reading").select("*")
                 .eq("subject", subject).order("computed_at", desc=False).limit(limit).execute())
         return resp.data or []
+
+    def existing_ids(self, ids: list[str]) -> set[str]:
+        if not ids:
+            return set()
+        found: set[str] = set()
+        for i in range(0, len(ids), 200):   # keep the URL/filter payload sane
+            chunk = ids[i:i + 200]
+            resp = self._client.table("item").select("external_id").in_("external_id", chunk).execute()
+            found.update(r["external_id"] for r in (resp.data or []))
+        return found
 
     def count_readings_since(self, since_iso: str) -> int:
         # head=True asks PostgREST for the count only — no rows come back.

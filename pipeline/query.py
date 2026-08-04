@@ -181,6 +181,19 @@ def run_query(subject_str: str, *, force_refresh: bool = False, max_age_hours: f
         raw = fetch_hn(resolved, period="month", windows=windows, per_window=per_window)
         if limit:
             raw = raw[:limit]
+
+        # Drop anything already in the corpus BEFORE scoring. upsert_items dedups at
+        # write time, which is too late — stance scoring runs first, so a refresh
+        # would pay a Haiku call per already-known item and discard the answer. On a
+        # nightly refresh across ~30 subjects that was ~5,400 wasted calls a night.
+        if raw and hasattr(store, "existing_ids"):
+            ids = [r.get("external_id") or r.get("url") for r in raw]
+            known = store.existing_ids([i for i in ids if i])
+            if known:
+                before = len(raw)
+                raw = [r for r, i in zip(raw, ids) if i not in known]
+                log(f"  {before - len(raw)} of {before} fetched items already scored — skipping them")
+
         log(f"  scoring stance on {len(raw)} items (Haiku, concurrent)…")
         scored = score_stance(raw, resolved["display"], quiet=quiet)
         for it in scored:

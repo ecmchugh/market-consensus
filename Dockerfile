@@ -37,9 +37,12 @@ print('embedding model cached into image')"
 
 COPY . .
 
-# The corpus lives on the mounted volume; scripts/bootstrap_corpus.py seeds it from
-# seed/corpus.seed.db on first boot only. Railway injects $PORT.
-ENV CONSENSUS_DB=/data/corpus.db
+# Both live on the mounted volume; scripts/bootstrap_corpus.py seeds them from
+# seed/ on first boot only. The subject cache is on the volume rather than in the
+# image because it's WRITTEN at runtime as novel subjects get resolved.
+# Railway injects $PORT.
+ENV CONSENSUS_DB=/data/corpus.db \
+    SUBJECT_CACHE=/data/subject_cache.json
 EXPOSE 8000
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3 \

@@ -28,3 +28,8 @@ slice2_*.json
 # cold path. Regenerate with: cp corpus.db seed/corpus.seed.db
 # Tradeoff: ~12MB binary in git, and a new blob in history each time it's refreshed.
 !seed/corpus.seed.db
+
+# Likewise the resolver cache: shipped so a fresh deploy doesn't pay a Haiku call
+# to resolve "Nvidia" -> NVDA on every single query. Regenerate with:
+#   cp .subject_cache.json seed/subject_cache.seed.json
+!seed/subject_cache.seed.json

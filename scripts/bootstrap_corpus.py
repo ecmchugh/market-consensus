@@ -14,13 +14,20 @@ volume IF AND ONLY IF the volume has no corpus yet. That means:
 
 Idempotent and safe to run on every container start. Never overwrites live data.
 
+The resolver cache gets the same treatment. It's small but it matters: without it
+every query — including one that then hits a fully cached reading and does no other
+work — pays a Haiku call just to turn "Nvidia" into NVDA.
+
 Env:
   CONSENSUS_DB   destination (Railway: /data/corpus.db). Required in production.
   CORPUS_SEED    override the baked seed path (default: seed/corpus.seed.db)
+  SUBJECT_CACHE  resolver cache destination (Railway: /data/subject_cache.json)
+  SUBJECT_SEED   override its seed path (default: seed/subject_cache.seed.json)
 """
 
 from __future__ import annotations
 
+import json
 import os
 import shutil
 import sqlite3
@@ -28,6 +35,38 @@ import sys
 from pathlib import Path
 
 SEED_PATH = Path(os.getenv("CORPUS_SEED") or "seed/corpus.seed.db")
+SUBJECT_SEED = Path(os.getenv("SUBJECT_SEED") or "seed/subject_cache.seed.json")
+
+
+def _seed_subject_cache() -> None:
+    """Put the resolver cache on the volume if it isn't there yet.
+
+    Same first-boot-only rule as the corpus: an existing cache has accumulated
+    subjects real users asked for, and must never be clobbered by the snapshot.
+    """
+    dest_raw = os.getenv("SUBJECT_CACHE")
+    if not dest_raw:
+        return
+    dest = Path(dest_raw)
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    if dest.exists() and dest.stat().st_size > 0:
+        try:
+            n = len(json.loads(dest.read_text()))
+            print(f"bootstrap: subject cache already present ({n} subjects) — leaving it alone")
+        except Exception:
+            print(f"bootstrap: subject cache present at {dest} — leaving it alone")
+        return
+    if not SUBJECT_SEED.exists():
+        print(f"bootstrap: no subject-cache seed at {SUBJECT_SEED} — every query will pay a resolver call")
+        return
+    tmp = dest.with_suffix(dest.suffix + ".partial")
+    shutil.copyfile(SUBJECT_SEED, tmp)
+    os.replace(tmp, dest)
+    try:
+        n = len(json.loads(dest.read_text()))
+    except Exception:
+        n = -1
+    print(f"bootstrap: seeded subject cache -> {dest} ({n} subjects)")
 
 
 def _describe(db: Path) -> str:
@@ -43,6 +82,11 @@ def _describe(db: Path) -> str:
 
 
 def main() -> int:
+    # Independent of the corpus, and deliberately first: the corpus branches below
+    # return early in several cases, and the resolver cache must be seeded whether
+    # or not the corpus needed seeding.
+    _seed_subject_cache()
+
     dest_raw = os.getenv("CONSENSUS_DB")
     if not dest_raw:
         print("bootstrap: CONSENSUS_DB unset — using the app default, nothing to do")

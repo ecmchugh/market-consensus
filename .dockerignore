@@ -17,6 +17,9 @@ __pycache__/
 *.db
 !seed/corpus.seed.db
 
+# Local resolver cache — the seed copy under seed/ is the one that ships.
+.subject_cache.json
+
 # Regenerable run artifacts.
 .slice2_cache/
 data/*.csv

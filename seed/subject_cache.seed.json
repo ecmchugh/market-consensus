@@ -1,0 +1,808 @@
+{
+  "nvidia": {
+    "display": "Nvidia",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "NVDA",
+    "hn_query": "Nvidia",
+    "reddit_query": "NVDA OR Nvidia",
+    "subreddits": [
+      "wallstreetbets",
+      "stocks",
+      "investing",
+      "nvidia"
+    ],
+    "aliases": [
+      "NVDA",
+      "Jensen Huang"
+    ],
+    "input": "Nvidia"
+  },
+  "uranium miners": {
+    "display": "Uranium miners",
+    "asset_type": "sector",
+    "is_financial": true,
+    "proxy": "URA",
+    "hn_query": "uranium miners",
+    "reddit_query": "uranium miners",
+    "subreddits": [
+      "stocks",
+      "investing",
+      "wallstreetbets",
+      "UraniumSqueeze"
+    ],
+    "aliases": [
+      "uranium mining",
+      "uranium sector",
+      "uranium stocks"
+    ],
+    "input": "uranium miners"
+  },
+  "bitcoin": {
+    "display": "Bitcoin",
+    "asset_type": "crypto",
+    "is_financial": true,
+    "proxy": "BTC-USD",
+    "hn_query": "Bitcoin",
+    "reddit_query": "Bitcoin OR BTC",
+    "subreddits": [
+      "Bitcoin",
+      "CryptoCurrency",
+      "wallstreetbets"
+    ],
+    "aliases": [
+      "BTC",
+      "digital gold",
+      "crypto"
+    ],
+    "input": "Bitcoin"
+  },
+  "the ai trade": {
+    "display": "The AI Trade",
+    "asset_type": "index",
+    "is_financial": true,
+    "proxy": "QQQ",
+    "hn_query": "artificial intelligence stocks",
+    "reddit_query": "AI stocks OR artificial intelligence investing",
+    "subreddits": [
+      "investing",
+      "stocks",
+      "wallstreetbets",
+      "technology"
+    ],
+    "aliases": [
+      "AI stocks",
+      "artificial intelligence equities",
+      "AI sector",
+      "AI boom",
+      "machine learning stocks"
+    ],
+    "input": "the AI trade"
+  },
+  "small-cap biotech": {
+    "display": "Small-cap biotech",
+    "asset_type": "sector",
+    "is_financial": true,
+    "proxy": "XBI",
+    "hn_query": "biotech startups",
+    "reddit_query": "small-cap biotech OR XBIT OR XBI",
+    "subreddits": [
+      "investing",
+      "stocks",
+      "biotech"
+    ],
+    "aliases": [
+      "biotech stocks",
+      "emerging biotech",
+      "micro-cap pharma"
+    ],
+    "input": "small-cap biotech"
+  },
+  "the dune movie": {
+    "display": "Dune Movie",
+    "asset_type": "other",
+    "is_financial": false,
+    "proxy": null,
+    "hn_query": "Dune movie",
+    "reddit_query": "Dune movie",
+    "subreddits": [
+      "movies",
+      "entertainment"
+    ],
+    "aliases": [
+      "Dune: Part One",
+      "Dune: Part Two",
+      "Denis Villeneuve Dune"
+    ],
+    "input": "the Dune movie"
+  },
+  "zzz_fake": {
+    "display": "ZZZ_fake",
+    "asset_type": "other",
+    "is_financial": false,
+    "proxy": null,
+    "hn_query": "ZZZ_fake",
+    "reddit_query": "ZZZ_fake",
+    "subreddits": [
+      "investing",
+      "stocks"
+    ],
+    "aliases": [],
+    "input": "ZZZ_fake"
+  },
+  "advanced micro devices": {
+    "display": "Advanced Micro Devices",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "AMD",
+    "hn_query": "Advanced Micro Devices",
+    "reddit_query": "AMD OR Advanced Micro Devices",
+    "subreddits": [
+      "stocks",
+      "investing",
+      "wallstreetbets",
+      "AMD"
+    ],
+    "aliases": [
+      "AMD",
+      "Advanced Micro Devices Inc."
+    ],
+    "input": "Advanced Micro Devices"
+  },
+  "nvda": {
+    "display": "Nvidia",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "NVDA",
+    "hn_query": "Nvidia",
+    "reddit_query": "NVDA OR Nvidia",
+    "subreddits": [
+      "wallstreetbets",
+      "stocks",
+      "nvidia",
+      "investing"
+    ],
+    "aliases": [
+      "NVDA",
+      "Nvidia Corporation"
+    ],
+    "input": "NVDA"
+  },
+  "the weather in paris": {
+    "display": "Weather in Paris",
+    "asset_type": "other",
+    "is_financial": false,
+    "proxy": null,
+    "hn_query": "weather Paris",
+    "reddit_query": "Paris weather",
+    "subreddits": [
+      "weather",
+      "Paris",
+      "France"
+    ],
+    "aliases": [],
+    "input": "the weather in Paris"
+  },
+  "zzzz": {
+    "display": "ZZZZ",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "ZZZZ",
+    "hn_query": "ZZZZ",
+    "reddit_query": "ZZZZ",
+    "subreddits": [
+      "stocks",
+      "investing",
+      "wallstreetbets"
+    ],
+    "aliases": [],
+    "input": "ZZZZ"
+  },
+  "palantir": {
+    "display": "Palantir Technologies",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "PLTR",
+    "hn_query": "Palantir",
+    "reddit_query": "PLTR OR Palantir",
+    "subreddits": [
+      "wallstreetbets",
+      "stocks",
+      "investing"
+    ],
+    "aliases": [
+      "Palantir Technologies",
+      "PLTR"
+    ],
+    "input": "Palantir"
+  },
+  "some uncached subject": {
+    "display": "Uncached Subject",
+    "asset_type": "other",
+    "is_financial": false,
+    "proxy": null,
+    "hn_query": "uncached subject",
+    "reddit_query": "uncached subject",
+    "subreddits": [
+      "investing",
+      "AskInvesting"
+    ],
+    "aliases": [],
+    "input": "some uncached subject"
+  },
+  "amd": {
+    "display": "AMD",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "AMD",
+    "hn_query": "AMD",
+    "reddit_query": "AMD OR Advanced Micro Devices",
+    "subreddits": [
+      "stocks",
+      "investing",
+      "wallstreetbets"
+    ],
+    "aliases": [
+      "Advanced Micro Devices",
+      "NVDA competitor",
+      "processor manufacturer"
+    ],
+    "input": "AMD"
+  },
+  "intel": {
+    "display": "Intel",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "INTC",
+    "hn_query": "Intel",
+    "reddit_query": "INTC OR Intel",
+    "subreddits": [
+      "stocks",
+      "investing",
+      "wallstreetbets",
+      "semiconductors"
+    ],
+    "aliases": [
+      "INTC",
+      "Intel Corporation"
+    ],
+    "input": "Intel"
+  },
+  "broadcom": {
+    "display": "Broadcom",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "AVGO",
+    "hn_query": "Broadcom",
+    "reddit_query": "AVGO OR Broadcom",
+    "subreddits": [
+      "stocks",
+      "investing",
+      "wallstreetbets",
+      "semiconductor"
+    ],
+    "aliases": [
+      "AVGO",
+      "Avago Technologies"
+    ],
+    "input": "Broadcom"
+  },
+  "tsmc": {
+    "display": "Taiwan Semiconductor Manufacturing Company (TSMC)",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "TSM",
+    "hn_query": "TSMC",
+    "reddit_query": "TSMC OR TSM",
+    "subreddits": [
+      "stocks",
+      "investing",
+      "wallstreetbets",
+      "semiconductor"
+    ],
+    "aliases": [
+      "Taiwan Semiconductor",
+      "TSM",
+      "TSMC"
+    ],
+    "input": "TSMC"
+  },
+  "micron": {
+    "display": "Micron Technology",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "MU",
+    "hn_query": "Micron",
+    "reddit_query": "MU OR Micron",
+    "subreddits": [
+      "stocks",
+      "investing",
+      "wallstreetbets",
+      "semiconductors"
+    ],
+    "aliases": [
+      "MU",
+      "Micron Technology Inc"
+    ],
+    "input": "Micron"
+  },
+  "arm": {
+    "display": "Arm Holdings",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "ARM",
+    "hn_query": "Arm Holdings",
+    "reddit_query": "ARM OR Arm Holdings",
+    "subreddits": [
+      "stocks",
+      "investing",
+      "wallstreetbets"
+    ],
+    "aliases": [
+      "Arm Holdings plc",
+      "ARM stock"
+    ],
+    "input": "Arm"
+  },
+  "apple": {
+    "display": "Apple",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "AAPL",
+    "hn_query": "Apple",
+    "reddit_query": "AAPL OR Apple",
+    "subreddits": [
+      "stocks",
+      "wallstreetbets",
+      "investing",
+      "apple"
+    ],
+    "aliases": [
+      "AAPL",
+      "Apple Inc."
+    ],
+    "input": "Apple"
+  },
+  "microsoft": {
+    "display": "Microsoft",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "MSFT",
+    "hn_query": "Microsoft",
+    "reddit_query": "MSFT OR Microsoft",
+    "subreddits": [
+      "stocks",
+      "investing",
+      "wallstreetbets",
+      "microsoft"
+    ],
+    "aliases": [
+      "MSFT",
+      "Softies"
+    ],
+    "input": "Microsoft"
+  },
+  "google": {
+    "display": "Google",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "GOOGL",
+    "hn_query": "Google",
+    "reddit_query": "GOOGL OR Google",
+    "subreddits": [
+      "stocks",
+      "investing",
+      "wallstreetbets"
+    ],
+    "aliases": [
+      "Alphabet",
+      "GOOG",
+      "Alphabet Inc"
+    ],
+    "input": "Google"
+  },
+  "meta": {
+    "display": "Meta Platforms",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "META",
+    "hn_query": "Meta Platforms",
+    "reddit_query": "META or Meta Platforms",
+    "subreddits": [
+      "stocks",
+      "wallstreetbets",
+      "investing",
+      "technology"
+    ],
+    "aliases": [
+      "Facebook",
+      "META"
+    ],
+    "input": "Meta"
+  },
+  "amazon": {
+    "display": "Amazon",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "AMZN",
+    "hn_query": "Amazon",
+    "reddit_query": "AMZN OR Amazon",
+    "subreddits": [
+      "stocks",
+      "wallstreetbets",
+      "investing",
+      "amazonprime"
+    ],
+    "aliases": [
+      "AWS",
+      "Amazon.com",
+      "AMZN"
+    ],
+    "input": "Amazon"
+  },
+  "tesla": {
+    "display": "Tesla",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "TSLA",
+    "hn_query": "Tesla",
+    "reddit_query": "TSLA OR Tesla",
+    "subreddits": [
+      "wallstreetbets",
+      "stocks",
+      "investing",
+      "Tesla"
+    ],
+    "aliases": [
+      "TSLA",
+      "Elon Musk's Tesla",
+      "Tesla Inc"
+    ],
+    "input": "Tesla"
+  },
+  "oracle": {
+    "display": "Oracle",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "ORCL",
+    "hn_query": "Oracle",
+    "reddit_query": "ORCL OR Oracle",
+    "subreddits": [
+      "stocks",
+      "investing",
+      "wallstreetbets"
+    ],
+    "aliases": [
+      "ORCL",
+      "Oracle Corporation"
+    ],
+    "input": "Oracle"
+  },
+  "netflix": {
+    "display": "Netflix",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "NFLX",
+    "hn_query": "Netflix",
+    "reddit_query": "NFLX OR Netflix",
+    "subreddits": [
+      "stocks",
+      "investing",
+      "wallstreetbets",
+      "entertainment"
+    ],
+    "aliases": [
+      "NFLX",
+      "Netflix Inc"
+    ],
+    "input": "Netflix"
+  },
+  "salesforce": {
+    "display": "Salesforce",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "CRM",
+    "hn_query": "Salesforce",
+    "reddit_query": "Salesforce OR CRM",
+    "subreddits": [
+      "stocks",
+      "investing",
+      "wallstreetbets",
+      "technology"
+    ],
+    "aliases": [
+      "CRM",
+      "Salesforce.com"
+    ],
+    "input": "Salesforce"
+  },
+  "snowflake": {
+    "display": "Snowflake",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "SNOW",
+    "hn_query": "Snowflake",
+    "reddit_query": "SNOW OR Snowflake",
+    "subreddits": [
+      "stocks",
+      "investing",
+      "wallstreetbets"
+    ],
+    "aliases": [
+      "SNOW",
+      "cloud data warehouse"
+    ],
+    "input": "Snowflake"
+  },
+  "coinbase": {
+    "display": "Coinbase",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "COIN",
+    "hn_query": "Coinbase",
+    "reddit_query": "Coinbase OR COIN",
+    "subreddits": [
+      "CryptoCurrency",
+      "stocks",
+      "investing",
+      "wallstreetbets"
+    ],
+    "aliases": [
+      "COIN",
+      "Coinbase Global"
+    ],
+    "input": "Coinbase"
+  },
+  "ethereum": {
+    "display": "Ethereum",
+    "asset_type": "crypto",
+    "is_financial": true,
+    "proxy": "ETH-USD",
+    "hn_query": "Ethereum",
+    "reddit_query": "Ethereum OR ETH",
+    "subreddits": [
+      "CryptoCurrency",
+      "ethereum",
+      "Bitcoin"
+    ],
+    "aliases": [
+      "ETH",
+      "Ether"
+    ],
+    "input": "Ethereum"
+  },
+  "semiconductors": {
+    "display": "Semiconductors",
+    "asset_type": "sector",
+    "is_financial": true,
+    "proxy": "SOXX",
+    "hn_query": "semiconductors",
+    "reddit_query": "semiconductors",
+    "subreddits": [
+      "investing",
+      "stocks",
+      "wallstreetbets",
+      "technology"
+    ],
+    "aliases": [
+      "chips",
+      "semiconductor industry",
+      "chipmakers"
+    ],
+    "input": "Semiconductors"
+  },
+  "ai infrastructure": {
+    "display": "AI Infrastructure",
+    "asset_type": "sector",
+    "is_financial": true,
+    "proxy": "NVDA",
+    "hn_query": "AI infrastructure",
+    "reddit_query": "AI infrastructure",
+    "subreddits": [
+      "stocks",
+      "investing",
+      "technology"
+    ],
+    "aliases": [
+      "AI chips",
+      "GPU makers",
+      "AI hardware",
+      "semiconductor infrastructure"
+    ],
+    "input": "AI infrastructure"
+  },
+  "cloud computing": {
+    "display": "Cloud Computing",
+    "asset_type": "sector",
+    "is_financial": true,
+    "proxy": "CLOU",
+    "hn_query": "cloud computing",
+    "reddit_query": "cloud computing OR AWS OR Azure OR GCP",
+    "subreddits": [
+      "investing",
+      "stocks",
+      "technology"
+    ],
+    "aliases": [
+      "cloud infrastructure",
+      "cloud services",
+      "IaaS",
+      "PaaS",
+      "SaaS"
+    ],
+    "input": "Cloud computing"
+  },
+  "quantum computing": {
+    "display": "Quantum Computing",
+    "asset_type": "sector",
+    "is_financial": true,
+    "proxy": "QTUM",
+    "hn_query": "quantum computing",
+    "reddit_query": "quantum computing",
+    "subreddits": [
+      "investing",
+      "stocks",
+      "technology"
+    ],
+    "aliases": [
+      "quantum tech",
+      "QC",
+      "quantum processors"
+    ],
+    "input": "Quantum computing"
+  },
+  "cybersecurity": {
+    "display": "Cybersecurity",
+    "asset_type": "sector",
+    "is_financial": true,
+    "proxy": "CYBR",
+    "hn_query": "cybersecurity",
+    "reddit_query": "cybersecurity",
+    "subreddits": [
+      "stocks",
+      "investing",
+      "technology"
+    ],
+    "aliases": [
+      "cyber security",
+      "infosec",
+      "information security",
+      "CYBR ETF"
+    ],
+    "input": "Cybersecurity"
+  },
+  "exxon mobil": {
+    "display": "Exxon Mobil",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "XOM",
+    "hn_query": "Exxon Mobil",
+    "reddit_query": "XOM OR Exxon",
+    "subreddits": [
+      "investing",
+      "stocks",
+      "energy"
+    ],
+    "aliases": [
+      "ExxonMobil",
+      "XOM",
+      "Exxon"
+    ],
+    "input": "Exxon Mobil"
+  },
+  "jpmorgan": {
+    "display": "JPMorgan Chase",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "JPM",
+    "hn_query": "JPMorgan Chase",
+    "reddit_query": "JPM OR JPMorgan",
+    "subreddits": [
+      "stocks",
+      "investing",
+      "wallstreetbets"
+    ],
+    "aliases": [
+      "JPMorgan Chase",
+      "JPM",
+      "JPMC"
+    ],
+    "input": "JPMorgan"
+  },
+  "pfizer": {
+    "display": "Pfizer",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "PFE",
+    "hn_query": "Pfizer",
+    "reddit_query": "PFE OR Pfizer",
+    "subreddits": [
+      "stocks",
+      "investing",
+      "wallstreetbets",
+      "Healthcare"
+    ],
+    "aliases": [
+      "PFE",
+      "Pfizer Inc."
+    ],
+    "input": "Pfizer"
+  },
+  "walmart": {
+    "display": "Walmart",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "WMT",
+    "hn_query": "Walmart",
+    "reddit_query": "WMT OR Walmart",
+    "subreddits": [
+      "stocks",
+      "investing",
+      "wallstreetbets"
+    ],
+    "aliases": [
+      "Walmart Inc.",
+      "WMT"
+    ],
+    "input": "Walmart"
+  },
+  "uranium": {
+    "display": "Uranium",
+    "asset_type": "commodity",
+    "is_financial": true,
+    "proxy": "URA",
+    "hn_query": "uranium",
+    "reddit_query": "uranium",
+    "subreddits": [
+      "investing",
+      "stocks",
+      "wallstreetbets",
+      "CryptoCurrency"
+    ],
+    "aliases": [
+      "uranium miners",
+      "nuclear fuel",
+      "UEC",
+      "CCJ"
+    ],
+    "input": "Uranium"
+  },
+  "solana": {
+    "display": "Solana",
+    "asset_type": "crypto",
+    "is_financial": true,
+    "proxy": "SOL-USD",
+    "hn_query": "Solana",
+    "reddit_query": "Solana OR SOL",
+    "subreddits": [
+      "CryptoCurrency",
+      "solana",
+      "cryptocurrency"
+    ],
+    "aliases": [
+      "SOL",
+      "Solana blockchain"
+    ],
+    "input": "Solana"
+  },
+  "tsm": {
+    "display": "Taiwan Semiconductor Manufacturing Company",
+    "asset_type": "stock",
+    "is_financial": true,
+    "proxy": "TSM",
+    "hn_query": "TSMC",
+    "reddit_query": "TSM OR TSMC",
+    "subreddits": [
+      "stocks",
+      "investing",
+      "wallstreetbets",
+      "semiconductors"
+    ],
+    "aliases": [
+      "TSMC",
+      "Taiwan Semiconductor",
+      "TSM"
+    ],
+    "input": "TSM"
+  }
+}
