@@ -75,16 +75,8 @@ export function clamp(n: number, lo: number, hi: number): number {
   return Math.max(lo, Math.min(hi, n));
 }
 
-/**
- * Plain-English strength of a Pearson r. Deliberately conservative — this project's
- * honest finding is that these correlations are weak, and the UI should not dress
- * a noisy r up as a result.
- */
-export function strengthOf(r: number): string {
-  const a = Math.abs(r);
-  if (a < 0.1) return "no relationship";
-  if (a < 0.3) return "very weak";
-  if (a < 0.5) return "weak";
-  if (a < 0.7) return "moderate";
-  return "strong";
-}
+// `strengthOf(r)` lived here to label Pearson correlations ("weak", "moderate") in
+// the old backtest panel. Removed along with that panel: this product measures what
+// the crowd thinks rather than forecasting price, and at ~11 monthly periods per
+// subject those coefficients were noise being given a confident-sounding label.
+// See components/PriceContext.tsx.

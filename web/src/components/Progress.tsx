@@ -15,7 +15,7 @@ const STAGES = [
   { label: "Scoring each post's stance (Haiku, concurrent)", secs: 7 },
   { label: "Embedding + semantic retrieval over the corpus", secs: 2 },
   { label: "Synthesizing the cited brief (Sonnet)", secs: 7 },
-  { label: "Backtesting conviction against price", secs: 2 },
+  { label: "Comparing conviction to price history", secs: 2 },
 ];
 
 export default function Progress({ subject }: { subject: string }) {

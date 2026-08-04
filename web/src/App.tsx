@@ -2,8 +2,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 import { ApiError, fetchCorpusStats, fetchHistory, querySubject } from "./api/client";
 import type { Reading } from "./api/types";
-import BacktestPanel from "./components/BacktestPanel";
 import Gauge from "./components/Gauge";
+import PriceContext from "./components/PriceContext";
 import Progress from "./components/Progress";
 import Report from "./components/Report";
 import SearchBar from "./components/SearchBar";
@@ -243,8 +243,8 @@ function Results({ reading, history, onRefresh }: { reading: Reading; history: R
           </Card>
 
           {reading.backtest && (
-            <Card title="Backtest" hint={reading.backtest.proxy ?? undefined}>
-              <BacktestPanel bt={reading.backtest} />
+            <Card title="Price context" hint={reading.backtest.proxy ?? undefined}>
+              <PriceContext bt={reading.backtest} />
             </Card>
           )}
 
