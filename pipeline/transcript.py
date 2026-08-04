@@ -46,12 +46,17 @@ AMBIGUOUS_ALIASES = {
 }
 
 # Words that mark finance/company talk. Used only to rescue AMBIGUOUS_ALIASES.
+#
+# Deliberately excludes words that are financial jargon but far more common in
+# ordinary English: "long", "short", "position", "product". "long" alone was enough
+# to make "going on a long walk" rescue *apple* into an AAPL opinion. A cue set that
+# is too permissive silently defeats the whole ambiguity check.
 CONTEXT_CUES = {
     "stock", "stocks", "shares", "share", "earnings", "revenue", "valuation", "market",
-    "markets", "cap", "investor", "investors", "buy", "sell", "sold", "bought", "long",
-    "short", "bullish", "bearish", "quarter", "guidance", "ipo", "ticker", "trading",
+    "markets", "cap", "investor", "investors", "buy", "sell", "sold", "bought",
+    "bullish", "bearish", "quarter", "guidance", "ipo", "ticker", "trading",
     "trade", "price", "growth", "margin", "margins", "company", "ceo", "profit",
-    "billion", "trillion", "percent", "%", "portfolio", "position", "chips", "product",
+    "billion", "trillion", "percent", "%", "portfolio", "chips",
 }
 
 # Mishearings seen in real Whisper output, mapped to the subject key they belong to.
@@ -76,6 +81,10 @@ MIN_WORDS = 25
 # ("Nvidia, TSMC, AMD, Micron, all those big names") rather than a view about any
 # one of them. Observed directly in the All-In spike.
 LIST_SUBJECT_LIMIT = 4
+
+# Mentions a secondary subject needs before the passage counts as being about it
+# too. One mention is a name-drop; two or more is a discussion.
+SUBSTANTIVE_MENTIONS = 2
 
 
 @dataclass
@@ -152,24 +161,38 @@ def _cue_nearby(text_lc: str, at: int, window: int = 220) -> bool:
     return any(re.search(rf"\b{re.escape(w)}\b", ctx) for w in CONTEXT_CUES)
 
 
-def find_subjects(text: str, alias_index: dict[str, list[str]]) -> set[str]:
-    """Subject keys genuinely mentioned in `text`.
+def count_subjects(text: str, alias_index: dict[str, list[str]], *, strict: bool = True) -> dict[str, int]:
+    """Subject key -> how many times it's mentioned in `text`.
 
     Word-boundary matched. Ambiguous common words additionally require a nearby
     context cue, so "an apple a day" doesn't become an AAPL opinion.
+
+    The COUNT matters, not just presence: a subject named once inside "Nvidia, TSMC,
+    AMD, Micron, all those big names" is being listed, while a subject named three
+    times is being discussed. `build_passages` uses that distinction to avoid
+    turning one sentence into three opinions.
     """
     lc = text.lower()
-    found: set[str] = set()
+    counts: dict[str, int] = {}
     for key, aliases in alias_index.items():
+        spans: set[tuple[int, int]] = set()
         for alias in aliases:
             for m in re.finditer(rf"\b{re.escape(alias)}\b", lc):
-                if alias in AMBIGUOUS_ALIASES and not _cue_nearby(lc, m.start()):
+                if strict and alias in AMBIGUOUS_ALIASES and not _cue_nearby(lc, m.start()):
                     continue
-                found.add(key)
-                break
-            if key in found:
-                break
-    return found
+                # Longer aliases are tried first; skip a hit already covered by one
+                # (so "taiwan semiconductor" isn't also counted as "tsmc" nearby).
+                if any(s <= m.start() < e for s, e in spans):
+                    continue
+                spans.add((m.start(), m.end()))
+        if spans:
+            counts[key] = len(spans)
+    return counts
+
+
+def find_subjects(text: str, alias_index: dict[str, list[str]]) -> set[str]:
+    """Subject keys genuinely mentioned in `text`."""
+    return set(count_subjects(text, alias_index))
 
 
 def build_passages(segments: list[Segment], alias_index: dict[str, list[str]], *,
@@ -186,8 +209,12 @@ def build_passages(segments: list[Segment], alias_index: dict[str, list[str]], *
     seen: set[tuple[str, int]] = set()
 
     for i, seg in enumerate(segments):
-        hits = find_subjects(seg.text, alias_index)
-        if not hits:
+        # Trigger LOOSELY (strict=False): a 40-char fragment rarely contains the
+        # finance vocabulary the ambiguity check wants, so applying it here meant
+        # "Meanwhile Intel is cheap, Intel has real capacity" never started a
+        # passage at all. Cast wide to find candidate positions; the strict check
+        # below decides what the passage is actually about, with real context.
+        if not count_subjects(seg.text, alias_index, strict=False):
             continue
 
         # Expand outward until the passage carries enough context.
@@ -210,13 +237,31 @@ def build_passages(segments: list[Segment], alias_index: dict[str, list[str]], *
         if len(text.split()) < MIN_WORDS:
             continue
 
-        # Re-detect over the FULL passage: context may disambiguate a mention the
+        # Re-count over the FULL passage: context may disambiguate a mention the
         # single fragment couldn't, and may reveal it's a list recitation.
-        passage_subjects = find_subjects(text, alias_index)
-        if len(passage_subjects) > LIST_SUBJECT_LIMIT:
+        counts = count_subjects(text, alias_index)
+        if len(counts) > LIST_SUBJECT_LIMIT:
             continue
 
-        for key in passage_subjects & hits:
+        # Attribute the passage rather than emitting it for everything it names.
+        #
+        # Observed failure this prevents: a sentence describing the chip index
+        # falling 20% named Nvidia, TSMC and AMD once each, and was emitted three
+        # times — inflating volume and correlating those three subjects in the
+        # backtest off a single sentence. A subject earns a passage by being
+        # DISCUSSED (named more than once), not merely listed. The most-mentioned
+        # subject always earns it, so every passage still produces exactly one
+        # primary opinion.
+        if not counts:
+            continue
+        top = max(counts.values())
+        primary = min((k for k, v in counts.items() if v == top), key=lambda k: text.lower().find(alias_index[k][-1]))
+        emit_for = {primary} | {k for k, v in counts.items() if v >= SUBSTANTIVE_MENTIONS}
+
+        # Attribution comes from the passage, not from which fragment happened to
+        # trigger it. Overlapping passages are collapsed by the per-minute `seen`
+        # guard below, so this can't double-count.
+        for key in emit_for:
             bucket = int(segments[lo].start // 60)
             if (key, bucket) in seen:      # one passage per subject per minute
                 continue
