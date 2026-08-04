@@ -122,6 +122,23 @@ class LocalItemStore(ItemStore):
                 backtest        TEXT,            -- json (null until computed)
                 PRIMARY KEY (subject, computed_at)
             );
+
+            -- Podcast episodes already ingested. This is what makes forward-only
+            -- ingestion possible: without it every nightly run would re-download and
+            -- re-transcribe the same back catalogue. Rows are written for SKIPPED and
+            -- FAILED episodes too, so a nightly job doesn't retry the same
+            -- irrelevant or broken episode forever.
+            CREATE TABLE IF NOT EXISTS processed_episode (
+                guid         TEXT PRIMARY KEY,
+                show         TEXT,
+                title        TEXT,
+                published    TEXT,               -- ISO-8601, from the feed
+                processed_at TEXT,
+                status       TEXT,               -- ok | skipped | failed
+                detail       TEXT,               -- why, when skipped/failed
+                n_passages   INTEGER,            -- candidates produced by chunking
+                n_items      INTEGER             -- survivors after stance scoring
+            );
             """
         )
         # Lightweight migration: add columns introduced after a db was first created.
@@ -149,7 +166,12 @@ class LocalItemStore(ItemStore):
                     VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
                     """,
                     (
-                        it.get("url") or it.get("external_id"),
+                        # external_id first: it is the explicit dedup key. URL was
+                        # taking precedence, which silently collapsed every podcast
+                        # passage from one episode into a single row — they all share
+                        # the episode's audio URL. Sources that don't set an
+                        # external_id (Hacker News) still fall back to url.
+                        it.get("external_id") or it.get("url"),
                         it.get("source"),
                         it.get("source_type"),
                         it.get("subject"),
@@ -265,6 +287,31 @@ class LocalItemStore(ItemStore):
                 "SELECT COUNT(*) FROM subject_reading WHERE computed_at >= ?", (since_iso,)
             ).fetchone()
         return int(row[0]) if row else 0
+
+    # --- podcast episode bookkeeping ---------------------------------------
+    def seen_episode_guids(self) -> set[str]:
+        """Every episode guid already handled, whatever the outcome."""
+        with self._lock:
+            return {r[0] for r in self._conn.execute("SELECT guid FROM processed_episode")}
+
+    def mark_episode(self, guid: str, *, show: str = "", title: str = "", published: str | None = None,
+                     status: str = "ok", detail: str = "", n_passages: int = 0, n_items: int = 0) -> None:
+        with self._lock:
+            self._conn.execute(
+                """INSERT OR REPLACE INTO processed_episode
+                   (guid, show, title, published, processed_at, status, detail, n_passages, n_items)
+                   VALUES (?,?,?,?,?,?,?,?,?)""",
+                (guid, show, title, published, _now_iso(), status, detail, n_passages, n_items),
+            )
+            self._conn.commit()
+
+    def episode_stats(self) -> dict:
+        """Counts by status — the ingestion job's health at a glance."""
+        with self._lock:
+            rows = self._conn.execute(
+                "SELECT status, COUNT(*), COALESCE(SUM(n_items),0) FROM processed_episode GROUP BY status"
+            ).fetchall()
+        return {r[0]: {"episodes": r[1], "items": r[2]} for r in rows}
 
 
 class SupabaseItemStore(ItemStore):

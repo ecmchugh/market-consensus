@@ -266,14 +266,19 @@ def build_passages(segments: list[Segment], alias_index: dict[str, list[str]], *
             if (key, bucket) in seen:      # one passage per subject per minute
                 continue
             seen.add((key, bucket))
+            start_s = int(segments[lo].start)
+            base_url = episode.get("url")
             out.append({
-                "external_id": f"{episode.get('guid', 'ep')}:{key}:{int(segments[lo].start)}",
+                "external_id": f"{episode.get('guid', 'ep')}:{key}:{start_s}",
                 "source": episode.get("show", "podcast"),
                 "source_type": "podcast",
                 "subject": key,
                 "title": episode.get("title", ""),
                 "text": text,
-                "url": episode.get("url"),
+                # Deep-link to the moment, so a citation points at the passage rather
+                # than the top of a two-hour episode. Also keeps per-passage URLs
+                # distinct, which matters wherever URL is used as an identity.
+                "url": f"{base_url}#t={start_s}" if base_url else None,
                 "timestamp": episode.get("published"),
                 "start_s": segments[lo].start,
                 "speaker": seg.speaker,

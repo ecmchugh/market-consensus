@@ -1,0 +1,11 @@
+# Podcast ingestion only. Deliberately NOT in requirements.txt: the API image
+# doesn't transcribe anything, and adding these would put ~500MB of ONNX runtime
+# and model weights into the deployed container for no benefit.
+#
+#     pip install -r requirements.txt -r requirements-ingest.txt
+#     PYTHONPATH=. python scripts/ingest_podcasts.py
+#
+# Shows that publish transcripts (Odd Lots) work WITHOUT this — run the ingester
+# with --no-whisper to stay on the zero-compute path.
+
+faster-whisper>=1.2      # CTranslate2 Whisper; no torch, ~11x realtime on CPU int8
